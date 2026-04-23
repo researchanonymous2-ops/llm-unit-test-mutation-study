@@ -1,0 +1,18 @@
+class,mutant_id,operator_id,mutator,operator_type,method,line,transformation
+Fraction,M001,OP01,ConditionalsBoundaryMutator,Relational,getReducedFraction,631,boundary condition change
+Fraction,M002,OP02,InvertNegsMutator,Other,getReducedFraction,637,removed negation
+Fraction,M003,OP02,InvertNegsMutator,Other,getReducedFraction,638,removed negation
+Fraction,M004,OP03,MathMutator,Arithmetic,getReducedFraction,628,bitwise operation modified
+Fraction,M005,OP03,MathMutator,Arithmetic,getReducedFraction,629,x / y → x * y
+Fraction,M006,OP03,MathMutator,Arithmetic,getReducedFraction,629,x / y → x * y
+Fraction,M007,OP03,MathMutator,Arithmetic,getReducedFraction,642,x / y → x * y
+Fraction,M008,OP03,MathMutator,Arithmetic,getReducedFraction,643,x / y → x * y
+Fraction,M009,OP04,NegateConditionalsMutator,Relational,getReducedFraction,620,if (cond) → if (!cond)
+Fraction,M010,OP04,NegateConditionalsMutator,Relational,getReducedFraction,624,if (cond) → if (!cond)
+Fraction,M011,OP04,NegateConditionalsMutator,Relational,getReducedFraction,628,if (cond) → if (!cond)
+Fraction,M012,OP04,NegateConditionalsMutator,Relational,getReducedFraction,628,if (cond) → if (!cond)
+Fraction,M013,OP04,NegateConditionalsMutator,Relational,getReducedFraction,631,if (cond) → if (!cond)
+Fraction,M014,OP04,NegateConditionalsMutator,Relational,getReducedFraction,632,if (cond) → if (!cond)
+Fraction,M015,OP04,NegateConditionalsMutator,Relational,getReducedFraction,632,if (cond) → if (!cond)
+Fraction,M016,OP05,NullReturnValsMutator,Return,getReducedFraction,625,return value modified
+Fraction,M017,OP05,NullReturnValsMutator,Return,getReducedFraction,644,return value modified

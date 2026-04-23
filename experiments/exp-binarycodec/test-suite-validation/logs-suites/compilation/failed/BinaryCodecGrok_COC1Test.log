@@ -1,0 +1,8 @@
+
+/app/experimentos/exp-binarycodec/src/test/java/org/apache/commons/codec/binary/BinaryCodecGrok_COC1Test.java:12: error: EMPTY_BYTE_ARRAY has private access in BinaryCodec
+        assertArrayEquals(BinaryCodec.EMPTY_BYTE_ARRAY, result);
+                                     ^
+/app/experimentos/exp-binarycodec/src/test/java/org/apache/commons/codec/binary/BinaryCodecGrok_COC1Test.java:18: error: EMPTY_BYTE_ARRAY has private access in BinaryCodec
+        assertArrayEquals(BinaryCodec.EMPTY_BYTE_ARRAY, result);
+                                     ^
+2 errors

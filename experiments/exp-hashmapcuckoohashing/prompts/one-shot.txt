@@ -1,0 +1,37 @@
+[1] Tarefa
+Gerar testes unitários em Java (JUnit 5) para o método public void insertKey2HashTable(int key)
+da classe com.thealgorithms.datastructures.hashmap.hashing.HashMapCuckooHashing.
+
+[2] Restrição de Escopo
+Gerar casos de teste apenas para o método public void insertKey2HashTable(int key).
+Não criar testes para outros métodos da classe.
+
+[3] Exemplo de Classe de Teste (One-Shot)
+
+Use o exemplo abaixo apenas como referência de estrutura, organização, imports e formato de uma classe de teste JUnit 5.
+
+Não reutilize valores de entrada, resultados esperados ou a lógica do teste apresentado.
+
+// Exemplo
+
+import org.junit.jupiter.api.Test;
+import com.thealgorithms.datastructures.hashmap.hashing.HashMapCuckooHashing;
+
+public class HashMapCuckooHashingOneShotExampleTest {
+
+    @Test
+    void testInsertKey2HashTableExample() {
+        HashMapCuckooHashing map = new HashMapCuckooHashing(4);
+        map.insertKey2HashTable(1);
+    }
+}
+
+// Fim do Exemplo
+
+[4] Geração do Código Final (JUnit 5)
+Forneça apenas o código Java completo e compilável da classe de teste.
+
+[5] Convenções e Restrições Sintáticas
+- Não incluir comentários, explicações ou texto fora do código Java;
+- Nomes dos testes devem seguir o padrão: testInsertKey2HashTable_*.
+

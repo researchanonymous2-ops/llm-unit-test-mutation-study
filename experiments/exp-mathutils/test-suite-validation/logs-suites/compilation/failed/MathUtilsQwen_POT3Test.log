@@ -1,0 +1,36 @@
+
+/app/experimentos/exp-mathutils/src/test/java/org/apache/commons/math3/util/MathUtilsQwen_POT3Test.java:17: error: cannot find symbol
+        assertEquals(LocalizedFormats.ARRAY_ELEMENT, exception.getPattern());
+                                                              ^
+  symbol:   method getPattern()
+  location: variable exception of type NotFiniteNumberException
+/app/experimentos/exp-mathutils/src/test/java/org/apache/commons/math3/util/MathUtilsQwen_POT3Test.java:18: error: cannot find symbol
+        assertEquals(1, exception.getArguments().length);
+                                 ^
+  symbol:   method getArguments()
+  location: variable exception of type NotFiniteNumberException
+/app/experimentos/exp-mathutils/src/test/java/org/apache/commons/math3/util/MathUtilsQwen_POT3Test.java:19: error: cannot find symbol
+        assertEquals(1, exception.getArguments()[0]);
+                                 ^
+  symbol:   method getArguments()
+  location: variable exception of type NotFiniteNumberException
+/app/experimentos/exp-mathutils/src/test/java/org/apache/commons/math3/util/MathUtilsQwen_POT3Test.java:28: error: cannot find symbol
+        assertEquals(LocalizedFormats.ARRAY_ELEMENT, exception.getPattern());
+                                                              ^
+  symbol:   method getPattern()
+  location: variable exception of type NotFiniteNumberException
+/app/experimentos/exp-mathutils/src/test/java/org/apache/commons/math3/util/MathUtilsQwen_POT3Test.java:29: error: cannot find symbol
+        assertEquals(2, exception.getArguments().length);
+                                 ^
+  symbol:   method getArguments()
+  location: variable exception of type NotFiniteNumberException
+/app/experimentos/exp-mathutils/src/test/java/org/apache/commons/math3/util/MathUtilsQwen_POT3Test.java:30: error: cannot find symbol
+        assertEquals(2, exception.getArguments()[0]);
+                                 ^
+  symbol:   method getArguments()
+  location: variable exception of type NotFiniteNumberException
+/app/experimentos/exp-mathutils/src/main/java/org/apache/commons/math3/util/MathUtils.java:57: warning: [removal] Double(double) in Double has been deprecated and marked for removal
+        return new Double(value).hashCode();
+               ^
+6 errors
+1 warning

@@ -1,0 +1,5 @@
+
+/app/experimentos/exp-matrixutil/src/test/java/com/thealgorithms/maths/MatrixUtilGrok_POT4Test.java:3: error: class, interface, enum, or record expected
+package com.thealgorithms.maths;
+^
+1 error

@@ -1,0 +1,26 @@
+
+/app/experimentos/exp-mathutils/src/test/java/org/apache/commons/math3/util/MathUtilsQwen_COC3Test.java:21: error: cannot find symbol
+        assertEquals(1, exception.getArguments()[1]);
+                                 ^
+  symbol:   method getArguments()
+  location: variable exception of type NotFiniteNumberException
+/app/experimentos/exp-mathutils/src/test/java/org/apache/commons/math3/util/MathUtilsQwen_COC3Test.java:28: error: cannot find symbol
+        assertEquals(2, exception.getArguments()[1]);
+                                 ^
+  symbol:   method getArguments()
+  location: variable exception of type NotFiniteNumberException
+/app/experimentos/exp-mathutils/src/test/java/org/apache/commons/math3/util/MathUtilsQwen_COC3Test.java:41: error: cannot find symbol
+        assertEquals(0, exception.getArguments()[1]);
+                                 ^
+  symbol:   method getArguments()
+  location: variable exception of type NotFiniteNumberException
+/app/experimentos/exp-mathutils/src/test/java/org/apache/commons/math3/util/MathUtilsQwen_COC3Test.java:48: error: cannot find symbol
+        assertEquals(1, exception.getArguments()[1]);
+                                 ^
+  symbol:   method getArguments()
+  location: variable exception of type NotFiniteNumberException
+/app/experimentos/exp-mathutils/src/main/java/org/apache/commons/math3/util/MathUtils.java:57: warning: [removal] Double(double) in Double has been deprecated and marked for removal
+        return new Double(value).hashCode();
+               ^
+4 errors
+1 warning

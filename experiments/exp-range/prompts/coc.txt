@@ -1,0 +1,96 @@
+[1] Papel
+
+Você é um engenheiro de software especializado em testes unitários e critérios de teste estrutural baseados em fluxo de dados.
+
+[2] Tarefa
+
+Gerar testes unitários em Java (JUnit 5) para o método elementCompareTo(T element) da classe org.apache.commons.lang3.Range.
+
+[3] Restrição de Escopo
+
+Gerar casos de teste apenas para o método elementCompareTo(T element).
+Não criar testes para outros métodos da classe.
+
+[3.1] Análise Estrutural Prévia do Método elementCompareTo(T element)
+
+O método elementCompareTo(T element) da classe Range foi previamente analisado
+segundo critérios de teste estrutural baseados em fluxo de dados.
+Essa análise deve ser considerada como base obrigatória para a construção do
+Chain of Code.
+
+Variáveis do método:
+- element: parâmetro formal
+
+Definições (def)
+
+Para element:
+- D1: definição inicial como parâmetro formal do método
+
+Usos predicativos (p-use)
+
+Para element:
+- P1: decisão condicional de validação de entrada (element == null)
+- P2: decisão condicional baseada no resultado de isAfter(element)
+- P3: decisão condicional baseada no resultado de isBefore(element)
+
+Usos computacionais (c-use)
+
+- Nenhum
+
+[4] Chain of Code
+
+Questão:Como o método elementCompareTo(T element) se comporta para diferentes valores de entrada?
+
+Convenções:
+- input_element: valor fornecido ao método elementCompareTo;
+- original_input: valor fornecido como argumento ao método elementCompareTo(T element);
+- return_candidate: valor elegível ao retorno em um caminho;
+- observable_return: valor efetivamente retornado por elementCompareTo(input_element);
+- def(Di): definição identificada conforme a análise estrutural;
+- p_use: uso predicativo;
+- path(Pi): caminho definição–uso livre de redefinição;
+- delta_state: representação explícita do estado semântico observável do método após uma ação relevante, indicando mudanças em candidatos a retorno, exceções ou conclusão de cenários de teste.
+
+Modelo do Chain of Code:
+
+1   input_element = original_input
+    def(D1): element = input_element
+    delta_state: { element definido }
+
+2   p_use: (element == null)
+    path(P0)
+    delta_state: { exceção lançada, observable_return indefinido }
+
+3   p_use: isAfter(element)
+    path(P1)
+    delta_state: { return_candidate = -1 }
+
+4   p_use: isBefore(element)
+    path(P2)
+    delta_state: { return_candidate = 1 }
+
+5   path(P3)
+    delta_state: { return_candidate = 0 }
+
+6   unit_test_scenarios = derive_from_paths(
+        P0, P1, P2, P3
+    )
+    delta_state: { unit_test_scenarios = complete }
+
+7   observable_return = elementCompareTo(input_element)
+    delta_state: { observable_return = return_candidate }
+
+Resposta:unit_test_scenarios
+
+[5] Geração do Código Final (JUnit 5)
+
+Com base exclusivamente no Modelo do Chain of Code definido acima,
+gere apenas o código Java completo e compilável da classe de teste JUnit 5
+para o método elementCompareTo(T element).
+
+[6] Convenções e Restrições Sintáticas
+
+- Os casos de teste devem garantir cobertura de todos os caminhos definidos no Chain of Code;
+- Não incluir comentários, explicações ou texto fora do código Java;
+- Os nomes dos testes devem seguir o padrão: testElementCompareTo_*.
+

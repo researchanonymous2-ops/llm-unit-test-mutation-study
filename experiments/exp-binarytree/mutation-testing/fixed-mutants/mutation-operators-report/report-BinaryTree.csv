@@ -1,0 +1,4 @@
+class,mutant_id,operator_id,mutator,operator_type,method,line,transformation
+BinaryTree,M001,OP01,ConditionalsBoundaryMutator,Relational,put,117,boundary condition change
+BinaryTree,M002,OP02,NegateConditionalsMutator,Relational,put,110,if (cond) → if (!cond)
+BinaryTree,M003,OP02,NegateConditionalsMutator,Relational,put,117,if (cond) → if (!cond)

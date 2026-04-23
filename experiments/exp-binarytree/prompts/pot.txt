@@ -1,0 +1,202 @@
+[1] Papel
+
+Você é um engenheiro de software especializado em testes unitários e critérios de teste estrutural baseados em fluxo de dados.
+
+[2] Tarefa
+
+Gerar testes unitários em Java (JUnit 5) para o método public void put(int value)
+da classe com.thealgorithms.datastructures.trees.BinaryTree.
+
+[3] Restrição de Escopo
+
+Gerar casos de teste apenas para o método public void put(int value).
+Não criar testes para outros métodos da classe BinaryTree.
+
+[3.1] Análise Estrutural Prévia do Método public void put(int value)
+
+O método put(int value) da classe BinaryTree foi analisado segundo critérios de
+teste estrutural baseados em fluxo de dados, considerando exclusivamente o código
+do método fornecido. Essa análise deve ser considerada como base obrigatória para
+a construção do Program-of-Thoughts.
+
+Variáveis do método:
+
+- value: parâmetro formal de entrada (valor inteiro a ser inserido na árvore)
+- root: atributo da classe BinaryTree (nó raiz da árvore)
+- newNode: variável local (novo nó criado a partir de value)
+- parent: variável local (nó pai retornado pela chamada a find(value), existente
+  apenas quando root != null)
+
+Definições (def)
+
+- D1: value definido como parâmetro formal do método
+- D2: newNode definido pela expressão new Node(value)
+- D3: root definido pela atribuição root = newNode, no caminho em que root == null
+- D4: parent definido como resultado da chamada find(value), no caminho em que root != null
+- D5: parent.left definido pela atribuição parent.left = newNode, quando value < parent.data
+- D6: parent.right definido pela atribuição parent.right = newNode, quando value >= parent.data
+
+Usos predicativos (p-use)
+
+- P1: uso de root na decisão condicional root == null
+- P2: uso de value na decisão condicional value < parent.data
+
+Usos computacionais (c-use)
+
+- C1: uso de value na criação do novo nó new Node(value)
+- C2: uso de value na comparação com parent.data
+- C3: uso de parent nas atribuições de parent.left ou parent.right
+- C4: uso de newNode nas atribuições dos filhos do nó pai
+- C5: uso de parent nas atribuições parent.left.parent = parent ou parent.right.parent = parent
+
+
+[4] Program-of-Thoughts
+
+- DEVERÁ SER UTILIZADO um programa de raciocínio estrutural que modele explicitamente o comportamento do método public void put(int value) com base em critérios de teste estrutural baseados em fluxo de dados, fiel e integralmente alinhado à Análise Estrutural Prévia definida na etapa [3.1].
+
+- O Program-of-Thoughts é um artefato intermediário de raciocínio e deve ser utilizado exclusivamente como base interna para a geração da classe de testes, não devendo ser reproduzido, modificado ou emitido como saída no código final.
+
+[4.1] Estrutura esperada do Program-of-Thoughts (JSON)
+
+- A estrutura a seguir é fornecida como um artefato de raciocínio já definido.
+  NÃO reproduza, modifique ou gere este JSON como saída.
+  Este artefato deve ser usado exclusivamente como base interna para a geração
+  da classe de testes na etapa seguinte.
+
+{
+  "semantic_roles": [
+    {
+      "name": "input_value",
+      "description": "valor inteiro fornecido como entrada ao método put"
+    },
+    {
+      "name": "observable_state",
+      "description": "estado estrutural observável da árvore após a inserção"
+    }
+  ],
+  "variables": [
+    { "name": "value", "role": "parâmetro formal de entrada" },
+    { "name": "root", "role": "atributo da classe BinaryTree" },
+    { "name": "newNode", "role": "variável local de criação do nó" },
+    { "name": "parent", "role": "variável local definida condicionalmente pela busca do nó pai" }
+  ],
+  "definitions": [
+    {
+      "id": "D1",
+      "variable": "value",
+      "description": "definição inicial como parâmetro formal do método"
+    },
+    {
+      "id": "D2",
+      "variable": "newNode",
+      "description": "definição como nova instância de Node(value)"
+    },
+    {
+      "id": "D3",
+      "variable": "root",
+      "description": "definição pela atribuição root = newNode, no caminho em que root == null"
+    },
+    {
+      "id": "D4",
+      "variable": "parent",
+      "description": "definição como resultado da chamada find(value), no caminho em que root != null"
+    },
+    {
+      "id": "D5",
+      "variable": "parent.left",
+      "description": "definição pela atribuição parent.left = newNode, quando value < parent.data"
+    },
+    {
+      "id": "D6",
+      "variable": "parent.right",
+      "description": "definição pela atribuição parent.right = newNode, quando value >= parent.data"
+    }
+  ],
+  "uses": [
+    {
+      "id": "U1",
+      "variable": "root",
+      "type": "p-use",
+      "description": "verificação de árvore vazia (root == null)"
+    },
+    {
+      "id": "U2",
+      "variable": "value",
+      "type": "p-use",
+      "description": "comparação value < parent.data"
+    },
+    {
+      "id": "U3",
+      "variable": "value",
+      "type": "c-use",
+      "description": "uso de value na criação do novo nó"
+    },
+    {
+      "id": "U4",
+      "variable": "parent",
+      "type": "c-use",
+      "description": "uso de parent nas atribuições de filhos e na definição do ponteiro parent do novo nó"
+    },
+    {
+      "id": "U5",
+      "variable": "newNode",
+      "type": "c-use",
+      "description": "uso de newNode nas atribuições parent.left ou parent.right"
+    }
+  ],
+  "du_paths": [
+    {
+      "id": "P0",
+      "description": "árvore inicialmente vazia",
+      "post_condition": "root referencia diretamente newNode"
+    },
+    {
+      "id": "P1",
+      "description": "árvore não vazia e value < parent.data",
+      "post_condition": "newNode inserido como filho esquerdo de parent"
+    },
+    {
+      "id": "P2",
+      "description": "árvore não vazia e value >= parent.data",
+      "post_condition": "newNode inserido como filho direito de parent"
+    }
+  ],
+  "planned_tests": [
+    {
+      "test_id": "T0",
+      "covers": ["P0"],
+      "asserts": ["inserção em árvore vazia ocorre sem exceção"]
+    },
+    {
+      "test_id": "T1",
+      "covers": ["P1"],
+      "asserts": ["inserção de valor menor que a raiz ocorre corretamente"]
+    },
+    {
+      "test_id": "T2",
+      "covers": ["P2"],
+      "asserts": ["inserção de valor maior ou igual à raiz ocorre corretamente"]
+    }
+  ],
+  "constraints": {
+    "all_defs_covered": true,
+    "all_p_uses_covered": true,
+    "all_c_uses_covered": true,
+    "all_decision_outcomes_covered": true,
+    "observable_contract_preserved": true
+  }
+}
+
+[5] Geração do Código Final (JUnit 5)
+
+Com base exclusivamente no Program-of-Thoughts definido na etapa anterior, gere como resultado final o código Java completo, compilável e executável
+da classe de teste JUnit 5 para o método public void put(int value).
+
+[6] Convenções e Restrições Sintáticas
+
+- O código Java final NÃO deve conter JSON sob nenhuma forma;
+- Qualquer classe de teste que inclua JSON dentro do código Java é considerada inválida;
+- Os casos de teste devem garantir cobertura de todos os caminhos definidos em "planned_tests";
+- Não incluir comentários, explicações ou texto fora do código Java;
+- Nomes dos testes devem seguir o padrão: testPut_*.
+

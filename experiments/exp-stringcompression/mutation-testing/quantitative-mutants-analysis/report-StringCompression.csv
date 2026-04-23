@@ -1,0 +1,26 @@
+Suite,Class,Test_Cases,Mutants,Killed,Survived,No_Coverage,Mutation_Score (%),Test_Strength (%)
+StringCompressionGrok_COC1Test,StringCompression,8,20,18,2,0,90.0,90.0
+StringCompressionGrok_COC2Test,StringCompression,7,20,18,2,0,90.0,90.0
+StringCompressionGrok_COC3Test,StringCompression,10,20,18,2,0,90.0,90.0
+StringCompressionGrok_COC4Test,StringCompression,7,20,18,2,0,90.0,90.0
+StringCompressionGrok_FS2Test,StringCompression,10,20,18,2,0,90.0,90.0
+StringCompressionGrok_FS3Test,StringCompression,10,20,19,1,0,95.0,95.0
+StringCompressionGrok_FS4Test,StringCompression,10,20,18,2,0,90.0,90.0
+StringCompressionGrok_FS5Test,StringCompression,10,20,18,2,0,90.0,90.0
+StringCompressionGrok_OS3Test,StringCompression,10,20,18,2,0,90.0,90.0
+StringCompressionGrok_OS4Test,StringCompression,8,20,18,2,0,90.0,90.0
+StringCompressionGrok_OS5Test,StringCompression,11,20,19,1,0,95.0,95.0
+StringCompressionGrok_POT1Test,StringCompression,4,20,18,2,0,90.0,90.0
+StringCompressionGrok_POT2Test,StringCompression,4,20,18,2,0,90.0,90.0
+StringCompressionGrok_POT3Test,StringCompression,4,20,18,2,0,90.0,90.0
+StringCompressionGrok_POT4Test,StringCompression,4,20,18,2,0,90.0,90.0
+StringCompressionGrok_POT5Test,StringCompression,4,20,18,2,0,90.0,90.0
+StringCompressionGrok_ZS2Test,StringCompression,10,20,19,1,0,95.0,95.0
+StringCompressionGrok_ZS3Test,StringCompression,10,20,19,1,0,95.0,95.0
+StringCompressionGrok_ZS4Test,StringCompression,10,20,19,1,0,95.0,95.0
+StringCompressionGrok_ZS5Test,StringCompression,10,20,19,1,0,95.0,95.0
+StringCompressionLlama_COC1Test,StringCompression,7,20,18,2,0,90.0,90.0
+StringCompressionLlama_COC2Test,StringCompression,7,20,18,2,0,90.0,90.0
+StringCompressionLlama_COC4Test,StringCompression,8,20,18,2,0,90.0,90.0
+StringCompressionLlama_FS5Test,StringCompression,9,20,19,1,0,95.0,95.0
+StringCompressionLlama_ZS1Test,StringCompression,8,20,19,1,0,95.0,95.0

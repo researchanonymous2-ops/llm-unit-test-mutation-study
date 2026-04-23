@@ -1,0 +1,11 @@
+
+/app/experimentos/exp-hex/src/test/java/org/apache/commons/codec/binary/HexQwen_FS1Test.java:48: error: incompatible types: possible lossy conversion from int to byte
+        byte[] input = { 0xAB, 0xCD, 0xEF };
+                         ^
+/app/experimentos/exp-hex/src/test/java/org/apache/commons/codec/binary/HexQwen_FS1Test.java:48: error: incompatible types: possible lossy conversion from int to byte
+        byte[] input = { 0xAB, 0xCD, 0xEF };
+                               ^
+/app/experimentos/exp-hex/src/test/java/org/apache/commons/codec/binary/HexQwen_FS1Test.java:48: error: incompatible types: possible lossy conversion from int to byte
+        byte[] input = { 0xAB, 0xCD, 0xEF };
+                                     ^
+3 errors

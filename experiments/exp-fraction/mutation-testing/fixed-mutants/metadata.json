@@ -1,0 +1,6 @@
+{
+  "created_utc": "20260122T175215Z",
+  "suite_base": "org.apache.commons.math3.fraction.FractionBaseTest",
+  "target_package": "org.apache.commons.math3.fraction",
+  "pit_plugin_version": "unknown"
+}

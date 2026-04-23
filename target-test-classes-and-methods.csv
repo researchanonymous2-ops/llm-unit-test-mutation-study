@@ -1,0 +1,17 @@
+Dataset,Project,Class,Cyclomatic Complexity of the Class,Target Test Method
+Testbench,TheAlgorithms-Java – strings,StringCompression ,10,public static String compress(String input)
+,TheAlgorithms-Java – others,Verhoeff,12,public static boolean verhoeffCheck(String digits)
+,TheAlgorithms-Java – datastructures,StackArray,16,public void push(int value)
+,TheAlgorithms-Java – strings,Anagrams ,23,"boolean approach2(String a, String b)"
+,TheAlgorithms-Java – maths,MatrixUtil ,27,"public static Optional<BigDecimal[][]> multiply(final BigDecimal[][] matrix1, final BigDecimal[][] matrix2)"
+,TheAlgorithms-Java – maths,Area ,29,"public static double surfaceAreaCone(final double radius, final double height)"
+,TheAlgorithms-Java – datastructures,BinaryTree ,44,public void put(int value)
+,TheAlgorithms-Java – hashmaps,HashMapCuckooHashing ,43,public void insertKey2HashTable(int key) {
+Defects4J,Commons-Math,Primes ,17,public static int nextPrime(int n) 
+,Commons-Codec,Hex ,21, public static char[] encodeHex(byte[] data)
+,Commons-Lang,CharSetUtils ,32,"public static String squeeze(final String str, final String... set)"
+,Commons-Codec,BinaryCodec ,35,public static byte[] toAsciiBytes(byte[] raw)
+,Commons-Math,MathUtils,44,public static void checkFinite(final double[] val)
+,Commons-Lang,CharRange,45,public boolean contains(final CharRange range)
+,Commons-Lang,Range ,57,public int elementCompareTo(final T element) 
+,Commons-Math,Fraction ,77," public static Fraction getReducedFraction(int numerator, int denominator)"

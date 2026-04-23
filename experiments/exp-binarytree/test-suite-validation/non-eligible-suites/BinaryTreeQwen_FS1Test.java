@@ -1,0 +1,901 @@
+package com.thealgorithms.datastructures.trees;
+
+// ```java
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
+
+import org.junit.jupiter.api.Test;
+
+import com.thealgorithms.datastructures.trees.BinaryTree;
+
+public class BinaryTreeQwen_FS1Test {
+
+    @Test
+    void testPut_rootIsNull_shouldSetRootWithGivenValue() {
+        BinaryTree tree = new BinaryTree();
+        tree.put(42);
+        assertNotNull(tree.getRoot());
+        assertEquals(42, tree.getRoot().data);
+        assertNull(tree.getRoot().left);
+        assertNull(tree.getRoot().right);
+        assertNull(tree.getRoot().parent);
+    }
+
+    @Test
+    void testPut_valueLessThanRoot_shouldInsertAsLeftChild() {
+        to0:45
+        0:45
+        testPut_valueLessThanRoot_shouldInsertAsLeftChild
+        tree = new BinaryTree();
+        tree.put(45:45
+        tree.put(3147:45
+       :47
+       :45:45:47:3148:45:3147:45:3147:45To avoid error in test method, we use a:45
+0:45
+        tree.put(141:45
+        0:45
+0:45
+        tree.put(3145:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+       21:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+       45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+       :45
+       45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+       :45
+       45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+       0:45
+       5:45
+       45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+       45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+       9:45
+        tree.put(141:45
+       0:45
+       141:454545
+       45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+       45
+        tree.put(141:45
+        tree.put(141:45
+        tree.put(141:45
+       5:45
+       45
+       45
+       45
+       5:45
+       5:45
+       0:45
+       45
+       45
+       141:45
+       45
+       45
+       45
+       45
+       45
+       45
+       45
+       45
+       45
+       45
+       45
+       45
+       45
+       45
+       45
+       45
+       45
+       45
+       45
+       45
+       45
+       45
+       45
+       45
+       45
+       45
+:45
+       45
+       45
+       45
+       45
+       45
+       45
+       45
+45
+       45
+       45
+       45
+       45
+45
+       45
+45
+       45
+       45
+       45
+       45
+       45
+       45
+       45
+45
+       45
+       45
+       4iéndo
+       45
+       45
+       45
+       45
+       45
+       45
+45
+       45
+       45
+       45
+       45
+       45
+       45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+0:45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+4 [-]:45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+45
+4

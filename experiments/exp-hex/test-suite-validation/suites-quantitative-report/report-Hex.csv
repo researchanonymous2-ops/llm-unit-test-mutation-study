@@ -1,0 +1,16 @@
+Class,Model,Prompt Strategy,Total Suites,Non-compiling Suites,Runtime-failure Suites,Eligible Suites,Ineligible Suites,Eligibility Rate (%)
+Hex,Grok,Zero-shot,5,2,0,3,2,60.0
+Hex,,One-shot,5,0,0,5,0,100.0
+Hex,,Few-shot,5,2,0,3,2,60.0
+Hex,,POT,5,4,0,1,4,20.0
+Hex,,COC,5,0,0,5,0,100.0
+Hex,Llama,Zero-shot,5,2,0,3,2,60.0
+Hex,,One-shot,5,0,4,1,4,20.0
+Hex,,Few-shot,5,2,0,3,2,60.0
+Hex,,POT,5,0,0,5,0,100.0
+Hex,,COC,5,2,0,3,2,60.0
+Hex,Qwen,Zero-shot,5,0,0,5,0,100.0
+Hex,,One-shot,5,0,0,5,0,100.0
+Hex,,Few-shot,5,1,0,4,1,80.0
+Hex,,POT,5,0,0,5,0,100.0
+Hex,,COC,5,0,0,5,0,100.0

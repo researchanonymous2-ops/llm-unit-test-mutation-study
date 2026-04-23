@@ -1,0 +1,2 @@
+"test_suite","line","source_code","description"
+"CharRangeLlama_FS5Test","50","CharRange inner = CharRange.isIn('y', 'z' + 1);","incompatible types: possible lossy conversion from int to char"

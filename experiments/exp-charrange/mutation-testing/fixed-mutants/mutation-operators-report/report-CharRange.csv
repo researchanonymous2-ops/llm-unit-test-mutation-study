@@ -1,0 +1,23 @@
+class,mutant_id,operator_id,mutator,operator_type,method,line,transformation
+CharRange,M001,OP01,ConditionalsBoundaryMutator,Relational,contains,189,boundary condition change
+CharRange,M002,OP01,ConditionalsBoundaryMutator,Relational,contains,189,boundary condition change
+CharRange,M003,OP01,ConditionalsBoundaryMutator,Relational,contains,191,boundary condition change
+CharRange,M004,OP01,ConditionalsBoundaryMutator,Relational,contains,191,boundary condition change
+CharRange,M005,OP01,ConditionalsBoundaryMutator,Relational,contains,196,boundary condition change
+CharRange,M006,OP01,ConditionalsBoundaryMutator,Relational,contains,196,boundary condition change
+CharRange,M007,OP02,NegateConditionalsMutator,Relational,contains,184,if (cond) → if (!cond)
+CharRange,M008,OP02,NegateConditionalsMutator,Relational,contains,187,if (cond) → if (!cond)
+CharRange,M009,OP02,NegateConditionalsMutator,Relational,contains,188,if (cond) → if (!cond)
+CharRange,M010,OP02,NegateConditionalsMutator,Relational,contains,189,if (cond) → if (!cond)
+CharRange,M011,OP02,NegateConditionalsMutator,Relational,contains,189,if (cond) → if (!cond)
+CharRange,M012,OP02,NegateConditionalsMutator,Relational,contains,191,if (cond) → if (!cond)
+CharRange,M013,OP02,NegateConditionalsMutator,Relational,contains,191,if (cond) → if (!cond)
+CharRange,M014,OP02,NegateConditionalsMutator,Relational,contains,193,if (cond) → if (!cond)
+CharRange,M015,OP02,NegateConditionalsMutator,Relational,contains,194,if (cond) → if (!cond)
+CharRange,M016,OP02,NegateConditionalsMutator,Relational,contains,194,if (cond) → if (!cond)
+CharRange,M017,OP02,NegateConditionalsMutator,Relational,contains,196,if (cond) → if (!cond)
+CharRange,M018,OP02,NegateConditionalsMutator,Relational,contains,196,if (cond) → if (!cond)
+CharRange,M019,OP03,BooleanTrueReturnValsMutator,Return,contains,189,return value modified
+CharRange,M020,OP03,BooleanTrueReturnValsMutator,Return,contains,191,return value modified
+CharRange,M021,OP03,BooleanTrueReturnValsMutator,Return,contains,194,return value modified
+CharRange,M022,OP03,BooleanTrueReturnValsMutator,Return,contains,196,return value modified

@@ -1,0 +1,41 @@
+[1] Tarefa
+Gerar testes unitários em Java (JUnit 5) para o método approach2(String a, String b)
+da classe com.thealgorithms.strings.Anagrams.
+
+[2] Restrição de Escopo
+Gerar casos de teste apenas para o método approach2(String a, String b).
+Não criar testes para outros métodos da classe.
+
+[3] Exemplo de Classe de Teste (One-Shot)
+
+Use o exemplo abaixo apenas como referência de estrutura,
+organização, imports e formato de uma classe de teste JUnit 5.
+
+Não reutilize valores de entrada, resultados esperados
+ou a lógica do teste apresentado.
+
+// Exemplo
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import com.thealgorithms.strings.Anagrams;
+import org.junit.jupiter.api.Test;
+
+public class AnagramsOneShotExampleTest {
+
+    @Test
+    void testApproach2Example() {
+        Anagrams anagrams = new Anagrams();
+        assertTrue(anagrams.approach2("listen", "silent"));
+    }
+}
+
+// Fim do Exemplo
+
+[4] Geração do Código Final (JUnit 5)
+Forneça apenas o código Java completo e compilável da classe de teste.
+
+[5] Convenções e Restrições Sintáticas
+- Não incluir comentários, explicações ou texto fora do código Java;
+- Nomes dos testes devem seguir o padrão: testApproach2_*.
+

@@ -1,0 +1,6 @@
+{
+  "created_utc": "20260124T233322Z",
+  "suite_base": "com.thealgorithms.datastructures.hashmap.hashing.HashMapCuckooHashingBaseTest",
+  "target_package": "com.thealgorithms.datastructures.hashmap.hashing",
+  "pit_plugin_version": "unknown"
+}

@@ -1,0 +1,6 @@
+{
+  "created_utc": "20260122T233200Z",
+  "suite_base": "org.apache.commons.codec.binary.HexBaseTest",
+  "target_package": "org.apache.commons.codec.binary",
+  "pit_plugin_version": "unknown"
+}

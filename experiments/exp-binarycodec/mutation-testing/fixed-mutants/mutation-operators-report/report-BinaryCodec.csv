@@ -1,0 +1,17 @@
+class,mutant_id,operator_id,mutator,operator_type,method,line,transformation
+BinaryCodec,M001,OP01,ConditionalsBoundaryMutator,Relational,toAsciiBytes,232,boundary condition change
+BinaryCodec,M002,OP01,ConditionalsBoundaryMutator,Relational,toAsciiBytes,233,boundary condition change
+BinaryCodec,M003,OP02,IncrementsMutator,Arithmetic,toAsciiBytes,232,increment modification
+BinaryCodec,M004,OP02,IncrementsMutator,Arithmetic,toAsciiBytes,232,increment modification
+BinaryCodec,M005,OP03,MathMutator,Arithmetic,toAsciiBytes,227,Replaced Shift Left with Shift Right
+BinaryCodec,M006,OP03,MathMutator,Arithmetic,toAsciiBytes,232,x - y → x + y
+BinaryCodec,M007,OP03,MathMutator,Arithmetic,toAsciiBytes,234,bitwise operation modified
+BinaryCodec,M008,OP03,MathMutator,Arithmetic,toAsciiBytes,235,x - y → x + y
+BinaryCodec,M009,OP03,MathMutator,Arithmetic,toAsciiBytes,237,x - y → x + y
+BinaryCodec,M010,OP04,NegateConditionalsMutator,Relational,toAsciiBytes,223,if (cond) → if (!cond)
+BinaryCodec,M011,OP04,NegateConditionalsMutator,Relational,toAsciiBytes,223,if (cond) → if (!cond)
+BinaryCodec,M012,OP04,NegateConditionalsMutator,Relational,toAsciiBytes,232,if (cond) → if (!cond)
+BinaryCodec,M013,OP04,NegateConditionalsMutator,Relational,toAsciiBytes,233,if (cond) → if (!cond)
+BinaryCodec,M014,OP04,NegateConditionalsMutator,Relational,toAsciiBytes,234,if (cond) → if (!cond)
+BinaryCodec,M015,OP05,NullReturnValsMutator,Return,toAsciiBytes,224,return value modified
+BinaryCodec,M016,OP05,NullReturnValsMutator,Return,toAsciiBytes,241,return value modified

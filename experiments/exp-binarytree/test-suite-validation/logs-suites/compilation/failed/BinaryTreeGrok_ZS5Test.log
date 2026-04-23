@@ -1,0 +1,5 @@
+
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeGrok_ZS5Test.java:3: error: class, interface, enum, or record expected
+package com.thealgorithms.datastructures.trees;
+^
+1 error

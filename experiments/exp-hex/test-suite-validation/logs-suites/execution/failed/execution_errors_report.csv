@@ -1,0 +1,5 @@
+"test_suite","method","line","message","tests_run","failures","errors","skipped"
+"HexLlama_OS2Test","testEncodeHex_NullInput","40","» NullPointer Cannot read the array length because ""data"" is null","5","0","1","0"
+"HexLlama_OS3Test","testEncodeHex_NullInput","40","» NullPointer Cannot read the array length because ""data"" is null","5","0","1","0"
+"HexLlama_OS4Test","testEncodeHex_NullInput","40","» NullPointer Cannot read the array length because ""data"" is null","5","0","1","0"
+"HexLlama_OS5Test","testEncodeHex_NullInput","40","» NullPointer Cannot read the array length because ""data"" is null","5","0","1","0"

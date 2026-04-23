@@ -1,0 +1,156 @@
+[1] Papel
+
+Você é um engenheiro de software especializado em testes unitários e critérios de teste estrutural baseados em fluxo de dados.
+
+[2] Tarefa
+
+Gerar testes unitários em Java (JUnit 5) para o método public boolean contains(final CharRange range) da classe org.apache.commons.lang3.CharRange.
+
+[3] Restrição de Escopo
+
+Gerar casos de teste apenas para o método public boolean contains(final CharRange range).
+Não criar testes para outros métodos da classe.
+
+[3.1] Análise Estrutural Prévia do Método public boolean contains(final CharRange range)
+
+O método contains(final CharRange range) da classe CharRange foi analisado segundo critérios de teste estrutural baseados em fluxo de dados, considerando exclusivamente
+o código do método fornecido. Essa análise deve ser considerada como base obrigatória para a construção do Program-of-Thoughts.
+
+Variáveis do método:
+
+- range: parâmetro formal (intervalo de caracteres de entrada)
+- this.start: atributo da instância atual
+- this.end: atributo da instância atual
+- this.negated: atributo da instância atual
+- range.start: atributo do parâmetro
+- range.end: atributo do parâmetro
+- range.negated: atributo do parâmetro
+
+Definições (def)
+
+Para range:
+- D1: definição inicial como parâmetro formal do método
+
+Para this.start:
+- D2: definição como atributo da instância atual
+
+Para this.end:
+- D3: definição como atributo da instância atual
+
+Para this.negated:
+- D4: definição como atributo da instância atual
+
+Para range.start:
+- D5: definição como atributo do parâmetro
+
+Para range.end:
+- D6: definição como atributo do parâmetro
+
+Para range.negated:
+- D7: definição como atributo do parâmetro
+
+Usos predicativos (p-use)
+
+- P1: verificação de nulidade do parâmetro (range == null)
+- P2: decisão condicional baseada em this.negated
+- P3: decisão condicional baseada em range.negated
+- P4: comparação this.start >= range.start
+- P5: comparação this.end <= range.end
+- P6: comparação range.end < this.start
+- P7: comparação range.start > this.end
+- P8: comparação this.start == 0
+- P9: comparação this.end == Character.MAX_VALUE
+- P10: comparação this.start <= range.start
+- P11: comparação this.end >= range.end
+
+Usos computacionais (c-use)
+
+- Não existem usos computacionais neste método.
+
+[4] Program-of-Thoughts
+
+- DEVERÁ SER UTILIZADO um programa de raciocínio estrutural que modele explicitamente o comportamento do método public boolean contains(final CharRange range) com base
+  em critérios de teste estrutural baseados em fluxo de dados.
+
+- Esse programa de raciocínio estrutural é representado por um objeto JSON válido,fornecido na seção seguinte.
+
+- O Program-of-Thoughts é um artefato intermediário de raciocínio e deve ser utilizado exclusivamente como base interna para a geração da classe de testes.
+
+[4.1] Estrutura esperada do Program-of-Thoughts (JSON)
+
+- A estrutura a seguir é fornecida como um artefato de raciocínio já definido.
+- NÃO reproduza, modifique ou gere este JSON como saída.
+- Este artefato deve ser usado exclusivamente como base interna para a geração da classe de testes na etapa seguinte.
+
+{
+  "semantic_roles": [
+    {
+      "name": "input_range",
+      "description": "intervalo de caracteres fornecido como entrada ao método contains"
+    },
+    {
+      "name": "observable_return",
+      "description": "valor booleano retornado ou exceção lançada pelo método"
+    }
+  ],
+  "variables": [
+    { "name": "range", "role": "parâmetro formal de entrada" },
+    { "name": "this.start", "role": "atributo da instância atual" },
+    { "name": "this.end", "role": "atributo da instância atual" },
+    { "name": "this.negated", "role": "atributo da instância atual" },
+    { "name": "range.start", "role": "atributo do parâmetro" },
+    { "name": "range.end", "role": "atributo do parâmetro" },
+    { "name": "range.negated", "role": "atributo do parâmetro" }
+  ],
+  "definitions": [
+    { "id": "D1", "variable": "range", "description": "definição inicial como parâmetro formal" },
+    { "id": "D2", "variable": "this.start", "description": "atributo da instância atual" },
+    { "id": "D3", "variable": "this.end", "description": "atributo da instância atual" },
+    { "id": "D4", "variable": "this.negated", "description": "atributo da instância atual" },
+    { "id": "D5", "variable": "range.start", "description": "atributo do parâmetro" },
+    { "id": "D6", "variable": "range.end", "description": "atributo do parâmetro" },
+    { "id": "D7", "variable": "range.negated", "description": "atributo do parâmetro" }
+  ],
+  "uses": [
+    { "id": "U1", "variable": "range", "type": "p-use", "description": "verificação de nulidade (range == null)" },
+    { "id": "U2", "variable": "this.negated", "type": "p-use", "description": "decisão baseada no estado negado da instância atual" },
+    { "id": "U3", "variable": "range.negated", "type": "p-use", "description": "decisão baseada no estado negado do parâmetro" },
+    { "id": "U4", "variable": "this.start", "type": "p-use", "description": "comparação com range.start" },
+    { "id": "U5", "variable": "this.end", "type": "p-use", "description": "comparação com range.end" },
+    { "id": "U6", "variable": "range.start", "type": "p-use", "description": "comparação com this.start" },
+    { "id": "U7", "variable": "range.end", "type": "p-use", "description": "comparação com this.end" }
+  ],
+  "du_paths": [
+    { "id": "P0", "description": "parâmetro range nulo", "post_condition": "lançamento de IllegalArgumentException" },
+    { "id": "P1", "description": "this.negated == true e range.negated == true", "post_condition": "verificação de inclusão entre intervalos negados" },
+    { "id": "P2", "description": "this.negated == true e range.negated == false", "post_condition": "verificação de exclusão completa do intervalo" },
+    { "id": "P3", "description": "this.negated == false e range.negated == true", "post_condition": "verificação de intervalo total (0 a Character.MAX_VALUE)" },
+    { "id": "P4", "description": "this.negated == false e range.negated == false", "post_condition": "verificação de inclusão direta entre intervalos" }
+  ],
+  "planned_tests": [
+    { "test_id": "T0", "covers": ["P0"], "asserts": ["IllegalArgumentException lançada"] },
+    { "test_id": "T1", "covers": ["P1"], "asserts": ["resultado booleano correto para intervalos ambos negados"] },
+    { "test_id": "T2", "covers": ["P2"], "asserts": ["resultado booleano correto para instância negada e parâmetro normal"] },
+    { "test_id": "T3", "covers": ["P3"], "asserts": ["resultado booleano correto para instância normal e parâmetro negado"] },
+    { "test_id": "T4", "covers": ["P4"], "asserts": ["resultado booleano correto para ambos intervalos normais"] }
+  ],
+  "constraints": {
+    "all_defs_covered": true,
+    "all_p_uses_covered": true,
+    "all_decision_outcomes_covered": true,
+    "observable_contract_preserved": true
+  }
+}
+
+[5] Geração do Código Final (JUnit 5)
+
+Com base exclusivamente no Program-of-Thoughts definido na etapa anterior, gere como resultado final o código Java completo, compilável e executável da classe de teste JUnit 5 para o método public boolean contains(final CharRange range).
+
+[6] Convenções e Restrições Sintáticas
+
+- O código Java final NÃO deve conter JSON sob nenhuma forma;
+- Qualquer classe de teste que inclua JSON dentro do código Java é considerada inválida;
+- Os casos de teste devem garantir cobertura de todos os caminhos definidos em "planned_tests";
+- Não incluir comentários, explicações ou texto fora do código Java;
+- Nomes dos testes devem seguir o padrão: testContains_*.
+

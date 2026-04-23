@@ -1,0 +1,14 @@
+
+/app/experimentos/exp-hex/src/test/java/org/apache/commons/codec/binary/HexLlama_FS5Test.java:18: error: duplicate class: org.apache.commons.codec.binary.HexLlama_FS5Test
+public class HexLlama_FS5Test {
+       ^
+/app/experimentos/exp-hex/src/test/java/org/apache/commons/codec/binary/HexLlama_FS5Test.java:9: error: cannot find symbol
+    @org.junit.Test
+              ^
+  symbol:   class Test
+  location: package org.junit
+/app/experimentos/exp-hex/src/test/java/org/apache/commons/codec/binary/HexLlama_FS5Test.java:13: error: incompatible types: char[] cannot be converted to byte[]
+        char[] actual = Hex.encodeHex(data);
+                                      ^
+Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
+3 errors

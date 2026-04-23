@@ -1,0 +1,16 @@
+Class,Model,Prompt Strategy,Total Suites,Non-compiling Suites,Runtime-failure Suites,Eligible Suites,Ineligible Suites,Eligibility Rate (%)
+Verhoeff,Grok,Zero-shot,5,2,1,2,3,40.0
+Verhoeff,,One-shot,5,0,2,3,2,60.0
+Verhoeff,,Few-shot,5,0,5,0,5,0.0
+Verhoeff,,POT,5,0,0,5,0,100.0
+Verhoeff,,COC,5,0,2,3,2,60.0
+Verhoeff,Llama,Zero-shot,5,0,1,4,1,80.0
+Verhoeff,,One-shot,5,0,0,5,0,100.0
+Verhoeff,,Few-shot,5,0,5,0,5,0.0
+Verhoeff,,POT,5,0,0,5,0,100.0
+Verhoeff,,COC,5,0,0,5,0,100.0
+Verhoeff,Qwen,Zero-shot,5,0,4,1,4,20.0
+Verhoeff,,One-shot,5,0,5,0,5,0.0
+Verhoeff,,Few-shot,5,1,4,0,5,0.0
+Verhoeff,,POT,5,0,1,4,1,80.0
+Verhoeff,,COC,5,0,5,0,5,0.0

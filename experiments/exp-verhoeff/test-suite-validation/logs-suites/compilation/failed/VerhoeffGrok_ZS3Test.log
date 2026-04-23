@@ -1,0 +1,5 @@
+
+/app/experimentos/exp-verhoeff/src/test/java/com/thealgorithms/others/VerhoeffGrok_ZS3Test.java:3: error: class, interface, enum, or record expected
+package com.thealgorithms.others;
+^
+1 error

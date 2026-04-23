@@ -1,0 +1,50 @@
+[1] Tarefa
+Gerar testes unitários em Java (JUnit 5) para o método
+squeeze(String str, String... set)
+da classe org.apache.commons.lang3.CharSetUtils.
+
+[2] Restrição de Escopo
+Gerar casos de teste apenas para o método squeeze(String str, String... set).
+Não criar testes para outros métodos da classe.
+
+[3] Exemplos de Classe de Teste (Few-Shot)
+
+Use os exemplos abaixo apenas como referência de estrutura, organização, imports e formato de uma classe de teste JUnit 5 com múltiplos casos de teste.
+
+Não reutilize valores de entrada, resultados esperados ou a lógica dos testes apresentados.
+
+// Exemplos
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
+
+import org.apache.commons.lang3.CharSetUtils;
+import org.junit.jupiter.api.Test;
+
+public class CharSetUtilsFewShotExampleTest {
+
+    @Test
+    void testSqueezeWithRepeatedCharactersInSet() {
+        assertEquals("helo", CharSetUtils.squeeze("hello", "k-p"));
+    }
+
+    @Test
+    void testSqueezeWithNoCharactersInSet() {
+        assertEquals("hello", CharSetUtils.squeeze("hello", "a-e"));
+    }
+
+    @Test
+    void testSqueezeWithNullInput() {
+        assertNull(CharSetUtils.squeeze(null, "a-z"));
+    }
+}
+
+// Fim dos Exemplos
+
+[4] Geração do Código Final (JUnit 5)
+Forneça apenas o código Java completo e compilável da classe de teste.
+
+[5] Convenções e Restrições Sintáticas
+- Não incluir comentários, explicações ou texto fora do código Java;
+- Nomes dos testes devem seguir o padrão: testSqueeze_*.
+

@@ -1,0 +1,2 @@
+"test_suite","line","source_code","description"
+"PrimesGrok_OS2Test","12","assertThrows(MathIllegalArgumentException.class, () -> Primes.nextPrime(-1));","cannot find symbol"

@@ -1,0 +1,40 @@
+[1] Tarefa
+Gerar testes unitários em Java (JUnit 5) para o método public void put(int value)
+da classe com.thealgorithms.datastructures.trees.BinaryTree.
+
+[2] Restrição de Escopo
+Gerar casos de teste apenas para o método public void put(int value).
+Não criar testes para outros métodos da classe BinaryTree.
+
+[3] Exemplo de Classe de Teste (One-Shot)
+
+Use o exemplo abaixo apenas como referência de estrutura,
+organização, imports e formato de uma classe de teste JUnit 5.
+
+Não reutilize valores de entrada, resultados esperados
+ou a lógica do teste apresentado.
+
+// Exemplo
+
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import org.junit.jupiter.api.Test;
+import com.thealgorithms.datastructures.trees.BinaryTree;
+
+public class BinaryTreeOneShotExampleTest {
+
+    @Test
+    void testPutExample() {
+        BinaryTree tree = new BinaryTree();
+        assertDoesNotThrow(() -> tree.put(1));
+    }
+}
+
+// Fim do Exemplo
+
+[4] Geração do Código Final (JUnit 5)
+Forneça apenas o código Java completo e compilável da classe de teste.
+
+[5] Convenções e Restrições Sintáticas
+- Não incluir comentários, explicações ou texto fora do código Java;
+- Nomes dos testes devem seguir o padrão: testPut_*.
+

@@ -1,0 +1,112 @@
+[1] Papel
+
+Você é um engenheiro de software especializado em testes unitários e critérios de teste estrutural baseados em fluxo de dados.
+
+[2] Tarefa
+
+Gerar testes unitários em Java (JUnit 5) para o método surfaceAreaCone(double radius, double height) da classe Area.
+
+[3] Restrição de Escopo
+
+Gerar casos de teste apenas para o método surfaceAreaCone(double radius, double height). Não criar testes para outros métodos da classe.
+
+[3.1] Análise Estrutural Prévia do Método surfaceAreaCone(double radius, double height)
+
+O método surfaceAreaCone(double radius, double height) da classe Area foi previamente analisado
+segundo critérios de teste estrutural baseados em fluxo de dados.
+Essa análise deve ser considerada como base obrigatória para a construção do Chain of Code.
+
+Variáveis do método surfaceAreaCone(double radius, double height):
+- radius: parâmetro formal
+- height: parâmetro formal
+
+O método não declara variáveis locais.
+
+Definições (def)
+
+Para radius:
+- D1: definição inicial do parâmetro radius na assinatura do método
+
+Para height:
+- D2: definição inicial do parâmetro height na assinatura do método
+
+Usos predicativos (p-use)
+
+Para radius:
+- P1: if (radius <= 0)
+
+Para height:
+- P2: if (height <= 0)
+
+Usos computacionais (c-use)
+
+Para radius:
+- C1: uso computacional de radius na expressão de retorno
+      Math.PI * radius * (radius + Math.pow(height * height + radius * radius, 0.5))
+
+Para height:
+- C2: uso computacional de height na expressão de retorno
+      Math.pow(height * height + radius * radius, 0.5)
+
+[4] Chain of Code
+
+Questão:
+Como o método surfaceAreaCone(double radius, double height) se comporta para diferentes valores de entrada?
+
+Convenções:
+- input_radius: valor original fornecido ao parâmetro radius;
+- input_height: valor original fornecido ao parâmetro height;
+- return_candidate: valor elegível ao retorno em um caminho;
+- observable_return: valor efetivamente retornado por surfaceAreaCone(input_radius, input_height);
+- def(Di): definição identificada conforme a análise estrutural;
+- p_use: uso predicativo;
+- c_use: uso computacional;
+- path(Pi): caminho definição–uso livre de redefinição;
+- delta_state: representação explícita do estado semântico observável do método após uma ação relevante,
+  indicando mudanças em variáveis, candidatos a retorno, efeitos de exceção ou conclusão de cenários de teste.
+
+Modelo do Chain of Code:
+
+1   input_radius = original_input_radius
+    input_height = original_input_height
+    def(D1): radius = input_radius
+    def(D2): height = input_height
+    delta_state: { radius definido, height definido }
+
+2   p_use: (radius <= 0)
+    path(P0)
+    c_use: throw_exception(radius)
+    delta_state: { observable_return indefinido }
+
+3   p_use: (height <= 0)
+    path(P1)
+    c_use: throw_exception(height)
+    delta_state: { observable_return indefinido }
+
+4   c_use: cálculo da expressão de retorno
+        Math.PI * radius * (radius + sqrt(height^2 + radius^2))
+    path(P2)
+    delta_state: { return_candidate definido }
+
+5   unit_test_scenarios = derive_from_paths(
+        P0, P1, P2
+    )
+    delta_state: { unit_test_scenarios = complete }
+
+6   observable_return = surfaceAreaCone(input_radius, input_height)
+    delta_state: { observable_return = return_candidate }
+
+Resposta:
+unit_test_scenarios
+
+[5] Geração do Código Final (JUnit 5)
+
+Com base exclusivamente no Modelo do Chain of Code definido acima, gere apenas o código Java completo e compilável
+da classe de teste JUnit 5 para o método surfaceAreaCone(double radius, double height).
+
+[6] Requisitos
+
+- Os casos de teste devem garantir cobertura de todos os caminhos definidos no Chain of Code;
+- Não incluir comentários, explicações ou texto fora do código Java;
+- Os nomes dos testes devem seguir o padrão: testSurfaceAreaCone_*.
+

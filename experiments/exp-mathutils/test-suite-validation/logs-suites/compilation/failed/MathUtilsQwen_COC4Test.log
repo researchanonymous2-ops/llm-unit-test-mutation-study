@@ -1,0 +1,41 @@
+
+/app/experimentos/exp-mathutils/src/test/java/org/apache/commons/math3/util/MathUtilsQwen_COC4Test.java:37: error: cannot find symbol
+        assertEquals(0, exception.getArguments()[1]);
+                                 ^
+  symbol:   method getArguments()
+  location: variable exception of type NotFiniteNumberException
+/app/experimentos/exp-mathutils/src/test/java/org/apache/commons/math3/util/MathUtilsQwen_COC4Test.java:45: error: cannot find symbol
+        assertEquals(0, exception.getArguments()[1]);
+                                 ^
+  symbol:   method getArguments()
+  location: variable exception of type NotFiniteNumberException
+/app/experimentos/exp-mathutils/src/test/java/org/apache/commons/math3/util/MathUtilsQwen_COC4Test.java:53: error: cannot find symbol
+        assertEquals(1, exception.getArguments()[1]);
+                                 ^
+  symbol:   method getArguments()
+  location: variable exception of type NotFiniteNumberException
+/app/experimentos/exp-mathutils/src/test/java/org/apache/commons/math3/util/MathUtilsQwen_COC4Test.java:61: error: cannot find symbol
+        assertEquals(1, exception.getArguments()[1]);
+                                 ^
+  symbol:   method getArguments()
+  location: variable exception of type NotFiniteNumberException
+/app/experimentos/exp-mathutils/src/test/java/org/apache/commons/math3/util/MathUtilsQwen_COC4Test.java:69: error: cannot find symbol
+        assertEquals(2, exception.getArguments()[1]);
+                                 ^
+  symbol:   method getArguments()
+  location: variable exception of type NotFiniteNumberException
+/app/experimentos/exp-mathutils/src/test/java/org/apache/commons/math3/util/MathUtilsQwen_COC4Test.java:77: error: cannot find symbol
+        assertEquals(2, exception.getArguments()[1]);
+                                 ^
+  symbol:   method getArguments()
+  location: variable exception of type NotFiniteNumberException
+/app/experimentos/exp-mathutils/src/test/java/org/apache/commons/math3/util/MathUtilsQwen_COC4Test.java:85: error: cannot find symbol
+        assertEquals(1, exception.getArguments()[1]);
+                                 ^
+  symbol:   method getArguments()
+  location: variable exception of type NotFiniteNumberException
+/app/experimentos/exp-mathutils/src/main/java/org/apache/commons/math3/util/MathUtils.java:57: warning: [removal] Double(double) in Double has been deprecated and marked for removal
+        return new Double(value).hashCode();
+               ^
+7 errors
+1 warning

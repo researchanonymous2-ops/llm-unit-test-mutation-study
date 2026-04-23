@@ -1,0 +1,2 @@
+"test_suite","line","source_code","description"
+"FractionGrok_OS1Test","65","assertThrows(MathArithmeticException.class, () -> Fraction.getReducedFraction(1, 0));","cannot find symbol"

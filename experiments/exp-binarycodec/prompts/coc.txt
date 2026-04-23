@@ -1,0 +1,172 @@
+[1] Papel
+
+Você é um engenheiro de software especializado em testes unitários e critérios de teste estrutural
+baseados em fluxo de dados.
+
+[2] Tarefa
+
+Gerar testes unitários em Java (JUnit 5) para o método toAsciiBytes(byte[] raw)
+da classe BinaryCodec.
+
+[3] Restrição de Escopo
+
+Gerar casos de teste apenas para o método toAsciiBytes(byte[] raw).
+Não criar testes para outros métodos da classe.
+
+[3.1] Análise Estrutural Prévia do Método toAsciiBytes(byte[] raw)
+
+O método toAsciiBytes(byte[] raw) da classe BinaryCodec foi analisado segundo
+critérios de teste estrutural baseados em fluxo de dados.
+Essa análise deve ser considerada como base obrigatória para a construção do Chain-of-Code.
+
+Variáveis do método:
+
+- raw: parâmetro formal (array de bytes de entrada)
+- l_ascii: variável local (array de bytes de saída)
+- ii: variável de controle do laço externo
+- jj: variável de controle auxiliar decrescente
+- bits: variável de controle do laço interno
+
+Definições (def)
+
+Para raw:
+- D1: definição inicial como parâmetro formal
+
+Para l_ascii:
+- D2: definição por alocação do array de saída com tamanho raw.length << 3
+
+Para ii:
+- D3: definição inicial no laço externo (ii = 0)
+- D4: redefinição por incremento no laço externo (ii++)
+
+Para jj:
+- D5: definição inicial no laço externo (jj = l_ascii.length - 1)
+- D6: redefinição por decremento no laço externo (jj -= 8)
+
+Para bits:
+- D7: definição inicial no laço interno (bits = 0)
+- D8: redefinição por incremento no laço interno (++bits)
+
+Usos predicativos (p-use)
+
+Para raw:
+- P1: decisão condicional de validação da entrada
+      (raw == null || raw.length == 0)
+
+Para ii:
+- P2: condição do laço externo
+      (ii < raw.length)
+
+Para bits:
+- P3: condição do laço interno
+      (bits < BITS.length)
+
+Para a expressão envolvendo raw:
+- P4: decisão condicional baseada na avaliação do bit
+      ((raw[ii] & BITS[bits]) == 0)
+
+Usos computacionais (c-use)
+
+Para raw:
+- C1: cálculo do tamanho do array de saída
+      (raw.length << 3)
+- C2: operação bitwise para extração de bits
+      (raw[ii] & BITS[bits])
+
+Para l_ascii:
+- C3: atribuição do valor '0' em l_ascii[jj - bits]
+- C4: atribuição do valor '1' em l_ascii[jj - bits]
+- C5: retorno do array l_ascii
+
+Para ii:
+- C6: indexação do array raw (raw[ii])
+
+Para jj:
+- C7: indexação do array l_ascii (jj - bits)
+
+
+[4] Chain of Code
+
+Questão:Como o método toAsciiBytes(byte[] raw) se comporta para diferentes valores de entrada?
+
+Convenções:
+- input_raw: valor original fornecido ao método toAsciiBytes;
+- observable_return: valor efetivamente retornado por toAsciiBytes(input_raw);
+- def(Di): definição identificada conforme a Análise Estrutural Prévia [3.1];
+- p_use: uso predicativo;
+- c_use: uso computacional;
+- path(Pi): caminho definição–uso livre de redefinição;
+- delta_state: representação explícita do estado semântico observável do método
+  após uma ação relevante (definições, redefinições, escrita em l_ascii ou retorno).
+
+Modelo do Chain of Code:
+
+1   input_raw = original_input
+    def(D1): raw = input_raw
+    delta_state: { raw definido }
+
+2   p_use(P1): (raw == null || raw.length == 0)
+    path(P0)
+    c_use: return EMPTY_BYTE_ARRAY
+    delta_state: { observable_return definido como array vazio }
+
+3   def(D2): l_ascii = new byte[raw.length << 3]
+    c_use: alocação do array de saída
+    delta_state: { l_ascii definido }
+
+4   def(D3): ii = 0
+    def(D5): jj = l_ascii.length - 1
+    delta_state: { ii e jj definidos }
+
+5   p_use(P2): (ii < raw.length)
+    delta_state: { entrada no laço externo }
+
+6   def(D7): bits = 0
+    delta_state: { bits definido }
+
+7   p_use(P3): (bits < BITS.length)
+    delta_state: { entrada no laço interno }
+
+8   p_use(P4): ((raw[ii] & BITS[bits]) == 0)
+    path(P1)
+    c_use(C3): l_ascii[jj - bits] = '0'
+    delta_state: { posição de l_ascii recebe '0' }
+
+9   p_use(P4): ((raw[ii] & BITS[bits]) != 0)
+    path(P2)
+    c_use(C4): l_ascii[jj - bits] = '1'
+    delta_state: { posição de l_ascii recebe '1' }
+
+10  def(D8): bits++
+    delta_state: { bits redefinido }
+
+11  def(D4): ii++
+    def(D6): jj = jj - 8
+    delta_state: { ii incrementado, jj decrementado }
+
+12  p_use(P2): (ii < raw.length)
+    delta_state: { iteração do laço externo ou saída }
+
+13  c_use(C5): return l_ascii
+    delta_state: { observable_return definido }
+
+14  unit_test_scenarios = derive_from_paths(
+        P0, P1, P2
+    )
+    delta_state: { unit_test_scenarios = complete }
+
+Resposta:unit_test_scenarios
+
+
+[5] Geração do Código Final (JUnit 5)
+
+Com base exclusivamente no Modelo do Chain of Code definido acima, gere apenas o
+código Java completo e compilável da classe de teste JUnit 5 para o método
+toAsciiBytes(byte[] raw).
+
+[6] Convenções e Restrições Sintáticas
+
+- Os casos de teste devem garantir cobertura de todos os caminhos definidos no Chain of Code;
+- Não incluir comentários, explicações ou texto fora do código Java;
+- Os nomes dos testes devem seguir o padrão: testToAsciiBytes_*.
+

@@ -1,0 +1,16 @@
+[1] Tarefa
+Gerar testes unitários em Java (JUnit 5) para o método public boolean contains(final CharRange range)
+da classe org.apache.commons.lang3.CharRange, considerando exclusivamente o comportamento observável do método a partir do código fornecido.
+
+[2] Restrição de Escopo
+Gerar casos de teste apenas para o método public boolean contains(final CharRange range).
+Não criar testes para outros métodos da classe.
+
+[3] Geração do Código Final (JUnit 5)
+Forneça apenas o código Java completo e compilável da classe de teste.
+
+[4] Convenções e Restrições Sintáticas
+- Não incluir comentários, explicações ou texto fora do código Java;
+- Nomes dos testes devem seguir o padrão: testContains_*.
+
+

@@ -1,0 +1,10 @@
+class,mutant_id,operator_id,mutator,operator_type,method,line,transformation
+Hex,M001,OP01,ConditionalsBoundaryMutator,Relational,encodeHex,109,boundary condition change
+Hex,M002,OP02,IncrementsMutator,Arithmetic,encodeHex,110,increment modification
+Hex,M003,OP02,IncrementsMutator,Arithmetic,encodeHex,111,increment modification
+Hex,M004,OP03,MathMutator,Arithmetic,encodeHex,106,Replaced Shift Left with Shift Right
+Hex,M005,OP03,MathMutator,Arithmetic,encodeHex,110,bitwise operation modified
+Hex,M006,OP03,MathMutator,Arithmetic,encodeHex,110,Replaced Unsigned Shift Right with Shift Left
+Hex,M007,OP03,MathMutator,Arithmetic,encodeHex,111,bitwise operation modified
+Hex,M008,OP04,NegateConditionalsMutator,Relational,encodeHex,109,if (cond) → if (!cond)
+Hex,M009,OP05,NullReturnValsMutator,Return,encodeHex,114,return value modified

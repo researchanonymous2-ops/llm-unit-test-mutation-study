@@ -1,0 +1,6 @@
+class,mutant_id,operator_id,mutator,operator_type,method,line,transformation
+Range,M001,OP01,NegateConditionalsMutator,Relational,elementCompareTo,288,if (cond) → if (!cond)
+Range,M002,OP01,NegateConditionalsMutator,Relational,elementCompareTo,292,if (cond) → if (!cond)
+Range,M003,OP01,NegateConditionalsMutator,Relational,elementCompareTo,294,if (cond) → if (!cond)
+Range,M004,OP02,PrimitiveReturnsMutator,Return,elementCompareTo,293,return value modified
+Range,M005,OP02,PrimitiveReturnsMutator,Return,elementCompareTo,295,return value modified

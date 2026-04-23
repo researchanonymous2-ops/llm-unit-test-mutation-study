@@ -1,0 +1,264 @@
+[1] Papel
+
+Você é um engenheiro de software especializado em testes unitários e critérios de teste estrutural baseados em fluxo de dados.
+
+[2] Tarefa
+
+Gerar testes unitários em Java (JUnit 5) para o método nextPrime(int n) da classe Primes.
+
+[3] Restrição de Escopo
+
+Gerar casos de teste apenas para o método nextPrime(int n). Não criar testes para outros métodos da classe.
+
+[3.1] Análise Estrutural Prévia do Método public static int nextPrime(int n)
+
+O método nextPrime(int n) da classe Primes foi analisado segundo
+critérios de teste estrutural baseados em fluxo de dados, considerando exclusivamente o código do método fornecido.
+Essa análise deve ser considerada como base obrigatória para a construção do Program-of-Thoughts.
+
+Variáveis do método:
+
+- n: parâmetro formal inteiro (valor de entrada para cálculo do próximo número primo)
+- rem: variável local inteira final (resto da divisão de n por 3)
+
+Definições (def)
+
+Para n:
+- D1: definição inicial como parâmetro formal do método
+- D2: redefinição por normalização para número ímpar (n = n | 1)
+- D3: redefinição por incremento controlado (n += 2)
+- D4: redefinição por incremento alternativo (n += 4)
+
+Para rem:
+- D5: definição como resultado do cálculo do resto da divisão de n por 3 (n % 3)
+
+Usos predicativos (p-use)
+
+Para n:
+- P1: decisão condicional de validação de entrada (verificação de valor negativo)
+- P2: decisão condicional de caso especial (verificação se n == 2)
+- P3: decisão condicional de ajuste inicial (verificação se n == 1)
+- P4: decisão condicional de primalidade (isPrime(n)), utilizada em diferentes pontos do fluxo de repetição
+
+Para rem:
+- P5: decisão condicional baseada no valor do resto (rem == 0)
+- P6: decisão condicional alternativa baseada no valor do resto (rem == 1)
+
+Usos computacionais (c-use)
+
+Para n:
+- C1: uso de n como valor associado à exceção lançada em caso de entrada inválida
+- C2: uso de n na operação de normalização para número ímpar
+- C3: uso de n no cálculo do resto da divisão por 3
+- C4: uso de n nas operações de incremento controlado dentro do laço
+- C5: uso de n como valor de retorno quando um número primo é encontrado
+
+[4] Program-of-Thoughts
+
+- DEVERÁ SER UTILIZADO um programa de raciocínio estrutural que modele explicitamente o comportamento do método nextPrime(int n) com base em critérios de teste estrutural baseados em fluxo de dados. Esse programa de raciocínio estrutural é representado por um objeto JSON válido, fornecido na seção seguinte.
+
+- O Program-of-Thoughts é um artefato intermediário de raciocínio e deve ser utilizado exclusivamente como base interna para a geração da classe de testes.
+
+
+[4.1] Estrutura esperada do Program-of-Thoughts (JSON)
+
+- A estrutura a seguir é fornecida como um artefato de raciocínio já definido. NÃO reproduza, modifique ou gere este JSON como saída. Este artefato deve ser usado exclusivamente como base interna para a geração da classe de testes na etapa seguinte.
+
+{
+  "semantic_roles": [
+    {
+      "name": "input_n",
+      "description": "valor original fornecido ao método nextPrime"
+    },
+    {
+      "name": "return_candidate",
+      "description": "valor intermediário elegível ao retorno ao longo da execução"
+    },
+    {
+      "name": "observable_return",
+      "description": "valor efetivamente retornado por nextPrime(input_n)"
+    }
+  ],
+  "variables": [
+    { "name": "n", "role": "parâmetro derivado de input_n" },
+    { "name": "rem", "role": "variável local final" }
+  ],
+  "definitions": [
+    {
+      "id": "D1",
+      "variable": "n",
+      "description": "definição inicial a partir de input_n"
+    },
+    {
+      "id": "D2",
+      "variable": "n",
+      "description": "redefinição por normalização para número ímpar (n = n | 1)"
+    },
+    {
+      "id": "D3",
+      "variable": "n",
+      "description": "redefinição por incremento n += 2"
+    },
+    {
+      "id": "D4",
+      "variable": "n",
+      "description": "redefinição por incremento n += 4"
+    },
+    {
+      "id": "D5",
+      "variable": "rem",
+      "description": "definição como resultado do cálculo do resto da divisão de n por 3 (n % 3)"
+    }
+  ],
+  "uses": [
+    {
+      "id": "U1",
+      "variable": "n",
+      "type": "p-use",
+      "description": "decisões iniciais de validação e casos especiais (n < 0, n == 2, n == 1)"
+    },
+    {
+      "id": "U2",
+      "variable": "n",
+      "type": "p-use",
+      "description": "avaliações de primalidade por chamadas a isPrime(n)"
+    },
+    {
+      "id": "U3",
+      "variable": "n",
+      "type": "c-use",
+      "description": "operações aritméticas de incremento e normalização"
+    },
+    {
+      "id": "U4",
+      "variable": "rem",
+      "type": "p-use",
+      "description": "decisões de fluxo baseadas em rem == 0 e rem == 1"
+    }
+  ],
+  "du_paths": [
+    {
+      "id": "P0",
+      "description": "exceção lançada para input_n < 0",
+      "post_condition": "observable_return não é definido"
+    },
+    {
+      "id": "P1",
+      "description": "retorno imediato para input_n == 2",
+      "post_condition": "observable_return == 2"
+    },
+    {
+      "id": "P2",
+      "description": "retorno imediato para input_n == 1 após normalização (n = n | 1)",
+      "post_condition": "observable_return == 2"
+    },
+    {
+      "id": "P3",
+      "description": "retorno imediato quando isPrime(n) é verdadeiro antes do laço",
+      "post_condition": "observable_return é o menor primo >= input_n"
+    },
+    {
+      "id": "P4",
+      "description": "ajuste inicial com rem == 0 (n += 2) antes do laço",
+      "post_condition": "observable_return é o menor primo >= input_n"
+    },
+    {
+      "id": "P5",
+      "description": "ajuste inicial com rem == 1 (n += 4) antes do laço",
+      "post_condition": "observable_return é o menor primo >= input_n"
+    },
+    {
+      "id": "P6",
+      "description": "entrada no laço sem ajuste inicial (rem == 2)",
+      "post_condition": "observable_return é o menor primo >= input_n"
+    },
+    {
+      "id": "P7",
+      "description": "retorno na primeira verificação de isPrime(n) dentro do laço",
+      "post_condition": "observable_return é o menor primo >= input_n"
+    },
+    {
+      "id": "P8",
+      "description": "retorno na segunda verificação após incremento n += 2 dentro do laço",
+      "post_condition": "observable_return é o menor primo >= input_n"
+    },
+    {
+      "id": "P9",
+      "description": "iteração completa do laço com incrementos n += 2 e n += 4 antes do retorno",
+      "post_condition": "observable_return é o menor primo >= input_n"
+    }
+  ],
+  "planned_tests": [
+    {
+      "test_id": "T0",
+      "covers": ["P0"],
+      "asserts": ["exceção lançada"]
+    },
+    {
+      "test_id": "T1",
+      "covers": ["P1"],
+      "asserts": ["observable_return == 2"]
+    },
+    {
+      "test_id": "T2",
+      "covers": ["P2"],
+      "asserts": ["observable_return == 2"]
+    },
+    {
+      "test_id": "T3",
+      "covers": ["P3"],
+      "asserts": ["observable_return >= input_n", "isPrime(observable_return)"]
+    },
+    {
+      "test_id": "T4",
+      "covers": ["P4"],
+      "asserts": ["observable_return >= input_n", "isPrime(observable_return)"]
+    },
+    {
+      "test_id": "T5",
+      "covers": ["P5"],
+      "asserts": ["observable_return >= input_n", "isPrime(observable_return)"]
+    },
+    {
+      "test_id": "T6",
+      "covers": ["P6"],
+      "asserts": ["observable_return >= input_n", "isPrime(observable_return)"]
+    },
+    {
+      "test_id": "T7",
+      "covers": ["P7"],
+      "asserts": ["observable_return >= input_n", "isPrime(observable_return)"]
+    },
+    {
+      "test_id": "T8",
+      "covers": ["P8"],
+      "asserts": ["observable_return >= input_n", "isPrime(observable_return)"]
+    },
+    {
+      "test_id": "T9",
+      "covers": ["P9"],
+      "asserts": ["observable_return >= input_n", "isPrime(observable_return)"]
+    }
+  ],
+  "constraints": {
+    "no_intermediate_redefinition": true,
+    "all_defs_covered": true,
+    "all_uses_covered": true,
+    "representative_loop_coverage": true,
+    "observable_contract_preserved": true
+  }
+}
+
+
+[5] Geração do Código Final (JUnit 5)
+
+Com base exclusivamente no Program-of-Thoughts definido na etapa anterior, gere apenas o código Java completo e compilável da classe de teste JUnit 5
+para o método nextPrime(int n).
+
+[6] Convenções e Restrições Sintáticas
+
+- O código Java final NÃO deve conter JSON sob nenhuma forma;
+- Qualquer classe de teste que inclua JSON dentro do código Java é considerada inválida;
+- Os casos de teste devem garantir cobertura de todos os caminhos definidos em "planned_tests";
+- Não incluir comentários, explicações ou texto fora do código Java;
+- Nomes dos testes devem seguir o padrão: testNextPrime_*.

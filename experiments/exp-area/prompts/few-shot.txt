@@ -1,0 +1,53 @@
+[1] Tarefa
+Gerar testes unitários em Java (JUnit 5) para o método
+surfaceAreaCone(double radius, double height)
+da classe com.thealgorithms.maths.Area.
+
+[2] Restrição de Escopo
+Gerar casos de teste apenas para o método surfaceAreaCone(double radius, double height).
+Não criar testes para outros métodos da classe.
+
+[3] Exemplos de Classe de Teste (Few-Shot)
+
+Use o exemplo abaixo apenas como referência de estrutura, organização, imports e formato de uma classe de teste JUnit 5 com múltiplos casos de teste.
+
+Não reutilize valores de entrada, resultados esperados ou a lógica dos testes apresentados.
+
+// Exemplos
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
+import org.junit.jupiter.api.Test;
+import com.thealgorithms.maths.Area;
+
+public class AreaFewShotExampleTest {
+
+    @Test
+    void testSurfaceAreaConeWithValidInput() {
+        double result = Area.surfaceAreaCone(2.0, 3.0);
+        assertEquals(Math.PI * 2.0 * (2.0 + Math.sqrt(13.0)), result);
+    }
+
+    @Test
+    void testSurfaceAreaConeWithAnotherValidInput() {
+        double result = Area.surfaceAreaCone(1.5, 4.0);
+        assertEquals(Math.PI * 1.5 * (1.5 + Math.sqrt(18.25)), result);
+    }
+
+    @Test
+    void testSurfaceAreaConeWithInvalidRadiusThrowsException() {
+        assertThrows(IllegalArgumentException.class,
+            () -> Area.surfaceAreaCone(0.0, 2.0));
+    }
+}
+
+// Fim dos Exemplos
+
+[4] Geração do Código Final (JUnit 5)
+Forneça apenas o código Java completo e compilável da classe de teste.
+
+[5] Requisitos
+- Não incluir comentários, explicações ou texto fora do código Java;
+- Nomes dos testes devem seguir o padrão: testSurfaceAreaCone_*.
+

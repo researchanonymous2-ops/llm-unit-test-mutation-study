@@ -1,0 +1,5 @@
+"test_suite","method","line","message","tests_run","failures","errors","skipped"
+"BinaryTreeQwen_FS2Test","testPut_sameValueMultipleTimes_shouldInsertAllToRight","149","expected: not <null>","13","1","0","0"
+"BinaryTreeQwen_FS3Test","testPut_multipleSameValues_shouldCreateChainToRight","110","expected: not <null>","11","1","0","0"
+"BinaryTreeQwen_OS4Test","testPut_duplicateValue","69","expected: not <null>","7","1","0","0"
+"BinaryTreeQwen_POT3Test","testPut_insercaoDeValorMaiorOuIgualARaiz","48","expected: <15> but was: <10>","3","1","0","0"

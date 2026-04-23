@@ -1,0 +1,156 @@
+[1] Papel
+Você é um engenheiro de software especializado em testes unitários e critérios
+de teste estrutural baseados em fluxo de dados.
+
+[2] Tarefa
+Gerar testes unitários em Java (JUnit 5) para o método approach2(String a, String b).
+
+[3] Conformidade dos nomes dos casos de testes
+Todos os casos de teste devem ter nomes que façam referência explícita
+ao método approach2, como por exemplo: testApproach2_*.
+
+[3.1] Análise Estrutural Prévia do Método approach2(String a, String b)
+
+O método approach2(String a, String b) da classe Anagrams foi previamente analisado segundo critérios de teste estrutural baseados em fluxo de dados.Essa análise deve ser considerada como base obrigatória para a construção do Program-of-Thoughts.
+
+Variáveis do método:
+- a: parâmetro formal (primeira string de entrada)
+- b: parâmetro formal (segunda string de entrada)
+- m: array local de inteiros (frequência dos caracteres de a)
+- n: array local de inteiros (frequência dos caracteres de b)
+- c: variável de iteração em laços foreach
+- i: variável de controle do laço for
+
+Definições (def)
+
+Para a:
+- D1: definição inicial como parâmetro formal
+
+Para b:
+- D2: definição inicial como parâmetro formal
+
+Para m:
+- D3: definição por alocação (new int[26])
+- D4: redefinições por incremento m[c - 'a']++
+
+Para n:
+- D5: definição por alocação (new int[26])
+- D6: redefinições por incremento n[c - 'a']++
+
+Para c:
+- D7: definição como variável de iteração no laço foreach sobre a
+- D8: definição como variável de iteração no laço foreach sobre b
+
+Para i:
+- D9: definição como variável de controle do laço for (int i = 0)
+
+Usos predicativos (p-use)
+
+Para a e b:
+- P1: if (a.length() != b.length())
+
+Para i:
+- P2: condição do laço for (i < 26)
+
+Para m e n:
+- P3: if (m[i] != n[i])
+
+Usos computacionais (c-use)
+
+Para a:
+- C1: uso em a.length()
+- C2: uso em a.toCharArray()
+
+Para b:
+- C3: uso em b.length()
+- C4: uso em b.toCharArray()
+
+Para m:
+- C5: acesso m[c - 'a']
+- C6: incremento m[c - 'a']++
+- C7: acesso m[i]
+
+Para n:
+- C8: acesso n[c - 'a']
+- C9: incremento n[c - 'a']++
+- C10: acesso n[i]
+
+Para c:
+- C11: uso em expressão c - 'a'
+
+Para i:
+- C12: uso como índice em m[i] e n[i]
+- C13: incremento i++
+
+[4] Program-of-Thoughts
+
+- DEVERÁ SER UTILIZADO um programa de raciocínio estrutural que modele explicitamente o comportamento do método approach2(String a, String b) com base em critérios de teste estrutural baseados em fluxo de dados. Esse programa de raciocínio estrutural é representado por um objeto JSON válido, fornecido na seção seguinte.
+
+- O Program-of-Thoughts é um artefato intermediário de raciocínio e deve ser utilizado exclusivamente como base interna para a geração da classe de testes.
+
+
+[4.1] Estrutura esperada do Program-of-Thoughts (JSON)
+
+- A estrutura a seguir é fornecida como um artefato de raciocínio já definido. NÃO reproduza, modifique ou gere este JSON como saída. Este artefato deve ser usado exclusivamente como base interna para a geração da classe de testes na etapa seguinte.
+
+{
+  "variables": [
+    { "name": "a", "role": "parâmetro" },
+    { "name": "b", "role": "parâmetro" },
+    { "name": "m", "role": "array de frequência de a" },
+    { "name": "n", "role": "array de frequência de b" },
+    { "name": "c", "role": "variável de iteração" },
+    { "name": "i", "role": "controle de laço" }
+  ],
+  "definitions": [
+    { "id": "D1", "variable": "a", "description": "definição como parâmetro formal" },
+    { "id": "D2", "variable": "b", "description": "definição como parâmetro formal" },
+    { "id": "D3", "variable": "m", "description": "alocação new int[26]" },
+    { "id": "D4", "variable": "m", "description": "incrementos m[c - 'a']++" },
+    { "id": "D5", "variable": "n", "description": "alocação new int[26]" },
+    { "id": "D6", "variable": "n", "description": "incrementos n[c - 'a']++" },
+    { "id": "D7", "variable": "c", "description": "iteração sobre a" },
+    { "id": "D8", "variable": "c", "description": "iteração sobre b" },
+    { "id": "D9", "variable": "i", "description": "controle do laço for" }
+  ],
+  "uses": [
+    { "id": "U1", "variable": "a,b", "type": "p-use", "description": "a.length() != b.length()" },
+    { "id": "U2", "variable": "a", "type": "c-use", "description": "a.length(), a.toCharArray()" },
+    { "id": "U3", "variable": "b", "type": "c-use", "description": "b.length(), b.toCharArray()" },
+    { "id": "U4", "variable": "m", "type": "c-use", "description": "m[c - 'a'], m[i]" },
+    { "id": "U5", "variable": "n", "type": "c-use", "description": "n[c - 'a'], n[i]" },
+    { "id": "U6", "variable": "i", "type": "p-use", "description": "i < 26" },
+    { "id": "U7", "variable": "m,n", "type": "p-use", "description": "m[i] != n[i]" }
+  ],
+  "du_paths": [
+    { "id": "P1", "description": "retorno imediato por tamanhos diferentes" },
+    { "id": "P2", "description": "tamanhos iguais, frequências coincidem em todas as posições" },
+    { "id": "P3", "description": "tamanhos iguais, divergência em ao menos uma posição do array" }
+  ],
+  "planned_tests": [
+    { "test_id": "T1", "covers": ["P1"] },
+    { "test_id": "T2", "covers": ["P2"] },
+    { "test_id": "T3", "covers": ["P3"] }
+  ],
+  "constraints": {
+    "no_intermediate_redefinition": true,
+    "all_defs_covered": true,
+    "all_uses_covered": true,
+    "complete_loop_evaluation": true
+  }
+}
+
+[5] Geração do Código Final (JUnit 5)
+
+Com base exclusivamente no Program-of-Thoughts definido na etapa anterior,
+gere apenas o código Java completo e compilável da classe de teste JUnit 5
+para o método approach2(String a, String b).
+
+[6] Convenções e Restrições Sintáticas
+
+- O código Java final NÃO deve conter JSON sob nenhuma forma; 
+- Qualquer classe de teste que inclua JSON dentro do código Java é considerada inválida;
+- Os casos de teste devem garantir cobertura de todos os caminhos definidos em "planned_tests";
+- Não incluir comentários, explicações ou texto fora do código Java;
+- Nomes dos testes devem seguir o padrão: testApproach2_*.
+

@@ -1,0 +1,14 @@
+
+/app/experimentos/exp-binarycodec/src/test/java/org/apache/commons/codec/binary/BinaryCodecQwen_COC2Test.java:13: error: EMPTY_BYTE_ARRAY has private access in BinaryCodec
+        assertSame(BinaryCodec.EMPTY_BYTE_ARRAY, result);
+                              ^
+/app/experimentos/exp-binarycodec/src/test/java/org/apache/commons/codec/binary/BinaryCodecQwen_COC2Test.java:20: error: EMPTY_BYTE_ARRAY has private access in BinaryCodec
+        assertSame(BinaryCodec.EMPTY_BYTE_ARRAY, result);
+                              ^
+/app/experimentos/exp-binarycodec/src/test/java/org/apache/commons/codec/binary/BinaryCodecQwen_COC2Test.java:57: error: incompatible types: possible lossy conversion from int to byte
+        byte[] input = new byte[]{0b10101010};
+                                  ^
+/app/experimentos/exp-binarycodec/src/test/java/org/apache/commons/codec/binary/BinaryCodecQwen_COC2Test.java:65: error: incompatible types: possible lossy conversion from int to byte
+        byte[] input = new byte[]{0b11110000, 0b00001111};
+                                  ^
+4 errors

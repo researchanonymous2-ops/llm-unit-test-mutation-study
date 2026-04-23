@@ -1,0 +1,170 @@
+[1] Papel
+
+Você é um engenheiro de software especializado em testes unitários e critérios de teste estrutural baseados em fluxo de dados.
+
+[2] Tarefa
+
+Gerar testes unitários em Java (JUnit 5) para o método surfaceAreaCone(double radius, double height) da classe Area.
+
+[3] Restrição de Escopo
+
+Gerar casos de teste apenas para o método surfaceAreaCone(double radius, double height).
+
+[3.1] Análise Estrutural Prévia do Método surfaceAreaCone(double radius, double height)
+
+O método surfaceAreaCone(double radius, double height) da classe Area foi previamente analisado
+segundo critérios de teste estrutural baseados em fluxo de dados.Essa análise deve ser considerada como base obrigatória para a construção do Program-of-Thoughts.
+
+Variáveis do método surfaceAreaCone(double radius, double height):radius (parâmetro formal) e height (parâmetro formal)
+
+O método não declara variáveis locais.
+
+Definições (def)
+
+Para radius:
+D1: definição inicial do parâmetro radius na assinatura do método
+
+Para height:
+D2: definição inicial do parâmetro height na assinatura do método
+
+Usos predicativos (p-use)
+
+Para radius:
+P1: if (radius <= 0)
+
+Para height:
+P2: if (height <= 0)
+
+Usos computacionais (c-use)
+
+Para radius:
+C1: uso computacional de radius na expressão de retorno
+    Math.PI * radius * (radius + Math.pow(height * height + radius * radius, 0.5))
+
+Para height:
+C2: uso computacional de height na expressão de retorno
+    Math.pow(height * height + radius * radius, 0.5)
+
+[4] Program-of-Thoughts
+
+- DEVERÁ SER UTILIZADO um programa de raciocínio estrutural que modele explicitamente o comportamento do método surfaceAreaCone(double radius, double height) com base em critérios de teste estrutural baseados em fluxo de dados. Esse programa de raciocínio estrutural é representado por um objeto JSON válido, fornecido na seção seguinte.
+
+- O Program-of-Thoughts é um artefato intermediário de raciocínio e deve ser utilizado exclusivamente como base interna para a geração da classe de testes.
+
+
+[4.1] Estrutura esperada do Program-of-Thoughts (JSON)
+
+- A estrutura a seguir é fornecida como um artefato de raciocínio já definido. NÃO reproduza, modifique ou gere este JSON como saída. Este artefato deve ser usado exclusivamente como base interna para a geração da classe de testes na etapa seguinte.
+
+{
+  "semantic_roles": [
+    {
+      "name": "input_radius",
+      "description": "valor original fornecido ao parâmetro radius"
+    },
+    {
+      "name": "input_height",
+      "description": "valor original fornecido ao parâmetro height"
+    },
+    {
+      "name": "observable_return",
+      "description": "valor efetivamente retornado por surfaceAreaCone(input_radius, input_height)"
+    }
+  ],
+  "variables": [
+    { "name": "radius", "role": "parâmetro de entrada" },
+    { "name": "height", "role": "parâmetro de entrada" }
+  ],
+  "definitions": [
+    {
+      "id": "D1",
+      "variable": "radius",
+      "description": "definição inicial a partir de input_radius"
+    },
+    {
+      "id": "D2",
+      "variable": "height",
+      "description": "definição inicial a partir de input_height"
+    }
+  ],
+  "uses": [
+    {
+      "id": "U1",
+      "variable": "radius",
+      "type": "p-use",
+      "description": "verificação de validade (radius <= 0)"
+    },
+    {
+      "id": "U2",
+      "variable": "height",
+      "type": "p-use",
+      "description": "verificação de validade (height <= 0)"
+    },
+    {
+      "id": "U3",
+      "variable": "radius",
+      "type": "c-use",
+      "description": "cálculo da área superficial no retorno"
+    },
+    {
+      "id": "U4",
+      "variable": "height",
+      "type": "c-use",
+      "description": "cálculo da geratriz e da área superficial no retorno"
+    }
+  ],
+  "du_paths": [
+    {
+      "id": "P0",
+      "description": "exceção lançada quando radius <= 0",
+      "post_condition": "observable_return não é definido"
+    },
+    {
+      "id": "P1",
+      "description": "exceção lançada quando height <= 0 e radius > 0",
+      "post_condition": "observable_return não é definido"
+    },
+    {
+      "id": "P2",
+      "description": "retorno normal com radius > 0 e height > 0",
+      "post_condition": "observable_return == Math.PI * radius * (radius + sqrt(height^2 + radius^2))"
+    }
+  ],
+  "planned_tests": [
+    {
+      "test_id": "T0",
+      "covers": ["P0"],
+      "asserts": ["exceção lançada"]
+    },
+    {
+      "test_id": "T1",
+      "covers": ["P1"],
+      "asserts": ["exceção lançada"]
+    },
+    {
+      "test_id": "T2",
+      "covers": ["P2"],
+      "asserts": ["observable_return > 0"]
+    }
+  ],
+  "constraints": {
+    "all_defs_covered": true,
+    "all_uses_covered": true,
+    "exception_paths_covered": true,
+    "observable_contract_preserved": true
+  }
+}
+
+[5] Geração do Código Final (JUnit 5)
+
+Com base exclusivamente no Program-of-Thoughts definido na etapa anterior, gere apenas o código Java completo e compilável da classe de teste JUnit 5
+para o método surfaceAreaCone(double radius, double height).
+
+[6] Requisitos
+
+- O código Java final NÃO deve conter JSON sob nenhuma forma;
+- Qualquer classe de teste que inclua JSON dentro do código Java é considerada inválida;
+- Os casos de teste devem garantir cobertura de todos os caminhos definidos em "planned_tests";
+- Não incluir comentários, explicações ou texto fora do código Java;
+- Nomes dos testes devem seguir o padrão: testSurfaceAreaCone_*.
+

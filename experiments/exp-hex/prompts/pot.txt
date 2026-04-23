@@ -1,0 +1,183 @@
+[1] Papel
+
+Você é um engenheiro de software especializado em testes unitários e critérios de teste estrutural baseados em fluxo de dados.
+
+[2] Tarefa
+
+Gerar testes unitários em Java (JUnit 5) para o método encodeHex(byte[] data).
+
+[3] Restrição de Escopo
+
+Gerar casos de teste apenas para o método encodeHex(byte[] data).
+Não criar testes para outros métodos da classe.
+
+[3.1] Análise Estrutural Prévia do Método encodeHex(byte[] data)
+
+O método encodeHex(byte[] data) da classe Hex foi analisado segundo critérios de
+teste estrutural baseados em fluxo de dados.
+Essa análise deve ser considerada como base obrigatória para a construção do
+Program-of-Thoughts.
+
+Variáveis do método encodeHex(byte[] data):
+
+- data: parâmetro formal (array de bytes de entrada)
+- l: variável local inteira (comprimento do array de entrada)
+- out: variável local (array de caracteres de saída)
+- i: variável de controle do laço
+- j: variável de controle do índice de escrita no array out
+
+Definições (def)
+
+Para data:
+- D1: definição inicial como parâmetro formal do método encodeHex(byte[] data)
+
+Para l:
+- D2: definição por leitura do comprimento do array (int l = data.length)
+
+Para out:
+- D3: definição por alocação do array de saída (char[] out = new char[l << 1])
+
+Para i:
+- D4: definição inicial no cabeçalho do laço (int i = 0)
+
+Para j:
+- D5: definição inicial no cabeçalho do laço (int j = 0)
+- D6: redefinição por incremento j++ na escrita do primeiro nibble
+- D7: redefinição por incremento j++ na escrita do segundo nibble
+
+Usos predicativos (p-use)
+
+Para i:
+- P1: condição do laço for (i < l)
+
+Usos computacionais (c-use)
+
+Para data:
+- C1: acesso ao valor data[i] nas operações bitwise
+
+Para l:
+- C2: cálculo do tamanho do array out (l << 1)
+- C3: condição do laço (i < l)
+
+Para out:
+- C4: atribuição out[j] = DIGITS[(0xF0 & data[i]) >>> 4]
+- C5: atribuição out[j] = DIGITS[0x0F & data[i]]
+
+Para i:
+- C6: incremento do índice do laço (i++)
+
+Para j:
+- D6: redefinição sequencial por dois incrementos j++ dentro do corpo do laço
+
+[4] Program-of-Thoughts
+
+- DEVERÁ SER UTILIZADO um programa de raciocínio estrutural que modele explicitamente o comportamento do método encodeHex(byte[] data) com base em critérios de teste estrutural baseados em fluxo de dados. Esse programa de raciocínio estrutural é representado por um objeto JSON válido, fornecido na seção seguinte.
+
+- O Program-of-Thoughts é um artefato intermediário de raciocínio e deve ser utilizado exclusivamente como base interna para a geração da classe de testes.
+
+
+[4.1] Estrutura esperada do Program-of-Thoughts (JSON)
+
+- A estrutura a seguir é fornecida como um artefato de raciocínio já definido. NÃO reproduza, modifique ou gere este JSON como saída. Este artefato deve ser usado exclusivamente como base interna para a geração da classe de testes na etapa seguinte.
+
+{
+  "semantic_roles": [
+    {
+      "name": "input_data",
+      "description": "array de bytes fornecido como entrada ao método encodeHex"
+    },
+    {
+      "name": "output_array",
+      "description": "array de caracteres resultante da codificação hexadecimal"
+    }
+  ],
+  "variables": [
+    { "name": "data", "role": "parâmetro formal de entrada" },
+    { "name": "l", "role": "tamanho do array de entrada" },
+    { "name": "out", "role": "array de saída" },
+    { "name": "i", "role": "controle do laço" },
+    { "name": "j", "role": "controle do índice de escrita" }
+  ],
+  "definitions": [
+    { "id": "D1", "variable": "data", "description": "definição inicial como parâmetro formal" },
+    { "id": "D2", "variable": "l", "description": "definição por data.length" },
+    { "id": "D3", "variable": "out", "description": "alocação do array de saída com tamanho l << 1" },
+    { "id": "D4", "variable": "i", "description": "inicialização do contador do laço" },
+    { "id": "D5", "variable": "j", "description": "inicialização do índice de escrita" }
+  ],
+  "uses": [
+    {
+      "id": "U1",
+      "variable": "i",
+      "type": "p-use",
+      "description": "condição do laço i < l"
+    },
+    {
+      "id": "U2",
+      "variable": "data",
+      "type": "c-use",
+      "description": "acesso a data[i] para operações bitwise"
+    },
+    {
+      "id": "U3",
+      "variable": "out",
+      "type": "c-use",
+      "description": "atribuições sucessivas no array de saída"
+    }
+  ],
+  "du_paths": [
+    {
+      "id": "P1",
+      "description": "entrada com array vazio, laço não executado",
+      "post_condition": "output_array com comprimento zero"
+    },
+    {
+      "id": "P2",
+      "description": "entrada com um único byte, uma iteração do laço",
+      "post_condition": "output_array com dois caracteres hexadecimais"
+    },
+    {
+      "id": "P3",
+      "description": "entrada com múltiplos bytes, múltiplas iterações do laço",
+      "post_condition": "output_array com comprimento igual a 2 * data.length"
+    }
+  ],
+  "planned_tests": [
+    {
+      "test_id": "T1",
+      "covers": ["P1"],
+      "asserts": ["output_array.length == 0"]
+    },
+    {
+      "test_id": "T2",
+      "covers": ["P2"],
+      "asserts": ["output_array.length == 2"]
+    },
+    {
+      "test_id": "T3",
+      "covers": ["P3"],
+      "asserts": ["output_array.length == 2 * input_data.length"]
+    }
+  ],
+  "constraints": {
+    "all_defs_covered": true,
+    "all_uses_covered": true,
+    "representative_loop_coverage": true,
+    "observable_contract_preserved": true
+  }
+}
+
+[5] Geração do Código Final (JUnit 5)
+
+Com base exclusivamente no Program-of-Thoughts definido na etapa anterior,
+gere apenas o código Java completo e compilável da classe de teste JUnit 5
+para o método encodeHex(byte[] data).
+
+[6] Requisitos
+
+- O código Java final NÃO deve conter JSON sob nenhuma forma;
+- Qualquer classe de teste que inclua JSON dentro do código Java é considerada inválida;
+- Os casos de teste devem garantir cobertura de todos os caminhos definidos em "planned_tests";
+- Não incluir comentários, explicações ou texto fora do código Java;
+- Nomes dos testes devem seguir o padrão: testEncodeHex_*.
+

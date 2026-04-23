@@ -1,0 +1,5 @@
+
+/app/experimentos/exp-binarycodec/src/test/java/org/apache/commons/codec/binary/BinaryCodecQwen_COC4Test.java:59: error: incompatible types: possible lossy conversion from int to byte
+        byte[] input_raw = new byte[]{0b10101010, 0b01010101};
+                                      ^
+1 error

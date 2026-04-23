@@ -1,0 +1,5 @@
+
+/app/experimentos/exp-hex/src/test/java/org/apache/commons/codec/binary/HexGrok_FS1Test.java:47: error: incompatible types: possible lossy conversion from int to byte
+       byte[] input = {(byte) 0xAB, 0xCD, (byte) 0xEF};
+                                    ^
+1 error

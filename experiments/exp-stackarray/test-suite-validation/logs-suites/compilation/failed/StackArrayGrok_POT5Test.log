@@ -1,0 +1,5 @@
+
+/app/experimentos/exp-stackarray/src/test/java/com/thealgorithms/datastructures/stacks/StackArrayGrok_POT5Test.java:26: error: maxSize has private access in StackArray
+        Assertions.assertTrue(stack.size() <= stack.maxSize);
+                                                   ^
+1 error

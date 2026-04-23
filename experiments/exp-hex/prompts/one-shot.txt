@@ -1,0 +1,41 @@
+[1] Tarefa
+Gerar testes unitários em Java (JUnit 5) para o método encodeHex(byte[] data)
+da classe org.apache.commons.codec.binary.Hex.
+
+[2] Restrição de Escopo
+Gerar casos de teste apenas para o método encodeHex(byte[] data).
+Não criar testes para outros métodos da classe.
+
+[3] Exemplo de Classe de Teste (One-Shot)
+
+Use o exemplo abaixo apenas como referência de estrutura,
+organização, imports e formato de uma classe de teste JUnit 5.
+
+Não reutilize valores de entrada, resultados esperados
+ou a lógica do teste apresentado.
+
+// Exemplo
+
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import org.apache.commons.codec.binary.Hex;
+import org.junit.jupiter.api.Test;
+
+public class HexOneShotExampleTest {
+
+    @Test
+    void testEncodeHexExample() {
+        byte[] input = { 0x0A };
+        char[] expected = { '0', 'a' };
+        assertArrayEquals(expected, Hex.encodeHex(input));
+    }
+}
+
+// Fim do Exemplo
+
+[4] Geração do Código Final (JUnit 5)
+Forneça apenas o código Java completo e compilável da classe de teste.
+
+[5] Requisitos
+- Não incluir comentários, explicações ou texto fora do código Java;
+- Nomes dos testes devem seguir o padrão: testEncodeHex_*.
+

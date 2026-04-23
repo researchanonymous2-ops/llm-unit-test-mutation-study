@@ -1,0 +1,10 @@
+class,mutant_id,operator_id,mutator,operator_type,method,line,transformation
+MatrixUtil,M001,OP01,NullReturnValsMutator,Return,lambda$main$5,102,return value modified
+MatrixUtil,M002,OP01,NullReturnValsMutator,Return,lambda$main$6,123,return value modified
+MatrixUtil,M003,OP01,NullReturnValsMutator,Return,lambda$main$7,146,return value modified
+MatrixUtil,M004,OP01,NullReturnValsMutator,Return,lambda$multiply$2,77,return value modified
+MatrixUtil,M005,OP02,VoidMethodCallMutator,Logical,lambda$multiply$4,71,removed call to java/util/stream/IntStream::forEach
+MatrixUtil,M006,OP02,VoidMethodCallMutator,Logical,lambda$operate$1,38,removed call to java/util/stream/IntStream::forEach
+MatrixUtil,M007,OP03,NegateConditionalsMutator,Relational,multiply,57,if (cond) → if (!cond)
+MatrixUtil,M008,OP02,VoidMethodCallMutator,Logical,multiply,69,removed call to java/util/stream/IntStream::forEach
+MatrixUtil,M009,OP04,EmptyObjectReturnValsMutator,Return,multiply,81,return value modified

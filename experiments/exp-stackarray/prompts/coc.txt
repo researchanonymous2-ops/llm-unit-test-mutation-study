@@ -1,0 +1,130 @@
+[1] Papel
+
+Você é um engenheiro de software especializado em testes unitários e critérios
+de teste estrutural baseados em fluxo de dados.
+
+[2] Tarefa
+
+Gerar testes unitários em Java (JUnit 5) para o método push(int value).
+Não gerar testes para outros métodos da classe.
+
+[3] Restrição de Escopo
+
+Gerar casos de teste apenas para o método push(int value).
+Não criar testes para outros métodos da classe.
+
+[3.1] Análise Estrutural Prévia do Método push(int value)
+
+O método push(int value) da classe StackArray foi previamente analisado
+segundo critérios de teste estrutural baseados em fluxo de dados.
+
+Variáveis do método:
+- value: parâmetro formal representando o elemento a ser inserido na pilha
+- top: variável de estado da pilha (controle do índice do topo)
+- stackArray: array interno que armazena os elementos da pilha
+- maxSize: capacidade atual da pilha
+
+Definições (def)
+
+Para value:
+- D1: definição inicial como parâmetro formal do método
+
+Para top:
+- D2: redefinição por incremento (top++) no ramo em que a pilha não está cheia
+
+Para stackArray:
+- D3: redefinição do elemento stackArray[top] após incremento do topo
+- D4: redefinição indireta por resize(int)
+
+Para maxSize:
+- D5: redefinição indireta por resize(int)
+
+Usos predicativos (p-use)
+
+Para top:
+- P1: verificação de pilha cheia na condição if (!isFull())
+- P2: uso implícito na condição de isFull() (top + 1 == maxSize)
+
+Para maxSize:
+- P3: uso implícito na condição de isFull() (top + 1 == maxSize)
+
+Usos computacionais (c-use)
+
+Para value:
+- C1: uso como valor atribuído ao elemento stackArray[top]
+
+Para top:
+- C2: uso como índice em stackArray[top]
+- C3: uso em operação de incremento (top++)
+
+Para stackArray:
+- C4: atribuição do valor value em stackArray[top]
+
+Para maxSize:
+- C5: uso como argumento em resize(maxSize * 2)
+
+[4] Chain of Code
+
+Questão:
+Como o método push(int value) se comporta sob diferentes estados internos da pilha?
+
+Convenções:
+- initial_state: estado inicial do objeto StackArray antes da chamada de push(int)
+- delta_state: representação explícita do estado semântico observável do método após uma ação relevante
+- def(Di): definição identificada conforme a análise estrutural
+- p_use: uso predicativo
+- c_use: uso computacional
+- path(Pi): caminho definição–uso livre de redefinição
+
+Modelo do Chain of Code:
+
+1   initial_state = StackArray(top, stackArray, maxSize)
+    delta_state: { estado inicial definido }
+
+2   p_use(P1, P2, P3): if (!isFull()) == true
+    path(P1_true)
+    c_use(C3): incremento do topo (top++)
+    def(D2): top redefinido
+    c_use(C2): uso de top como índice em stackArray[top]
+    c_use(C1): value utilizado na atribuição
+    c_use(C4): stackArray[top] = value
+    def(D3): stackArray redefinido no índice top
+    delta_state: { elemento inserido, top incrementado }
+
+3   p_use(P1, P2, P3): if (!isFull()) == false
+    path(P1_false)
+    c_use(C5): resize(maxSize * 2)
+    def(D4): stackArray redefinido
+    def(D5): maxSize redefinido
+    delta_state: { capacidade da pilha aumentada }
+
+4   c_use: chamada recursiva push(value)
+    path(P2_after_resize)
+    c_use(C3): incremento do topo (top++)
+    def(D2): top redefinido
+    c_use(C2): uso de top como índice em stackArray[top]
+    c_use(C1): value utilizado na atribuição
+    c_use(C4): stackArray[top] = value
+    def(D3): stackArray redefinido no índice top
+    delta_state: { elemento inserido após resize }
+
+5   unit_test_scenarios = derive_from_paths(
+        P1_true,
+        P1_false ∧ P2_after_resize
+    )
+    delta_state: { unit_test_scenarios = complete }
+
+Resposta: unit_test_scenarios
+
+[5] Geração do Código Final (JUnit 5)
+
+Com base exclusivamente no Modelo do Chain of Code definido acima,
+gere apenas o código Java completo e compilável da classe de teste JUnit 5
+para o método push(int value).
+
+[6] Convenções e Restrições Sintáticas
+
+- Os casos de teste devem garantir cobertura de todos os caminhos definidos no Chain of Code;
+- Não incluir comentários, explicações ou texto fora do código Java;
+- Os nomes dos testes devem seguir o padrão: testPush_*.
+

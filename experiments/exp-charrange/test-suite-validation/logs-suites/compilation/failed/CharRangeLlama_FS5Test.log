@@ -1,0 +1,6 @@
+
+/app/experimentos/exp-charrange/src/test/java/org/apache/commons/lang3/CharRangeLlama_FS5Test.java:50: error: incompatible types: possible lossy conversion from int to char
+        CharRange inner = CharRange.isIn('y', 'z' + 1);
+                                                  ^
+Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
+1 error

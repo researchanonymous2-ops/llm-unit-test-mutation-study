@@ -1,0 +1,16 @@
+
+/app/experimentos/exp-mathutils/src/test/java/org/apache/commons/math3/util/MathUtilsGrok_POT5Test.java:12: error: cannot find symbol
+        assertThrows(NotFiniteNumberException.class, () -> MathUtils.checkFinite(arr));
+                     ^
+  symbol:   class NotFiniteNumberException
+  location: class MathUtilsGrok_POT5Test
+/app/experimentos/exp-mathutils/src/test/java/org/apache/commons/math3/util/MathUtilsGrok_POT5Test.java:18: error: cannot find symbol
+        assertThrows(NotFiniteNumberException.class, () -> MathUtils.checkFinite(arr));
+                     ^
+  symbol:   class NotFiniteNumberException
+  location: class MathUtilsGrok_POT5Test
+/app/experimentos/exp-mathutils/src/main/java/org/apache/commons/math3/util/MathUtils.java:57: warning: [removal] Double(double) in Double has been deprecated and marked for removal
+        return new Double(value).hashCode();
+               ^
+2 errors
+1 warning

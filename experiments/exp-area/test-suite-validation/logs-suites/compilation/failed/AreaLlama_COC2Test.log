@@ -1,0 +1,8 @@
+
+/app/experimentos/exp-area/src/test/java/com/thealgorithms/maths/AreaLlama_COC2Test.java:18: error: POSITIVE_RADIUS has private access in Area
+        assertEquals(Area.POSITIVE_RADIUS, exception.getMessage());
+                         ^
+/app/experimentos/exp-area/src/test/java/com/thealgorithms/maths/AreaLlama_COC2Test.java:26: error: POSITIVE_HEIGHT has private access in Area
+        assertEquals(Area.POSITIVE_HEIGHT, exception.getMessage());
+                         ^
+2 errors

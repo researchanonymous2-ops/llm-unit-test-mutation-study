@@ -1,0 +1,6 @@
+{
+  "created_utc": "20260125T203558Z",
+  "suite_base": "org.apache.commons.math3.util.MathUtilsBaseTest",
+  "target_package": "org.apache.commons.math3.util",
+  "pit_plugin_version": "unknown"
+}

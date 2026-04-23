@@ -1,0 +1,91 @@
+[1] Tarefa
+Gerar testes unitários em Java (JUnit 5) para o método
+multiply(BigDecimal[][] matrix1, BigDecimal[][] matrix2)
+da classe com.thealgorithms.maths.MatrixUtil.
+
+[2] Restrição de Escopo
+Gerar casos de teste apenas para o método
+multiply(BigDecimal[][] matrix1, BigDecimal[][] matrix2).
+Não criar testes para outros métodos da classe.
+
+[3] Exemplos de Classe de Teste (Few-Shot)
+
+Use o exemplo abaixo apenas como referência de estrutura,
+organização, imports e formato de uma classe de teste JUnit 5
+com múltiplos casos de teste.
+
+Não reutilize valores de entrada, resultados esperados
+ou a lógica dos testes apresentados.
+
+// Exemplos
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+
+import java.math.BigDecimal;
+import java.util.Optional;
+
+import org.junit.jupiter.api.Test;
+import com.thealgorithms.maths.MatrixUtil;
+
+public class MatrixUtilFewShotExampleTest {
+
+    @Test
+    void testMultiplyWithCompatibleMatrices() {
+        BigDecimal[][] matrix1 = {
+            { BigDecimal.ONE, BigDecimal.ZERO },
+            { BigDecimal.ZERO, BigDecimal.ONE }
+        };
+
+        BigDecimal[][] matrix2 = {
+            { BigDecimal.ONE, BigDecimal.ZERO },
+            { BigDecimal.ZERO, BigDecimal.ONE }
+        };
+
+        Optional<BigDecimal[][]> result = MatrixUtil.multiply(matrix1, matrix2);
+        assertTrue(result.isPresent());
+    }
+
+    @Test
+    void testMultiplyWithDifferentDimensionsReturnsEmpty() {
+        BigDecimal[][] matrix1 = {
+            { BigDecimal.ONE, BigDecimal.ONE }
+        };
+
+        BigDecimal[][] matrix2 = {
+            { BigDecimal.ONE, BigDecimal.ONE },
+            { BigDecimal.ONE, BigDecimal.ONE }
+        };
+
+        Optional<BigDecimal[][]> result = MatrixUtil.multiply(matrix1, matrix2);
+        assertFalse(result.isPresent());
+    }
+
+    @Test
+    void testMultiplyWithSingleElementMatrices() {
+        BigDecimal[][] matrix1 = {
+            { BigDecimal.ONE }
+        };
+
+        BigDecimal[][] matrix2 = {
+            { BigDecimal.ONE }
+        };
+
+        Optional<BigDecimal[][]> result = MatrixUtil.multiply(matrix1, matrix2);
+        assertTrue(result.isPresent());
+    }
+}
+
+// Fim dos Exemplos
+
+[4] Geração do Código Final (JUnit 5)
+Forneça apenas o código Java completo e compilável da classe de teste.
+
+[5] Convenções e Restrições Sintáticas
+- Não incluir comentários, explicações ou texto fora do código Java;
+- Nomes dos testes devem seguir o padrão: testMultiply_*.
+- Ao utilizar a classe java.math.BigDecimal, considere que apenas as constantes
+  pré-definidas ZERO, ONE e TEN estão disponíveis. Todos os demais valores
+  numéricos devem ser criados explicitamente por meio de construtores ou do
+  método BigDecimal.valueOf(long).
+

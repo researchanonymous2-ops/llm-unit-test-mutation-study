@@ -1,0 +1,160 @@
+[1] Papel
+
+Você é um engenheiro de software especializado em testes unitários e critérios de teste estrutural baseados em fluxo de dados.
+
+[2] Tarefa
+
+Gerar testes unitários em Java (JUnit 5) para o método compress(String input).
+
+[3] Restrição de Escopo
+
+Gerar casos de teste apenas para o método compress(String input).
+Não criar testes para outros métodos da classe.
+
+[3.1] Análise Estrutural Prévia do Método compress(String input)
+
+O método compress(String input) da classe StringCompression foi analisado segundo critérios de teste estrutural baseados em fluxo de dados. Essa análise deve ser considerada como base obrigatória para a construção do Chain of Code.
+
+Variáveis do método:
+- input: parâmetro formal
+- count: variável local mutável
+- compressedString: variável local acumuladora
+- i: variável de controle do laço
+
+Definições (def)
+
+Para input:
+- D1: definição inicial como parâmetro formal
+
+Para count:
+- D2: definição inicial (int count = 1)
+- D3: redefinição por incremento (count = count + 1)
+- D4: redefinição explícita (count = 1)
+
+Para compressedString:
+- D5: definição inicial (String compressedString = "")
+- D6: redefinição por retorno de appendCount(compressedString, count, ch)
+- D7: redefinição por concatenação com caractere final
+      (appendCount(...) + input.charAt(i + 1))
+
+Para i:
+- D8: definição inicial no laço for (int i = 0)
+- D9: redefinição por incremento do laço (i++)
+
+Usos predicativos (p-use)
+
+Para input:
+- P1: if (input.length() == 1)
+- P2: if (input.charAt(i) == input.charAt(i + 1))
+- P3: if ((i + 1) == input.length() - 1)
+- P4: else if (input.charAt(i) != input.charAt(i + 1))
+
+Para i:
+- P5: condição do laço for (i < input.length() - 1)
+
+Usos computacionais (c-use)
+
+Para input:
+- C1: uso em input.length()
+- C2: uso em return input.charAt(0)
+- C3: uso em input.charAt(i)
+- C4: uso em input.charAt(i + 1)
+
+Para count:
+- C5: uso em incremento aritmético (count = count + 1)
+- C6: uso como argumento em appendCount(compressedString, count, ch)
+
+Para compressedString:
+- C7: uso como argumento em appendCount(compressedString, count, ch)
+- C8: atribuição do retorno de appendCount(...)
+- C9: concatenação appendCount(...) + input.charAt(i + 1)
+- C10: return compressedString
+
+Para i:
+- C11: uso em expressão aritmética (i + 1)
+- C12: incremento do laço (i++)
+
+[4] Chain of Code
+
+Questão: Como o método compress(String input) se comporta para diferentes valores de entrada?
+
+Convenções:
+- input_s: valor original fornecido ao método compress;
+- return_candidate: valor elegível ao retorno em um caminho;
+- observable_return: valor efetivamente retornado por compress(input_s);
+- def(Di): definição identificada conforme a análise estrutural;
+- p_use: uso predicativo;
+- c_use: uso computacional;
+- path(Pi): caminho definição–uso livre de redefinição;
+- delta_state: representação explícita do estado semântico observável do método
+  após uma ação relevante, registrando apenas informações necessárias para
+  derivação de cenários de teste.
+
+Modelo do Chain of Code:
+
+1   input_s = original_input
+    def(D1): input = input_s
+    delta_state: { input definido }
+
+2   p_use(P1): (input.length() == 1)
+    path(P1)
+    c_use(C2): return input.charAt(0)
+    delta_state: { return_candidate definido, observable_return definido }
+
+3   def(D2): count = 1
+    def(D5): compressedString = ""
+    delta_state: { count inicializado, compressedString inicializado }
+
+4   def(D8): i = 0
+    p_use(P5): (i < input.length() - 1)
+    delta_state: { i definido }
+
+5   p_use(P2): (input.charAt(i) == input.charAt(i + 1))
+    path(P2)
+    c_use(C5): count = count + 1
+    def(D3)
+    delta_state: { count redefinido }
+
+6   p_use(P3): ((i + 1) == input.length() - 1) AND (input.charAt(i) == input.charAt(i + 1))
+    path(P3)
+    c_use(C6, C7): appendCount(compressedString, count, input.charAt(i))
+    def(D6)
+    delta_state: { return_candidate definido, laço encerrado }
+
+7   p_use(P4): (input.charAt(i) != input.charAt(i + 1))
+    path(P4)
+    c_use(C6, C7): appendCount(compressedString, count, input.charAt(i))
+    def(D6)
+    delta_state: { compressedString redefinido }
+
+8   p_use(P3): ((i + 1) == input.length() - 1)
+    path(P5)
+    c_use(C9): appendCount(...) + input.charAt(i + 1)
+    def(D7)
+    delta_state: { return_candidate definido }
+
+9   def(D4): count = 1
+    def(D9): i = i + 1
+    delta_state: { count reiniciado, i redefinido }
+
+10  unit_test_scenarios = derive_from_paths(
+        P1, P2, P3, P4, P5
+    )
+    delta_state: { unit_test_scenarios = complete }
+
+11  observable_return = compress(input_s)
+    delta_state: { observable_return = return_candidate }
+
+Resposta: unit_test_scenarios
+
+[5] Geração do Código Final (JUnit 5)
+
+Com base exclusivamente no Modelo do Chain of Code definido acima, gere apenas o código Java completo e compilável da classe de teste JUnit 5 para o método
+compress(String input).
+
+[6] Convenções e Restrições Sintáticas
+
+- Os casos de teste devem garantir cobertura de todos os caminhos definidos no Chain of Code;
+- Não incluir comentários, explicações ou texto fora do código Java;
+- Os nomes dos testes devem seguir o padrão: testCompress_*.
+

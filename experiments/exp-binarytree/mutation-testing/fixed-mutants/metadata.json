@@ -1,0 +1,6 @@
+{
+  "created_utc": "20260124T211302Z",
+  "suite_base": "com.thealgorithms.datastructures.trees.BinaryTreeBaseTest",
+  "target_package": "com.thealgorithms.datastructures.trees",
+  "pit_plugin_version": "unknown"
+}

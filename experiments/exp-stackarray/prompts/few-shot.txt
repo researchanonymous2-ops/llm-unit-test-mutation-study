@@ -1,0 +1,57 @@
+[1] Tarefa
+Gerar testes unitários em Java (JUnit 5) para o método push(int value)
+da classe com.thealgorithms.datastructures.stacks.StackArray.
+
+[2] Restrição de Escopo
+Gerar casos de teste apenas para o método push(int value).
+Não criar testes para outros métodos da classe.
+
+[3] Exemplos de Classe de Teste (Few-Shot)
+
+Use o exemplo abaixo apenas como referência de estrutura, organização, imports e formato de uma classe de teste JUnit 5 com múltiplos casos de teste.
+
+Não reutilize valores de entrada, resultados esperados ou a lógica dos testes apresentados.
+
+// Exemplos
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import com.thealgorithms.datastructures.stacks.StackArray;
+import org.junit.jupiter.api.Test;
+
+public class StackArrayFewShotExampleTest {
+
+    @Test
+    void testPushOnEmptyStack() {
+        StackArray stack = new StackArray(3);
+        stack.push(1);
+        assertTrue(!stack.isEmpty());
+    }
+
+    @Test
+    void testPushMultipleElements() {
+        StackArray stack = new StackArray(3);
+        stack.push(4);
+        stack.push(6);
+        stack.push(8);
+        assertTrue(!stack.isEmpty());
+    }
+
+    @Test
+    void testPushTriggersResizeWhenFull() {
+        StackArray stack = new StackArray(1);
+        stack.push(5);
+        stack.push(9);
+        assertTrue(!stack.isEmpty());
+    }
+}
+
+// Fim dos Exemplos
+
+[4] Geração do Código Final (JUnit 5)
+Forneça apenas o código Java completo e compilável da classe de teste.
+
+[5] Convenções e Restrições Sintáticas
+- Não incluir comentários, explicações ou texto fora do código Java;
+- Nomes dos testes devem seguir o padrão: testPush_*.
+

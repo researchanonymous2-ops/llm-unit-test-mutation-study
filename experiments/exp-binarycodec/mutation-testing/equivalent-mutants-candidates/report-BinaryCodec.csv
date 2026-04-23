@@ -1,0 +1,17 @@
+class,mutant_id,operator_id,mutator,method,line,equivalent_candidate,total_survived_suites,total_killed_suites,total_no_coverage_suites,killed_by_suites,survived_in_suites,no_coverage_suites
+BinaryCodec,M001,OP01,ConditionalsBoundaryMutator,toAsciiBytes,232,N,0,4,0,"BinaryCodecGrok_FS5Test, BinaryCodecGrok_ZS2Test, BinaryCodecGrok_ZS3Test, BinaryCodecGrok_ZS4Test",-,-
+BinaryCodec,M002,OP01,ConditionalsBoundaryMutator,toAsciiBytes,233,N,0,4,0,"BinaryCodecGrok_FS5Test, BinaryCodecGrok_ZS2Test, BinaryCodecGrok_ZS3Test, BinaryCodecGrok_ZS4Test",-,-
+BinaryCodec,M003,OP02,IncrementsMutator,toAsciiBytes,232,N,0,4,0,"BinaryCodecGrok_FS5Test, BinaryCodecGrok_ZS2Test, BinaryCodecGrok_ZS3Test, BinaryCodecGrok_ZS4Test",-,-
+BinaryCodec,M004,OP02,IncrementsMutator,toAsciiBytes,232,N,0,4,0,"BinaryCodecGrok_FS5Test, BinaryCodecGrok_ZS2Test, BinaryCodecGrok_ZS3Test, BinaryCodecGrok_ZS4Test",-,-
+BinaryCodec,M005,OP03,MathMutator,toAsciiBytes,227,N,0,4,0,"BinaryCodecGrok_FS5Test, BinaryCodecGrok_ZS2Test, BinaryCodecGrok_ZS3Test, BinaryCodecGrok_ZS4Test",-,-
+BinaryCodec,M006,OP03,MathMutator,toAsciiBytes,232,N,0,4,0,"BinaryCodecGrok_FS5Test, BinaryCodecGrok_ZS2Test, BinaryCodecGrok_ZS3Test, BinaryCodecGrok_ZS4Test",-,-
+BinaryCodec,M007,OP03,MathMutator,toAsciiBytes,234,N,0,4,0,"BinaryCodecGrok_FS5Test, BinaryCodecGrok_ZS2Test, BinaryCodecGrok_ZS3Test, BinaryCodecGrok_ZS4Test",-,-
+BinaryCodec,M008,OP03,MathMutator,toAsciiBytes,235,N,0,4,0,"BinaryCodecGrok_FS5Test, BinaryCodecGrok_ZS2Test, BinaryCodecGrok_ZS3Test, BinaryCodecGrok_ZS4Test",-,-
+BinaryCodec,M009,OP03,MathMutator,toAsciiBytes,237,N,0,4,0,"BinaryCodecGrok_FS5Test, BinaryCodecGrok_ZS2Test, BinaryCodecGrok_ZS3Test, BinaryCodecGrok_ZS4Test",-,-
+BinaryCodec,M010,OP04,NegateConditionalsMutator,toAsciiBytes,223,N,0,4,0,"BinaryCodecGrok_FS5Test, BinaryCodecGrok_ZS2Test, BinaryCodecGrok_ZS3Test, BinaryCodecGrok_ZS4Test",-,-
+BinaryCodec,M011,OP04,NegateConditionalsMutator,toAsciiBytes,223,N,0,4,0,"BinaryCodecGrok_FS5Test, BinaryCodecGrok_ZS2Test, BinaryCodecGrok_ZS3Test, BinaryCodecGrok_ZS4Test",-,-
+BinaryCodec,M012,OP04,NegateConditionalsMutator,toAsciiBytes,232,N,0,4,0,"BinaryCodecGrok_FS5Test, BinaryCodecGrok_ZS2Test, BinaryCodecGrok_ZS3Test, BinaryCodecGrok_ZS4Test",-,-
+BinaryCodec,M013,OP04,NegateConditionalsMutator,toAsciiBytes,233,N,0,4,0,"BinaryCodecGrok_FS5Test, BinaryCodecGrok_ZS2Test, BinaryCodecGrok_ZS3Test, BinaryCodecGrok_ZS4Test",-,-
+BinaryCodec,M014,OP04,NegateConditionalsMutator,toAsciiBytes,234,N,0,4,0,"BinaryCodecGrok_FS5Test, BinaryCodecGrok_ZS2Test, BinaryCodecGrok_ZS3Test, BinaryCodecGrok_ZS4Test",-,-
+BinaryCodec,M015,OP05,NullReturnValsMutator,toAsciiBytes,224,N,0,4,0,"BinaryCodecGrok_FS5Test, BinaryCodecGrok_ZS2Test, BinaryCodecGrok_ZS3Test, BinaryCodecGrok_ZS4Test",-,-
+BinaryCodec,M016,OP05,NullReturnValsMutator,toAsciiBytes,241,N,0,4,0,"BinaryCodecGrok_FS5Test, BinaryCodecGrok_ZS2Test, BinaryCodecGrok_ZS3Test, BinaryCodecGrok_ZS4Test",-,-

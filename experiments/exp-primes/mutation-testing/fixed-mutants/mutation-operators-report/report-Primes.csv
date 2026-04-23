@@ -1,0 +1,21 @@
+class,mutant_id,operator_id,mutator,operator_type,method,line,transformation
+Primes,M001,OP01,ConditionalsBoundaryMutator,Relational,nextPrime,75,boundary condition change
+Primes,M002,OP02,IncrementsMutator,Arithmetic,nextPrime,94,increment modification
+Primes,M003,OP02,IncrementsMutator,Arithmetic,nextPrime,97,increment modification
+Primes,M004,OP02,IncrementsMutator,Arithmetic,nextPrime,103,increment modification
+Primes,M005,OP02,IncrementsMutator,Arithmetic,nextPrime,107,increment modification
+Primes,M006,OP03,MathMutator,Arithmetic,nextPrime,81,bitwise operation modified
+Primes,M007,OP03,MathMutator,Arithmetic,nextPrime,92,modulus operation modified
+Primes,M008,OP04,NegateConditionalsMutator,Relational,nextPrime,75,if (cond) → if (!cond)
+Primes,M009,OP04,NegateConditionalsMutator,Relational,nextPrime,78,if (cond) → if (!cond)
+Primes,M010,OP04,NegateConditionalsMutator,Relational,nextPrime,82,if (cond) → if (!cond)
+Primes,M011,OP04,NegateConditionalsMutator,Relational,nextPrime,86,if (cond) → if (!cond)
+Primes,M012,OP04,NegateConditionalsMutator,Relational,nextPrime,93,if (cond) → if (!cond)
+Primes,M013,OP04,NegateConditionalsMutator,Relational,nextPrime,95,if (cond) → if (!cond)
+Primes,M014,OP04,NegateConditionalsMutator,Relational,nextPrime,100,if (cond) → if (!cond)
+Primes,M015,OP04,NegateConditionalsMutator,Relational,nextPrime,104,if (cond) → if (!cond)
+Primes,M016,OP05,PrimitiveReturnsMutator,Return,nextPrime,79,return value modified
+Primes,M017,OP05,PrimitiveReturnsMutator,Return,nextPrime,83,return value modified
+Primes,M018,OP05,PrimitiveReturnsMutator,Return,nextPrime,87,return value modified
+Primes,M019,OP05,PrimitiveReturnsMutator,Return,nextPrime,101,return value modified
+Primes,M020,OP05,PrimitiveReturnsMutator,Return,nextPrime,105,return value modified

@@ -1,0 +1,7 @@
+
+/app/experimentos/exp-fraction/src/test/java/org/apache/commons/math3/fraction/FractionGrok_OS1Test.java:65: error: cannot find symbol
+       assertThrows(MathArithmeticException.class, () -> Fraction.getReducedFraction(1, 0));
+                    ^
+  symbol:   class MathArithmeticException
+  location: class FractionGrok_OS1Test
+1 error

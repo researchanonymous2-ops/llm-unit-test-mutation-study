@@ -1,0 +1,14 @@
+
+/app/experimentos/exp-hashmapcuckoohashing/src/test/java/com/thealgorithms/datastructures/hashmap/hashing/HashMapCuckooHashingGrok_POT4Test.java:14: error: tableSize has private access in HashMapCuckooHashing
+        int originalSize = hashMap.tableSize;
+                                  ^
+/app/experimentos/exp-hashmapcuckoohashing/src/test/java/com/thealgorithms/datastructures/hashmap/hashing/HashMapCuckooHashingGrok_POT4Test.java:16: error: tableSize has private access in HashMapCuckooHashing
+        assertTrue(hashMap.tableSize > originalSize);
+                          ^
+/app/experimentos/exp-hashmapcuckoohashing/src/test/java/com/thealgorithms/datastructures/hashmap/hashing/HashMapCuckooHashingGrok_POT4Test.java:50: error: tableSize has private access in HashMapCuckooHashing
+        int originalSize = hashMap.tableSize;
+                                  ^
+/app/experimentos/exp-hashmapcuckoohashing/src/test/java/com/thealgorithms/datastructures/hashmap/hashing/HashMapCuckooHashingGrok_POT4Test.java:52: error: tableSize has private access in HashMapCuckooHashing
+        assertTrue(hashMap.tableSize > originalSize);
+                          ^
+4 errors

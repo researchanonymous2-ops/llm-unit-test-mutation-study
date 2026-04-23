@@ -1,0 +1,226 @@
+[1] Papel
+
+Você é um engenheiro de software especializado em testes unitários e critérios de teste estrutural baseados em fluxo de dados.
+
+[2] Tarefa
+
+Gerar testes unitários em Java (JUnit 5) para o método public static Fraction getReducedFraction(int numerator, int denominator)
+da classe org.apache.commons.math3.fraction.Fraction.
+
+[3] Restrição de Escopo
+
+Gerar casos de teste apenas para o método public static Fraction getReducedFraction(int numerator, int denominator).
+Não criar testes para outros métodos da classe.
+
+[3.1] Análise Estrutural Prévia do Método public static Fraction getReducedFraction(int numerator, int denominator)
+
+O método getReducedFraction(int numerator, int denominator) da classe Fraction foi analisado segundo
+critérios de teste estrutural baseados em fluxo de dados, considerando exclusivamente o código do método fornecido.
+Essa análise deve ser considerada como base obrigatória para a construção do Program-of-Thoughts.
+
+Variáveis do método:
+
+- numerator: parâmetro formal (numerador da fração)
+- denominator: parâmetro formal (denominador da fração)
+- gcd: variável local inteira (máximo divisor comum)
+
+Definições (def)
+
+Para numerator:
+- D1: definição inicial como parâmetro formal do método
+
+Para denominator:
+- D2: definição inicial como parâmetro formal do método
+
+Para gcd:
+- D3: definição como resultado da chamada ArithmeticUtils.gcd(numerator, denominator)
+
+Usos predicativos (p-use)
+
+Para denominator:
+- P1: decisão condicional de validação de entrada (denominator == 0)
+- P2: decisão condicional de caso especial (denominator == Integer.MIN_VALUE && (numerator & 1) == 0)
+- P3: decisão condicional de normalização de sinal (denominator < 0)
+
+Para numerator:
+- P4: decisão condicional de normalização de zero (numerator == 0)
+- P5: uso em decisão combinada no caso especial (numerator & 1)
+
+Usos computacionais (c-use)
+
+- C1: uso de numerator e denominator no cálculo do máximo divisor comum (ArithmeticUtils.gcd)
+- C2: uso de numerator e denominator na criação do objeto Fraction (new Fraction(numerator, denominator))
+
+[4] Program-of-Thoughts
+
+- DEVERÁ SER UTILIZADO um programa de raciocínio estrutural que modele explicitamente o comportamento do método public static Fraction getReducedFraction(int numerator, int denominator) com base em critérios de teste estrutural baseados em fluxo de dados. Esse programa de raciocínio estrutural é representado por um objeto JSON válido, fornecido na seção seguinte.
+
+- O Program-of-Thoughts é um artefato intermediário de raciocínio e deve ser utilizado exclusivamente como base interna para a geração da classe de testes.
+
+
+[4.1] Estrutura esperada do Program-of-Thoughts (JSON)
+
+- A estrutura a seguir é fornecida como um artefato de raciocínio já definido. NÃO reproduza, modifique ou gere este JSON como saída. Este artefato deve ser usado exclusivamente como base interna para a geração da classe de testes na etapa seguinte.
+
+{
+  "semantic_roles": [
+    {
+      "name": "input_numerator",
+      "description": "numerador fornecido como entrada ao método getReducedFraction"
+    },
+    {
+      "name": "input_denominator",
+      "description": "denominador fornecido como entrada ao método getReducedFraction"
+    },
+    {
+      "name": "observable_return",
+      "description": "instância de Fraction retornada ou exceção lançada pelo método"
+    }
+  ],
+  "variables": [
+    { "name": "numerator", "role": "parâmetro formal de entrada" },
+    { "name": "denominator", "role": "parâmetro formal de entrada" },
+    { "name": "gcd", "role": "variável local de cálculo" }
+  ],
+  "definitions": [
+    {
+      "id": "D1",
+      "variable": "numerator",
+      "description": "definição inicial como parâmetro formal"
+    },
+    {
+      "id": "D2",
+      "variable": "denominator",
+      "description": "definição inicial como parâmetro formal"
+    },
+    {
+      "id": "D3",
+      "variable": "gcd",
+      "description": "definição como resultado da chamada ArithmeticUtils.gcd(numerator, denominator)"
+    }
+  ],
+  "uses": [
+    {
+      "id": "U1",
+      "variable": "denominator",
+      "type": "p-use",
+      "description": "verificação de denominador zero (denominator == 0)"
+    },
+    {
+      "id": "U2",
+      "variable": "numerator",
+      "type": "p-use",
+      "description": "verificação de numerador zero (numerator == 0)"
+    },
+    {
+      "id": "U3",
+      "variable": "denominator",
+      "type": "p-use",
+      "description": "caso especial com denominator == Integer.MIN_VALUE e numerador par ((numerator & 1) == 0)"
+    },
+    {
+      "id": "U4",
+      "variable": "denominator",
+      "type": "p-use",
+      "description": "normalização de sinal (denominator < 0)"
+    },
+    {
+      "id": "U5",
+      "variable": "numerator",
+      "type": "c-use",
+      "description": "uso no cálculo do máximo divisor comum"
+    },
+    {
+      "id": "U6",
+      "variable": "denominator",
+      "type": "c-use",
+      "description": "uso no cálculo do máximo divisor comum"
+    },
+    {
+      "id": "U7",
+      "variable": "numerator",
+      "type": "c-use",
+      "description": "uso na criação do objeto Fraction"
+    },
+    {
+      "id": "U8",
+      "variable": "denominator",
+      "type": "c-use",
+      "description": "uso na criação do objeto Fraction"
+    }
+  ],
+  "du_paths": [
+    {
+      "id": "P0",
+      "description": "denominador igual a zero",
+      "post_condition": "lançamento de MathArithmeticException"
+    },
+    {
+      "id": "P1",
+      "description": "numerador igual a zero",
+      "post_condition": "retorno da constante Fraction.ZERO"
+    },
+    {
+      "id": "P2",
+      "description": "caso especial com denominator == Integer.MIN_VALUE e numerador par",
+      "post_condition": "normalização prévia antes do cálculo do MDC"
+    },
+    {
+      "id": "P3",
+      "description": "denominador negativo",
+      "post_condition": "normalização de sinal no numerador e denominador"
+    },
+    {
+      "id": "P4",
+      "description": "retorno após cálculo do MDC",
+      "post_condition": "retorno de nova instância Fraction com valores reduzidos"
+    }
+  ],
+  "planned_tests": [
+    {
+      "test_id": "T0",
+      "covers": ["P0"],
+      "asserts": ["MathArithmeticException lançada"]
+    },
+    {
+      "test_id": "T1",
+      "covers": ["P1"],
+      "asserts": ["retorno igual a Fraction.ZERO"]
+    },
+    {
+      "test_id": "T2",
+      "covers": ["P2"],
+      "asserts": ["fração normalizada antes do cálculo do MDC"]
+    },
+    {
+      "test_id": "T3",
+      "covers": ["P3"],
+      "asserts": ["sinal normalizado corretamente"]
+    },
+    {
+      "test_id": "T4",
+      "covers": ["P4"],
+      "asserts": ["fração retornada está reduzida"]
+    }
+  ],
+  "constraints": {
+    "all_defs_covered": true,
+    "all_p_uses_covered": true,
+    "all_c_uses_covered": true,
+    "all_decision_outcomes_covered": true,
+    "observable_contract_preserved": true
+  }
+}
+
+[5] Geração do Código Final (JUnit 5)
+
+Com base exclusivamente no Program-of-Thoughts definido na etapa anterior,gere como resultado final o código Java completo, compilável e executável da classe de teste JUnit 5 para o método public static Fraction getReducedFraction(int numerator, int denominator).
+
+[6] Convenções e Restrições Sintáticas
+
+- O código Java final NÃO deve conter JSON sob nenhuma forma; 
+- Qualquer classe de teste que inclua JSON dentro do código Java é considerada inválida;
+- Os casos de teste devem garantir cobertura de todos os caminhos definidos em "planned_tests";
+- Não incluir comentários, explicações ou texto fora do código Java;
+- Nomes dos testes devem seguir o padrão: testGetReducedFraction_*.
+

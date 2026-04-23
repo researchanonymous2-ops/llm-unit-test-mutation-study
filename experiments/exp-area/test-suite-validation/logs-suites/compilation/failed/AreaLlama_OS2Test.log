@@ -1,0 +1,140 @@
+
+/app/experimentos/exp-area/src/test/java/com/thealgorithms/maths/AreaLlama_OS2Test.java:33: error: class, interface, enum, or record expected
+import org.junit.jupiter.api.Test;
+^
+/app/experimentos/exp-area/src/test/java/com/thealgorithms/maths/AreaLlama_OS2Test.java:34: error: class, interface, enum, or record expected
+import static org.junit.jupiter.api.Assertions.assertEquals;
+^
+/app/experimentos/exp-area/src/test/java/com/thealgorithms/maths/AreaLlama_OS2Test.java:52: error: class, interface, enum, or record expected
+import org.junit.jupiter.api.Test;
+^
+/app/experimentos/exp-area/src/test/java/com/thealgorithms/maths/AreaLlama_OS2Test.java:53: error: class, interface, enum, or record expected
+import static org.junit.jupiter.api.Assertions.assertEquals;
+^
+/app/experimentos/exp-area/src/test/java/com/thealgorithms/maths/AreaLlama_OS2Test.java:78: error: class, interface, enum, or record expected
+import static org.junit.jupiter.api.Assertions.assertThrows;
+^
+/app/experimentos/exp-area/src/test/java/com/thealgorithms/maths/AreaLlama_OS2Test.java:79: error: class, interface, enum, or record expected
+import static org.junit.jupiter.api.Assertions.assertEquals;
+^
+/app/experimentos/exp-area/src/test/java/com/thealgorithms/maths/AreaLlama_OS2Test.java:81: error: class, interface, enum, or record expected
+import org.junit.jupiter.api.Test;
+^
+/app/experimentos/exp-area/src/test/java/com/thealgorithms/maths/AreaLlama_OS2Test.java:95: error: class, interface, enum, or record expected
+import org.junit.jupiter.api.Test;
+^
+/app/experimentos/exp-area/src/test/java/com/thealgorithms/maths/AreaLlama_OS2Test.java:109: error: class, interface, enum, or record expected
+import org.junit.jupiter.api.Test;
+^
+/app/experimentos/exp-area/src/test/java/com/thealgorithms/maths/AreaLlama_OS2Test.java:123: error: class, interface, enum, or record expected
+import org.junit.jupiter.api.Test;
+^
+/app/experimentos/exp-area/src/test/java/com/thealgorithms/maths/AreaLlama_OS2Test.java:142: error: class, interface, enum, or record expected
+import org.junit.jupiter.api.Test;
+^
+/app/experimentos/exp-area/src/test/java/com/thealgorithms/maths/AreaLlama_OS2Test.java:143: error: class, interface, enum, or record expected
+import static org.junit.jupiter.api.Assertions.assertThrows;
+^
+/app/experimentos/exp-area/src/test/java/com/thealgorithms/maths/AreaLlama_OS2Test.java:144: error: class, interface, enum, or record expected
+import static org.junit.jupiter.api.Assertions.assertEquals;
+^
+/app/experimentos/exp-area/src/test/java/com/thealgorithms/maths/AreaLlama_OS2Test.java:158: error: class, interface, enum, or record expected
+import org.junit.jupiter.api.Test;
+^
+/app/experimentos/exp-area/src/test/java/com/thealgorithms/maths/AreaLlama_OS2Test.java:172: error: class, interface, enum, or record expected
+import org.junit.jupiter.api.Test;
+^
+/app/experimentos/exp-area/src/test/java/com/thealgorithms/maths/AreaLlama_OS2Test.java:187: error: class, interface, enum, or record expected
+import org.junit.jupiter.api.Test;
+^
+/app/experimentos/exp-area/src/test/java/com/thealgorithms/maths/AreaLlama_OS2Test.java:188: error: class, interface, enum, or record expected
+import static org.junit.jupiter.api.Assertions.assertThrows;
+^
+/app/experimentos/exp-area/src/test/java/com/thealgorithms/maths/AreaLlama_OS2Test.java:202: error: class, interface, enum, or record expected
+import org.junit.Test;
+^
+/app/experimentos/exp-area/src/test/java/com/thealgorithms/maths/AreaLlama_OS2Test.java:212: error: class, interface, enum, or record expected
+import org.junit.jupiter.api.Test;
+^
+/app/experimentos/exp-area/src/test/java/com/thealgorithms/maths/AreaLlama_OS2Test.java:214: error: class, interface, enum, or record expected
+import static org.junit.jupiter.api.Assertions.assertEquals;
+^
+/app/experimentos/exp-area/src/test/java/com/thealgorithms/maths/AreaLlama_OS2Test.java:235: error: class, interface, enum, or record expected
+import org.junit.Test;
+^
+/app/experimentos/exp-area/src/test/java/com/thealgorithms/maths/AreaLlama_OS2Test.java:278: error: class, interface, enum, or record expected
+import org.junit.Test;
+^
+/app/experimentos/exp-area/src/test/java/com/thealgorithms/maths/AreaLlama_OS2Test.java:408: error: class, interface, enum, or record expected
+import org.junit.Test;
+^
+/app/experimentos/exp-area/src/test/java/com/thealgorithms/maths/AreaLlama_OS2Test.java:421: error: class, interface, enum, or record expected
+import org.junit.Test;
+^
+/app/experimentos/exp-area/src/test/java/com/thealgorithms/maths/AreaLlama_OS2Test.java:434: error: class, interface, enum, or record expected
+import org.junit.Test;
+^
+/app/experimentos/exp-area/src/test/java/com/thealgorithms/maths/AreaLlama_OS2Test.java:1001: error: class, interface, enum, or record expected
+The final code is.
+^
+/app/experimentos/exp-area/src/test/java/com/thealgorithms/maths/AreaLlama_OS2Test.java:1001: error: class, interface, enum, or record expected
+The final code is.
+          ^
+/app/experimentos/exp-area/src/test/java/com/thealgorithms/maths/AreaLlama_OS2Test.java:1011: error: class, interface, enum, or record expected
+Here is the final code.
+                  ^
+/app/experimentos/exp-area/src/test/java/com/thealgorithms/maths/AreaLlama_OS2Test.java:1021: error: class, interface, enum, or record expected
+The final code is.
+          ^
+/app/experimentos/exp-area/src/test/java/com/thealgorithms/maths/AreaLlama_OS2Test.java:1031: error: class, interface, enum, or record expected
+Here is the final code.
+                  ^
+/app/experimentos/exp-area/src/test/java/com/thealgorithms/maths/AreaLlama_OS2Test.java:1041: error: class, interface, enum, or record expected
+The final code is.
+          ^
+/app/experimentos/exp-area/src/test/java/com/thealgorithms/maths/AreaLlama_OS2Test.java:1051: error: class, interface, enum, or record expected
+Here is the final code.
+                  ^
+/app/experimentos/exp-area/src/test/java/com/thealgorithms/maths/AreaLlama_OS2Test.java:1802: error: '(' expected
+    public static void main main() {
+                            ^
+/app/experimentos/exp-area/src/test/java/com/thealgorithms/maths/AreaLlama_OS2Test.java:1810: error: <identifier> expected
+    public static void main(String[] public static void main(String[] args) {
+                                    ^
+/app/experimentos/exp-area/src/test/java/com/thealgorithms/maths/AreaLlama_OS2Test.java:2109: error: class, interface, enum, or record expected
+The final code is:
+^
+/app/experimentos/exp-area/src/test/java/com/thealgorithms/maths/AreaLlama_OS2Test.java:2109: error: class, interface, enum, or record expected
+The final code is:
+          ^
+/app/experimentos/exp-area/src/test/java/com/thealgorithms/maths/AreaLlama_OS2Test.java:2119: error: class, interface, enum, or record expected
+The final code is:
+          ^
+/app/experimentos/exp-area/src/test/java/com/thealgorithms/maths/AreaLlama_OS2Test.java:2129: error: class, interface, enum, or record expected
+The final code is:
+          ^
+/app/experimentos/exp-area/src/test/java/com/thealgorithms/maths/AreaLlama_OS2Test.java:2139: error: class, interface, enum, or record expected
+The final code is:
+          ^
+/app/experimentos/exp-area/src/test/java/com/thealgorithms/maths/AreaLlama_OS2Test.java:2149: error: class, interface, enum, or record expected
+The final code is:
+          ^
+/app/experimentos/exp-area/src/test/java/com/thealgorithms/maths/AreaLlama_OS2Test.java:2165: error: class, interface, enum, or record expected
+The final code is:
+          ^
+/app/experimentos/exp-area/src/test/java/com/thealgorithms/maths/AreaLlama_OS2Test.java:2175: error: class, interface, enum, or record expected
+The final code is:
+          ^
+/app/experimentos/exp-area/src/test/java/com/thealgorithms/maths/AreaLlama_OS2Test.java:2185: error: class, interface, enum, or record expected
+The final code is:
+          ^
+/app/experimentos/exp-area/src/test/java/com/thealgorithms/maths/AreaLlama_OS2Test.java:2195: error: class, interface, enum, or record expected
+The final code is:
+          ^
+/app/experimentos/exp-area/src/test/java/com/thealgorithms/maths/AreaLlama_OS2Test.java:2205: error: class, interface, enum, or record expected
+The final code is:
+          ^
+/app/experimentos/exp-area/src/test/java/com/thealgorithms/maths/AreaLlama_OS2Test.java:2215: error: reached end of file while parsing
+The final code
+          ^
+46 errors

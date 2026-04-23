@@ -1,0 +1,141 @@
+[1] Papel
+
+Você é um engenheiro de software especializado em testes unitários e critérios de teste estrutural baseados em fluxo de dados.
+
+[2] Tarefa
+
+Gerar testes unitários em Java (JUnit 5) para o método public static boolean verhoeffCheck(String digits) da classe Verhoeff.
+
+[3] Restrição de Escopo
+
+Gerar casos de teste apenas para o método verhoeffCheck(String digits).
+Não criar testes para outros métodos da classe.
+
+[3.1] Análise Estrutural Prévia do Método public static boolean verhoeffCheck(String digits)
+
+O método verhoeffCheck(String digits) da classe Verhoeff foi analisado segundo critérios de teste estrutural baseados em fluxo de dados,
+considerando exclusivamente o código do método fornecido.Essa análise deve ser considerada como base obrigatória para a construção do Chain of Code.
+
+Variáveis do método:
+
+- digits: parâmetro formal do tipo String (sequência de dígitos de entrada)
+- numbers: variável local (array de inteiros derivado de digits)
+- checksum: variável local inteira (acumulador do estado do algoritmo)
+- index: variável local inteira (índice reverso de acesso ao array)
+- b: variável local do tipo byte (valor permutado)
+
+Definições (def)
+
+Para digits:
+- D1: definição inicial como parâmetro formal do método
+
+Para numbers:
+- D2: definição como resultado da conversão de digits para array de inteiros
+
+Para checksum:
+- D3: definição inicial com valor 0
+- D4: redefinição iterativa dentro do laço for
+
+Para index:
+- D5: definição como cálculo de índice reverso (numbers.length - i - 1)
+
+Para b:
+- D6: definição como resultado do acesso à tabela de permutação
+
+Usos predicativos (p-use)
+
+Para digits:
+- P1: validação de entrada (verificação de null)
+- P2: validação de conteúdo (verificação de caracteres não numéricos)
+
+Para checksum:
+- P3: decisão final de retorno (checksum == 0)
+
+Usos computacionais (c-use)
+
+Para digits:
+- C1: uso na validação da entrada
+
+Para numbers:
+- C2: uso no controle do laço for (numbers.length)
+- C3: uso no acesso indexado (numbers[index])
+
+Para checksum:
+- C4: uso como índice da tabela de multiplicação
+- C5: uso como valor acumulado ao longo da iteração
+
+Para index:
+- C6: uso no acesso reverso ao array numbers
+
+Para b:
+- C7: uso como índice da tabela de multiplicação
+
+[4] Chain of Code
+
+Questão:Como o método verhoeffCheck(String digits) se comporta para diferentes valores de entrada válidos?
+
+Convenções:
+- input_digits: valor original fornecido ao método;
+- return_candidate: valor booleano candidato ao retorno;
+- observable_return: valor efetivamente retornado pelo método;
+- def(Di): definição identificada conforme a análise estrutural;
+- p_use: uso predicativo;
+- c_use: uso computacional;
+- path(Pi): caminho definição–uso livre de redefinição;
+- delta_state: representação explícita do estado semântico observável após uma ação relevante, contendo apenas informações necessárias
+  para derivação de cenários de teste.
+
+Modelo do Chain of Code:
+
+1   input_digits = original_input
+    def(D1): digits = input_digits
+    delta_state: { digits definido, pré-condição satisfeita }
+
+2   def(D2): numbers = toIntArray(digits)
+    delta_state: { numbers definido }
+
+3   def(D3): checksum = 0
+    delta_state: { checksum inicializado }
+
+4   p_use: início do laço for (i < numbers.length)
+    delta_state: { entrada no laço }
+
+5   def(D5): index = numbers.length - i - 1
+    c_use(C6): acesso reverso ao array
+    delta_state: { index definido }
+
+6   def(D6): b = PERMUTATION_TABLE[i % 8][numbers[index]]
+    c_use(C3, C7): acesso à tabela de permutação
+    delta_state: { b definido }
+
+7   def(D4): checksum = MULTIPLICATION_TABLE[checksum][b]
+    c_use(C4, C5): atualização do acumulador
+    delta_state: { checksum redefinido }
+
+8   repetição do laço até i == numbers.length
+    path(P0)
+    delta_state: { iteração completa }
+
+9   p_use(P1): checksum == 0
+    c_use: return true
+    delta_state: { return_candidate = true }
+
+10  p_use(P2): checksum != 0
+    c_use: return false
+    delta_state: { return_candidate = false }
+
+11  observable_return = verhoeffCheck(input_digits)
+    delta_state: { observable_return definido }
+
+Resposta:unit_test_scenarios
+
+[5] Geração do Código Final (JUnit 5)
+
+Com base exclusivamente no Modelo do Chain of Code definido acima, gere apenas o código Java completo e compilável da classe de teste JUnit 5 para o método verhoeffCheck(String digits).
+
+[6] Convenções e Restrições Sintáticas
+
+- Os casos de teste devem garantir cobertura de todos os caminhos definidos no Chain of Code;
+- Não incluir comentários, explicações ou texto fora do código Java;
+- Os nomes dos testes devem seguir o padrão: testVerhoeffCheck_*.
+

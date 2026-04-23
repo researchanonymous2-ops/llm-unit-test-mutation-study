@@ -1,0 +1,40 @@
+[1] Tarefa
+Gerar testes unitários em Java (JUnit 5) para o método elementCompareTo(T element)
+da classe org.apache.commons.lang3.Range.
+
+[2] Restrição de Escopo
+Gerar casos de teste apenas para o método elementCompareTo(T element).
+Não criar testes para outros métodos da classe.
+
+[3] Exemplo de Classe de Teste (One-Shot)
+
+Use o exemplo abaixo apenas como referência de estrutura,
+organização, imports e formato de uma classe de teste JUnit 5.
+
+Não reutilize valores de entrada, resultados esperados
+ou a lógica do teste apresentado.
+
+// Exemplo
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.apache.commons.lang3.Range;
+import org.junit.jupiter.api.Test;
+
+public class RangeOneShotExampleTest {
+
+    @Test
+    void testElementCompareToExample() {
+        Range<Integer> range = Range.between(1, 5);
+        assertEquals(0, range.elementCompareTo(3));
+    }
+}
+
+// Fim do Exemplo
+
+[4] Geração do Código Final (JUnit 5)
+Forneça apenas o código Java completo e compilável da classe de teste.
+
+[5] Convenções e Restrições Sintáticas
+- Não incluir comentários, explicações ou texto fora do código Java;
+- Nomes dos testes devem seguir o padrão: testElementCompareTo_*.
+

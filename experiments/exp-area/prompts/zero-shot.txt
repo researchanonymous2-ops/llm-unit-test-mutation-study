@@ -1,0 +1,17 @@
+[1] Tarefa
+Gerar testes unitários em Java (JUnit 5) para o método
+surfaceAreaCone(double radius, double height)
+da classe com.thealgorithms.maths.Area, considerando exclusivamente
+o comportamento observável do método a partir do código fornecido.
+
+[2] Restrição de Escopo
+Gerar casos de teste apenas para o método surfaceAreaCone(double radius, double height).
+Não criar testes para outros métodos da classe.
+
+[3] Geração do Código Final (JUnit 5)
+Forneça apenas o código Java completo e compilável da classe de teste.
+
+[4] Requisitos
+- Não incluir comentários, explicações ou texto fora do código Java;
+- Nomes dos testes devem seguir o padrão: testSurfaceAreaCone_*.
+

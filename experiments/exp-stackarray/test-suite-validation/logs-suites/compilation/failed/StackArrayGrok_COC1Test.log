@@ -1,0 +1,14 @@
+
+/app/experimentos/exp-stackarray/src/test/java/com/thealgorithms/datastructures/stacks/StackArrayGrok_COC1Test.java:13: error: top has private access in StackArray
+        assertEquals(0, stack.top);
+                             ^
+/app/experimentos/exp-stackarray/src/test/java/com/thealgorithms/datastructures/stacks/StackArrayGrok_COC1Test.java:24: error: top has private access in StackArray
+        assertEquals(0, stack.top);
+                             ^
+/app/experimentos/exp-stackarray/src/test/java/com/thealgorithms/datastructures/stacks/StackArrayGrok_COC1Test.java:27: error: top has private access in StackArray
+        assertEquals(1, stack.top);
+                             ^
+/app/experimentos/exp-stackarray/src/test/java/com/thealgorithms/datastructures/stacks/StackArrayGrok_COC1Test.java:30: error: maxSize has private access in StackArray
+        assertEquals(2, stack.maxSize);
+                             ^
+4 errors

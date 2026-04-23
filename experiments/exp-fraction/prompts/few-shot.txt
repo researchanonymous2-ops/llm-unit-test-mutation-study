@@ -1,0 +1,53 @@
+[1] Tarefa
+Gerar testes unitários em Java (JUnit 5) para o método public static Fraction getReducedFraction(int numerator, int denominator)
+da classe org.apache.commons.math3.fraction.Fraction.
+
+[2] Restrição de Escopo
+Gerar casos de teste apenas para o método public static Fraction getReducedFraction(int numerator, int denominator).
+Não criar testes para outros métodos da classe.
+
+[3] Exemplos de Casos de Teste na Classe de Teste (Few-Shot)
+
+Use os exemplos abaixo apenas como referência de estrutura, organização, imports e formato de uma classe de teste JUnit 5 com múltiplos casos de teste.
+
+Não reutilize valores de entrada, resultados esperados ou a lógica dos testes apresentados.
+
+// Exemplos
+
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
+import org.apache.commons.math3.exception.MathArithmeticException;
+import org.apache.commons.math3.fraction.Fraction;
+import org.junit.jupiter.api.Test;
+
+public class FractionFewShotExampleTest {
+
+    @Test
+    void testGetReducedFractionValidInput() {
+        Fraction result = Fraction.getReducedFraction(3, 6);
+        assertNotNull(result);
+    }
+
+    @Test
+    void testGetReducedFractionNegativeDenominator() {
+        Fraction result = Fraction.getReducedFraction(1, -3);
+        assertNotNull(result);
+    }
+
+    @Test
+    void testGetReducedFractionZeroDenominatorThrowsException() {
+        assertThrows(MathArithmeticException.class,
+            () -> Fraction.getReducedFraction(1, 0));
+    }
+}
+
+// Fim dos Exemplos
+
+[4] Geração do Código Final (JUnit 5)
+Forneça apenas o código Java completo e compilável da classe de teste.
+
+[5] Convenções e Restrições Sintáticas
+- Não incluir comentários, explicações ou texto fora do código Java;
+- Nomes dos testes devem seguir o padrão: testGetReducedFraction_*.
+

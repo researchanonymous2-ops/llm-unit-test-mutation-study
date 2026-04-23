@@ -1,0 +1,21 @@
+class,mutant_id,operator_id,mutator,operator_type,method,line,transformation
+StringCompression,M001,OP01,ConditionalsBoundaryMutator,Relational,compress,25,boundary condition change
+StringCompression,M002,OP02,MathMutator,Arithmetic,compress,25,x - y → x + y
+StringCompression,M003,OP02,MathMutator,Arithmetic,compress,28,x + y → x - y
+StringCompression,M004,OP02,MathMutator,Arithmetic,compress,29,x + y → x - y
+StringCompression,M005,OP02,MathMutator,Arithmetic,compress,31,x + y → x - y
+StringCompression,M006,OP02,MathMutator,Arithmetic,compress,31,x - y → x + y
+StringCompression,M007,OP02,MathMutator,Arithmetic,compress,31,x + y → x - y
+StringCompression,M008,OP02,MathMutator,Arithmetic,compress,34,x + y → x - y
+StringCompression,M009,OP02,MathMutator,Arithmetic,compress,35,x + y → x - y
+StringCompression,M010,OP02,MathMutator,Arithmetic,compress,35,x - y → x + y
+StringCompression,M011,OP02,MathMutator,Arithmetic,compress,36,x + y → x - y
+StringCompression,M012,OP03,NegateConditionalsMutator,Relational,compress,21,if (cond) → if (!cond)
+StringCompression,M013,OP03,NegateConditionalsMutator,Relational,compress,25,if (cond) → if (!cond)
+StringCompression,M014,OP03,NegateConditionalsMutator,Relational,compress,28,if (cond) → if (!cond)
+StringCompression,M015,OP03,NegateConditionalsMutator,Relational,compress,31,if (cond) → if (!cond)
+StringCompression,M016,OP03,NegateConditionalsMutator,Relational,compress,31,if (cond) → if (!cond)
+StringCompression,M017,OP03,NegateConditionalsMutator,Relational,compress,34,if (cond) → if (!cond)
+StringCompression,M018,OP03,NegateConditionalsMutator,Relational,compress,35,if (cond) → if (!cond)
+StringCompression,M019,OP04,EmptyObjectReturnValsMutator,Return,compress,22,return value modified
+StringCompression,M020,OP04,EmptyObjectReturnValsMutator,Return,compress,44,return value modified

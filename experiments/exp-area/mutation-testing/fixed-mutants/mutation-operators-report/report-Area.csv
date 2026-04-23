@@ -1,0 +1,12 @@
+class,mutant_id,operator_id,mutator,operator_type,method,line,transformation
+Area,M001,OP01,ConditionalsBoundaryMutator,Relational,surfaceAreaCone,185,boundary condition change
+Area,M002,OP01,ConditionalsBoundaryMutator,Relational,surfaceAreaCone,188,boundary condition change
+Area,M003,OP02,MathMutator,Arithmetic,surfaceAreaCone,191,x * y → x / y
+Area,M004,OP02,MathMutator,Arithmetic,surfaceAreaCone,191,x * y → x / y
+Area,M005,OP02,MathMutator,Arithmetic,surfaceAreaCone,191,x * y → x / y
+Area,M006,OP02,MathMutator,Arithmetic,surfaceAreaCone,191,x + y → x - y
+Area,M007,OP02,MathMutator,Arithmetic,surfaceAreaCone,191,x + y → x - y
+Area,M008,OP02,MathMutator,Arithmetic,surfaceAreaCone,191,x * y → x / y
+Area,M009,OP03,NegateConditionalsMutator,Relational,surfaceAreaCone,185,if (cond) → if (!cond)
+Area,M010,OP03,NegateConditionalsMutator,Relational,surfaceAreaCone,188,if (cond) → if (!cond)
+Area,M011,OP04,PrimitiveReturnsMutator,Return,surfaceAreaCone,191,return value modified

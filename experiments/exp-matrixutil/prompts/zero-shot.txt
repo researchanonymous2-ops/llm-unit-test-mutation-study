@@ -1,0 +1,22 @@
+[1] Tarefa
+Gerar testes unitários em Java (JUnit 5) para o método
+multiply(BigDecimal[][] matrix1, BigDecimal[][] matrix2)
+da classe com.thealgorithms.maths.MatrixUtil, considerando exclusivamente
+o comportamento observável do método a partir do código fornecido.
+
+[2] Restrição de Escopo
+Gerar casos de teste apenas para o método
+multiply(BigDecimal[][] matrix1, BigDecimal[][] matrix2).
+Não criar testes para outros métodos da classe.
+
+[3] Geração do Código Final (JUnit 5)
+Forneça apenas o código Java completo e compilável da classe de teste.
+
+[4] Convenções e Restrições Sintáticas
+- Não incluir comentários, explicações ou texto fora do código Java;
+- Nomes dos testes devem seguir o padrão: testMultiply_*;
+- Ao utilizar a classe java.math.BigDecimal, considere que apenas as constantes
+  pré-definidas ZERO, ONE e TEN estão disponíveis. Todos os demais valores
+  numéricos devem ser criados explicitamente por meio de construtores ou do
+  método BigDecimal.valueOf(long).
+

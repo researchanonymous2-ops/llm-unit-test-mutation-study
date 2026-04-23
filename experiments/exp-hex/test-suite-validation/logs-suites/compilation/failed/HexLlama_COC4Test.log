@@ -1,0 +1,38 @@
+
+/app/experimentos/exp-hex/src/test/java/org/apache/commons/codec/binary/HexLlama_COC4Test.java:51: error: class, interface, enum, or record expected
+public void testDecodeHex() {
+       ^
+/app/experimentos/exp-hex/src/test/java/org/apache/commons/codec/binary/HexLlama_COC4Test.java:53: error: class, interface, enum, or record expected
+    byte[] expected = {0x31, 0x32};
+    ^
+/app/experimentos/exp-hex/src/test/java/org/apache/commons/codec/binary/HexLlama_COC4Test.java:54: error: class, interface, enum, or record expected
+    assertArrayEquals(expected, Hex.decodeHex(hex));
+    ^
+/app/experimentos/exp-hex/src/test/java/org/apache/commons/codec/binary/HexLlama_COC4Test.java:55: error: class, interface, enum, or record expected
+}
+^
+/app/experimentos/exp-hex/src/test/java/org/apache/commons/codec/binary/HexLlama_COC4Test.java:87: error: class, interface, enum, or record expected
+public void testToHex() {
+       ^
+/app/experimentos/exp-hex/src/test/java/org/apache/commons/codec/binary/HexLlama_COC4Test.java:89: error: class, interface, enum, or record expected
+    String hex = Hex.encodeHex(bytes);
+    ^
+/app/experimentos/exp-hex/src/test/java/org/apache/commons/codec/binary/HexLlama_COC4Test.java:90: error: class, interface, enum, or record expected
+    assertEquals("31323334", hex);
+    ^
+/app/experimentos/exp-hex/src/test/java/org/apache/commons/codec/binary/HexLlama_COC4Test.java:91: error: class, interface, enum, or record expected
+}
+^
+/app/experimentos/exp-hex/src/test/java/org/apache/commons/codec/binary/HexLlama_COC4Test.java:114: error: class, interface, enum, or record expected
+public void testToHex() {
+       ^
+/app/experimentos/exp-hex/src/test/java/org/apache/commons/codec/binary/HexLlama_COC4Test.java:116: error: class, interface, enum, or record expected
+    String hex = Hex.encodeHex(bytes);
+    ^
+/app/experimentos/exp-hex/src/test/java/org/apache/commons/codec/binary/HexLlama_COC4Test.java:117: error: class, interface, enum, or record expected
+    assertEquals("31323334", hex);
+    ^
+/app/experimentos/exp-hex/src/test/java/org/apache/commons/codec/binary/HexLlama_COC4Test.java:118: error: class, interface, enum, or record expected
+}
+^
+12 errors

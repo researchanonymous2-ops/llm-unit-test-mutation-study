@@ -1,0 +1,216 @@
+[1] Papel
+
+Você é um engenheiro de software especializado em testes unitários e critérios de teste estrutural baseados em fluxo de dados.
+
+[2] Tarefa
+
+Gerar testes unitários em Java (JUnit 5) para o método toAsciiBytes(byte[] raw)
+da classe BinaryCodec.
+
+[3] Restrição de Escopo
+
+Gerar casos de teste apenas para o método toAsciiBytes(byte[] raw).
+Não criar testes para outros métodos da classe.
+
+[3.1] Análise Estrutural Prévia do Método toAsciiBytes(byte[] raw)
+
+O método toAsciiBytes(byte[] raw) da classe BinaryCodec foi analisado segundo
+critérios de teste estrutural baseados em fluxo de dados.
+Essa análise deve ser considerada como base obrigatória para a construção do
+Program-of-Thoughts e do Chain-of-Code.
+
+Variáveis do método:
+
+- raw: parâmetro formal (array de bytes de entrada)
+- l_ascii: variável local (array de bytes de saída)
+- ii: variável de controle do laço externo
+- jj: variável de controle auxiliar decrescente
+- bits: variável de controle do laço interno
+
+Definições (def)
+
+Para raw:
+- D1: definição inicial como parâmetro formal
+
+Para l_ascii:
+- D2: definição por alocação de array com tamanho raw.length << 3
+
+Para ii:
+- D3: definição inicial no laço externo (ii = 0)
+- D4: redefinição por incremento no laço externo (ii++)
+
+Para jj:
+- D5: definição inicial no laço externo (jj = l_ascii.length - 1)
+- D6: redefinição por decremento no laço externo (jj -= 8)
+
+Para bits:
+- D7: definição inicial no laço interno (bits = 0)
+- D8: redefinição por incremento no laço interno (++bits)
+
+Usos predicativos (p-use)
+
+Para raw:
+- P1: decisão condicional de validação de entrada (raw == null || raw.length == 0)
+
+Para ii:
+- P2: condição do laço externo (ii < raw.length)
+
+Para bits:
+- P3: condição do laço interno (bits < BITS.length)
+
+Para a expressão envolvendo raw:
+- P4: decisão condicional baseada no resultado da operação bitwise
+      ((raw[ii] & BITS[bits]) == 0)
+
+Usos computacionais (c-use)
+
+Para raw:
+- C1: cálculo do tamanho do array l_ascii (raw.length << 3)
+- C2: operação bitwise para extração de bits (raw[ii] & BITS[bits])
+
+Para l_ascii:
+- C3: atribuição de valor '0' em l_ascii[jj - bits]
+- C4: atribuição de valor '1' em l_ascii[jj - bits]
+- C5: retorno do array l_ascii
+
+Para ii:
+- C6: indexação do array raw (raw[ii])
+
+Para jj:
+- C7: indexação do array l_ascii (jj - bits)
+
+[4] Program-of-Thoughts
+
+- DEVERÁ SER UTILIZADO um programa de raciocínio estrutural que modele explicitamente o comportamento do método toAsciiBytes(byte[] raw) com base em critérios de teste estrutural baseados em fluxo de dados. Esse programa de raciocínio estrutural é representado por um objeto JSON válido, fornecido na seção seguinte.
+
+- O Program-of-Thoughts é um artefato intermediário de raciocínio e deve ser utilizado exclusivamente como base interna para a geração da classe de testes.
+
+
+[4.1] Estrutura esperada do Program-of-Thoughts (JSON)
+
+- A estrutura a seguir é fornecida como um artefato de raciocínio já definido. NÃO reproduza, modifique ou gere este JSON como saída. Este artefato deve ser usado exclusivamente como base interna para a geração da classe de testes na etapa seguinte.
+
+{
+  "semantic_roles": [
+    {
+      "name": "input_raw",
+      "description": "array de bytes fornecido como entrada ao método toAsciiBytes"
+    },
+    {
+      "name": "observable_return",
+      "description": "array de bytes retornado por toAsciiBytes(input_raw)"
+    }
+  ],
+  "variables": [
+    { "name": "raw", "role": "parâmetro formal de entrada" },
+    { "name": "l_ascii", "role": "array de saída" },
+    { "name": "ii", "role": "controle do laço externo" },
+    { "name": "jj", "role": "controle auxiliar decrescente" },
+    { "name": "bits", "role": "controle do laço interno" }
+  ],
+  "definitions": [
+    { "id": "D1", "variable": "raw", "description": "definição inicial como parâmetro formal" },
+    { "id": "D2", "variable": "l_ascii", "description": "alocação do array de saída com tamanho raw.length << 3" },
+    { "id": "D3", "variable": "ii", "description": "inicialização e redefinição por incremento no laço externo" },
+    { "id": "D4", "variable": "jj", "description": "inicialização e redefinição por decremento no laço externo" },
+    { "id": "D5", "variable": "bits", "description": "inicialização e redefinição por incremento no laço interno" }
+  ],
+  "uses": [
+    {
+      "id": "U1",
+      "variable": "raw",
+      "type": "p-use",
+      "description": "verificação de entrada nula ou array vazio (raw == null || raw.length == 0)"
+    },
+    {
+      "id": "U2",
+      "variable": "raw",
+      "type": "c-use",
+      "description": "operação bitwise para extração de bits (raw[ii] & BITS[bits])"
+    },
+    {
+      "id": "U3",
+      "variable": "ii",
+      "type": "p-use",
+      "description": "condição do laço externo (ii < raw.length)"
+    },
+    {
+      "id": "U4",
+      "variable": "bits",
+      "type": "p-use",
+      "description": "condição do laço interno (bits < BITS.length)"
+    },
+    {
+      "id": "U5",
+      "variable": "jj",
+      "type": "c-use",
+      "description": "indexação do array de saída (jj - bits)"
+    }
+  ],
+  "du_paths": [
+    {
+      "id": "P0",
+      "description": "p-use inicial verdadeiro: raw é nulo ou vazio",
+      "post_condition": "observable_return é um array vazio"
+    },
+    {
+      "id": "P1",
+      "description": "execução completa dos laços com raw contendo um único byte",
+      "post_condition": "observable_return possui tamanho igual a 8"
+    },
+    {
+      "id": "P2",
+      "description": "execução completa dos laços com raw contendo múltiplos bytes",
+      "post_condition": "observable_return possui tamanho igual a 8 * raw.length"
+    },
+    {
+      "id": "P3",
+      "description": "ramificação do p-use ((raw[ii] & BITS[bits]) == 0)",
+      "post_condition": "posição correspondente em l_ascii recebe o valor '0'"
+    },
+    {
+      "id": "P4",
+      "description": "ramificação do p-use ((raw[ii] & BITS[bits]) != 0)",
+      "post_condition": "posição correspondente em l_ascii recebe o valor '1'"
+    }
+  ],
+  "planned_tests": [
+    {
+      "test_id": "T0",
+      "covers": ["P0"],
+      "asserts": ["tamanho do retorno == 0"]
+    },
+    {
+      "test_id": "T1",
+      "covers": ["P1", "P3", "P4"],
+      "asserts": ["tamanho do retorno == 8"]
+    },
+    {
+      "test_id": "T2",
+      "covers": ["P2", "P3", "P4"],
+      "asserts": ["tamanho do retorno == 8 * input_raw.length"]
+    }
+  ],
+  "constraints": {
+    "all_defs_covered": true,
+    "all_uses_covered": true,
+    "representative_loop_coverage": true,
+    "observable_contract_preserved": true
+  }
+}
+
+[5] Geração do Código Final (JUnit 5)
+
+Com base exclusivamente no Program-of-Thoughts definido na etapa anterior,
+gere apenas o código Java completo e compilável da classe de teste JUnit 5
+para o método toAsciiBytes(byte[] raw).
+
+[6] Convenções e Restrições Sintáticas
+
+- O código Java final NÃO deve conter JSON sob nenhuma forma.
+- Qualquer classe de teste que inclua JSON dentro do código Java é considerada inválida.
+- Os casos de teste devem garantir cobertura de todos os caminhos definidos em "planned_tests";
+- Não incluir comentários, explicações ou texto fora do código Java.
+- Nomes dos testes devem seguir o padrão: testToAsciiBytes_*.
+
+

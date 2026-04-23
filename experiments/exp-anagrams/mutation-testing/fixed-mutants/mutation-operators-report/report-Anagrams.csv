@@ -1,0 +1,12 @@
+class,mutant_id,operator_id,mutator,operator_type,method,line,transformation
+Anagrams,M001,OP01,ConditionalsBoundaryMutator,Relational,approach2,75,boundary condition change
+Anagrams,M002,OP02,MathMutator,Arithmetic,approach2,66,x - y → x + y
+Anagrams,M003,OP02,MathMutator,Arithmetic,approach2,66,x + y → x - y
+Anagrams,M004,OP02,MathMutator,Arithmetic,approach2,73,x - y → x + y
+Anagrams,M005,OP02,MathMutator,Arithmetic,approach2,73,x + y → x - y
+Anagrams,M006,OP03,NegateConditionalsMutator,Relational,approach2,60,if (cond) → if (!cond)
+Anagrams,M007,OP03,NegateConditionalsMutator,Relational,approach2,75,if (cond) → if (!cond)
+Anagrams,M008,OP03,NegateConditionalsMutator,Relational,approach2,76,if (cond) → if (!cond)
+Anagrams,M009,OP04,BooleanFalseReturnValsMutator,Return,approach2,80,return value modified
+Anagrams,M010,OP05,BooleanTrueReturnValsMutator,Return,approach2,61,return value modified
+Anagrams,M011,OP05,BooleanTrueReturnValsMutator,Return,approach2,77,return value modified

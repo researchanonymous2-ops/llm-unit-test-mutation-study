@@ -1,0 +1,135 @@
+[1] Papel
+
+Você é um engenheiro de software especializado em testes unitários e critérios
+de teste estrutural baseados em fluxo de dados.
+
+[2] Tarefa
+
+Gerar testes unitários em Java (JUnit 5) para o método push(int value).
+Não gerar testes para outros métodos da classe.
+
+[3] Restrição de Escopo
+
+Gerar casos de teste apenas para o método push(int value).
+Não criar testes para outros métodos da classe.
+
+[3.1] Análise Estrutural Prévia do Método push(int value)
+
+O método push(int value) da classe StackArray foi analisado
+segundo critérios de teste estrutural baseados em fluxo de dados. Essa análise deve ser considerada como base obrigatória para 
+a construção do Program-of-Thoughts.
+
+Variáveis do método:
+- value: parâmetro formal representando o elemento a ser inserido na pilha
+- top: variável de estado da pilha (controle do índice do topo)
+- stackArray: array interno que armazena os elementos da pilha
+- maxSize: capacidade atual da pilha
+
+Definições (def)
+
+Para value:
+- D1: definição inicial como parâmetro formal do método
+
+Para top:
+- D2: redefinição por incremento (top++) no ramo em que a pilha não está cheia
+
+Para stackArray:
+- D3: redefinição do elemento stackArray[top] após incremento do topo
+- D4: redefinição indireta por resize(int)
+
+Para maxSize:
+- D5: redefinição indireta por resize(int)
+
+Usos predicativos (p-use)
+
+Para top:
+- P1: verificação de pilha cheia na condição if (!isFull())
+- P2: uso implícito na condição de isFull() (top + 1 == maxSize)
+
+Para maxSize:
+- P3: uso implícito na condição de isFull() (top + 1 == maxSize)
+
+Usos computacionais (c-use)
+
+Para value:
+- C1: uso como valor atribuído ao elemento stackArray[top]
+
+Para top:
+- C2: uso como índice em stackArray[top]
+- C3: uso em operação de incremento (top++)
+
+Para stackArray:
+- C4: atribuição do valor value em stackArray[top]
+
+Para maxSize:
+- C5: uso como argumento em resize(maxSize * 2)
+
+[4] Program-of-Thoughts
+
+- DEVERÁ SER UTILIZADO um programa de raciocínio estrutural que modele explicitamente o comportamento do método push(int value) com base em critérios 
+de teste estrutural baseados em fluxo de dados. Esse programa de raciocínio estrutural é representado por um objeto JSON válido, fornecido 
+na seção seguinte.
+
+- O Program-of-Thoughts é um artefato intermediário de raciocínio e deve ser utilizado exclusivamente como base interna para a geração da classe de testes.
+
+
+[4.1] Estrutura esperada do Program-of-Thoughts (JSON)
+
+- A estrutura a seguir é fornecida como um artefato de raciocínio já definido. NÃO reproduza, modifique ou gere este JSON como saída. Este artefato deve ser usado exclusivamente como base interna para a geração da classe de testes na etapa seguinte.
+
+{
+  "variables": [
+    { "name": "value", "role": "elemento a ser inserido na pilha" },
+    { "name": "top", "role": "variável de estado da pilha" },
+    { "name": "stackArray", "role": "estrutura interna da pilha" },
+    { "name": "maxSize", "role": "capacidade atual da pilha" }
+  ],
+  "definitions": [
+    { "id": "D1", "variable": "value", "description": "definição inicial como parâmetro formal" },
+    { "id": "D2", "variable": "top", "description": "redefinição por incremento (top++)" },
+    { "id": "D3", "variable": "stackArray", "description": "atribuição de value em stackArray[top]" },
+    { "id": "D4", "variable": "stackArray", "description": "redefinição indireta por resize(int)" },
+    { "id": "D5", "variable": "maxSize", "description": "redefinição indireta por resize(int)" }
+  ],
+  "uses": [
+    { "id": "U1", "variable": "top", "type": "p-use", "description": "verificação de pilha cheia via isFull()" },
+    { "id": "U2", "variable": "maxSize", "type": "p-use", "description": "uso implícito na condição de isFull()" },
+    { "id": "U3", "variable": "value", "type": "c-use", "description": "valor atribuído ao topo da pilha" },
+    { "id": "U4", "variable": "top", "type": "c-use", "description": "uso como índice em stackArray[top]" },
+    { "id": "U5", "variable": "top", "type": "c-use", "description": "incremento do topo (top++)" },
+    { "id": "U6", "variable": "maxSize", "type": "c-use", "description": "uso como argumento em resize(maxSize * 2)" }
+  ],
+  "du_paths": [
+    {
+      "id": "P1",
+      "description": "inserção direta quando a pilha não está cheia"
+    },
+    {
+      "id": "P2",
+      "description": "inserção após redimensionamento quando a pilha está cheia"
+    }
+  ],
+  "planned_tests": [
+    { "test_id": "T1", "covers": ["P1"] },
+    { "test_id": "T2", "covers": ["P2"] }
+  ],
+  "constraints": {
+    "all_defs_covered": true,
+    "all_uses_covered": true,
+    "state_dependency_explicit": true
+  }
+}
+
+[5] Geração do Código Final (JUnit 5)
+
+Com base exclusivamente no Program-of-Thoughts definido na etapa anterior,
+gere apenas o código Java completo e compilável da classe de teste JUnit 5
+para o método push(int value).
+
+[6] Convenções e Restrições Sintáticas
+- O código Java final NÃO deve conter JSON sob nenhuma forma; 
+- Qualquer classe de teste que inclua JSON dentro do código Java é considerada inválida;
+- Os casos de teste devem garantir cobertura de todos os caminhos definidos em "planned_tests";
+- Não incluir comentários, explicações ou texto fora do código Java;
+- Nomes dos testes devem seguir o padrão: testPush_*.
+

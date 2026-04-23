@@ -1,0 +1,178 @@
+[1] Papel
+
+Você é um engenheiro de software especializado em testes unitários e critérios de teste estrutural baseados em fluxo de dados.
+
+[2] Tarefa
+
+Gerar testes unitários em Java (JUnit 5) para o método approach2(String a, String b).
+
+[3] Restrição de Escopo
+
+Gerar casos de teste apenas para o método approach2(String a, String b).
+Não criar testes para outros métodos da classe.
+
+[3.1] Análise Estrutural Prévia do Método approach2(String a, String b)
+
+O método approach2(String a, String b) da classe Anagrams foi previamente analisado
+segundo critérios de teste estrutural baseados em fluxo de dados.
+
+Variáveis do método:
+- a: parâmetro formal (primeira string de entrada)
+- b: parâmetro formal (segunda string de entrada)
+- m: array local de inteiros (frequência dos caracteres de a)
+- n: array local de inteiros (frequência dos caracteres de b)
+- c: variável de iteração em laços foreach
+- i: variável de controle do laço for
+
+Definições (def)
+
+Para a:
+- D1: definição inicial como parâmetro formal
+
+Para b:
+- D2: definição inicial como parâmetro formal
+
+Para m:
+- D3: definição por alocação (new int[26])
+- D4: redefinições por incremento m[c - 'a']++
+
+Para n:
+- D5: definição por alocação (new int[26])
+- D6: redefinições por incremento n[c - 'a']++
+
+Para c:
+- D7: definição como variável de iteração no laço foreach sobre a
+- D8: definição como variável de iteração no laço foreach sobre b
+
+Para i:
+- D9: definição como variável de controle do laço for (int i = 0)
+
+Usos predicativos (p-use)
+
+Para a e b:
+- P1: if (a.length() != b.length())
+
+Para i:
+- P2: condição do laço for (i < 26)
+
+Para m e n:
+- P3: if (m[i] != n[i])
+
+Usos computacionais (c-use)
+
+Para a:
+- C1: uso em a.length()
+- C2: uso em a.toCharArray()
+
+Para b:
+- C3: uso em b.length()
+- C4: uso em b.toCharArray()
+
+Para m:
+- C5: acesso m[c - 'a']
+- C6: incremento m[c - 'a']++
+- C7: acesso m[i]
+
+Para n:
+- C8: acesso n[c - 'a']
+- C9: incremento n[c - 'a']++
+- C10: acesso n[i]
+
+Para c:
+- C11: uso em expressão c - 'a'
+
+Para i:
+- C12: uso como índice em m[i] e n[i]
+- C13: incremento i++
+
+[4] Chain of Code
+
+Questão:
+Como o método approach2(String a, String b) se comporta para diferentes valores de entrada?
+
+Convenções:
+- input_a, input_b: valores originais fornecidos ao método;
+- return_candidate: valor elegível ao retorno em um caminho;
+- observable_return: valor efetivamente retornado por approach2(input_a, input_b);
+- def(Di): definição identificada conforme a análise estrutural;
+- p_use: uso predicativo;
+- c_use: uso computacional;
+- path(Pi): caminho definição–uso livre de redefinição;
+- delta_state: representação explícita do estado semântico observável do método após uma ação relevante,
+  registrando apenas informações necessárias para a derivação de cenários de teste.
+
+Modelo do Chain of Code:
+
+1   input_a = original_input_a
+    input_b = original_input_b
+    def(D1): a = input_a
+    def(D2): b = input_b
+    delta_state: { a definido, b definido }
+
+2   p_use(P1): (a.length() != b.length()) == true
+    path(P1)
+    c_use(C1, C3): cálculo dos comprimentos
+    delta_state: { return_candidate = false }
+
+3   observable_return = return_candidate
+    delta_state: { observable_return definido }
+
+4   p_use(P1): (a.length() != b.length()) == false
+    path(P2)
+    def(D3): m = new int[26]
+    def(D5): n = new int[26]
+    delta_state: { m definido, n definido }
+
+5   def(D7): iteração sobre a
+    c_use(C2, C11, C5, C6): m[c - 'a']++
+    delta_state: { m atualizado }
+
+6   def(D8): iteração sobre b
+    c_use(C4, C11, C8, C9): n[c - 'a']++
+    delta_state: { n atualizado }
+
+7   def(D9): i = 0
+    p_use(P2): (i < 26)
+    path(P3)
+    c_use(C12, C7, C10): acesso m[i], n[i]
+    delta_state: { i em iteração }
+
+8   p_use(P3): (m[i] != n[i]) == true
+    path(P4)
+    delta_state: { return_candidate = false }
+
+9   observable_return = return_candidate
+    delta_state: { observable_return definido }
+
+10  p_use(P3): (m[i] != n[i]) == false
+    c_use(C13): i++
+    delta_state: { próxima iteração do laço }
+
+11  p_use(P2): término do laço (i == 26)
+    path(P5)
+    delta_state: { return_candidate = true }
+
+12  observable_return = return_candidate
+    delta_state: { observable_return definido }
+
+13  unit_test_scenarios = derive_from_paths(
+        P1,   // tamanhos diferentes
+        P5,   // tamanhos iguais e frequências idênticas
+        P4    // tamanhos iguais e divergência de frequência
+    )
+    delta_state: { unit_test_scenarios = complete }
+
+Resposta: unit_test_scenarios
+
+[5] Geração do Código Final (JUnit 5)
+
+Com base exclusivamente no Modelo do Chain of Code definido acima,
+gere apenas o código Java completo e compilável da classe de teste JUnit 5
+para o método approach2(String a, String b).
+
+[6] Convenções e Restrições Sintáticas
+
+- Os casos de teste devem garantir cobertura de todos os caminhos definidos no Chain of Code;
+- Não incluir comentários, explicações ou texto fora do código Java;
+- Os nomes dos testes devem seguir o padrão: testApproach2_*.
+

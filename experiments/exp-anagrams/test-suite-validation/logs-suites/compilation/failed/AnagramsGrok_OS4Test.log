@@ -1,0 +1,7 @@
+
+/app/experimentos/exp-anagrams/src/test/java/com/thealgorithms/strings/AnagramsGrok_OS4Test.java:50: error: cannot find symbol
+      assertTrue(anagrams.aproach2("aab", "aba"));
+                         ^
+  symbol:   method aproach2(String,String)
+  location: variable anagrams of type Anagrams
+1 error

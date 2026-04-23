@@ -1,0 +1,56 @@
+[1] Tarefa
+Gerar testes unitários em Java (JUnit 5) para o método public boolean contains(final CharRange range) da classe org.apache.commons.lang3.CharRange.
+
+[2] Restrição de Escopo
+Gerar casos de teste apenas para o método public boolean contains(final CharRange range).
+Não criar testes para outros métodos da classe.
+
+[3] Exemplos de Casos de Teste na Classe de Teste (Few-Shot)
+
+Use os exemplos abaixo apenas como referência de estrutura, organização, imports e formato de uma classe de teste JUnit 5 com múltiplos casos de teste.
+
+Não reutilize valores de entrada, resultados esperados ou a lógica dos testes apresentados.
+
+// Exemplos
+
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
+import org.apache.commons.lang3.CharRange;
+import org.junit.jupiter.api.Test;
+
+public class CharRangeFewShotExampleTest {
+
+    @Test
+    void testContainsWithNormalRanges() {
+        CharRange outer = CharRange.isIn('a', 'z');
+        CharRange inner = CharRange.isIn('b', 'y');
+        Boolean result = outer.contains(inner);
+        assertNotNull(result);
+    }
+
+    @Test
+    void testContainsWithNegatedOuterRange() {
+        CharRange outer = CharRange.isNotIn('m', 'p');
+        CharRange inner = CharRange.isIn('a', 'c');
+        Boolean result = outer.contains(inner);
+        assertNotNull(result);
+    }
+
+    @Test
+    void testContainsWithNullRangeThrowsException() {
+        CharRange outer = CharRange.isIn('a', 'z');
+        assertThrows(IllegalArgumentException.class,
+            () -> outer.contains(null));
+    }
+}
+
+// Fim dos Exemplos
+
+[4] Geração do Código Final (JUnit 5)
+Forneça apenas o código Java completo e compilável da classe de teste.
+
+[5] Convenções e Restrições Sintáticas
+- Não incluir comentários, explicações ou texto fora do código Java;
+- Nomes dos testes devem seguir o padrão: testContains_*.
+

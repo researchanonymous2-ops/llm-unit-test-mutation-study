@@ -1,0 +1,137 @@
+[1] Papel
+
+Você é um engenheiro de software especializado em testes unitários e critérios de teste estrutural baseados em fluxo de dados.
+
+[2] Tarefa
+
+Gerar testes unitários em Java (JUnit 5) para o método public static Fraction getReducedFraction(int numerator, int denominator)
+da classe org.apache.commons.math3.fraction.Fraction.
+
+[3] Restrição de Escopo
+
+Gerar casos de teste apenas para o método getReducedFraction(int numerator, int denominator). Não criar testes para outros métodos da classe.
+
+[3.1] Análise Estrutural Prévia do Método public static Fraction getReducedFraction(int numerator, int denominator)
+
+O método getReducedFraction(int numerator, int denominator) da classe Fraction foi previamente analisado segundo critérios de teste estrutural baseados em
+fluxo de dados. Essa análise deve ser considerada como base obrigatória para a construção do Chain of Code.
+
+Variáveis do método:
+- numerator: parâmetro formal
+- denominator: parâmetro formal
+- gcd: variável local (resultado do cálculo do MDC)
+
+Definições (def)
+
+Para numerator:
+- D1: definição inicial como parâmetro formal do método
+
+Para denominator:
+- D2: definição inicial como parâmetro formal do método
+
+Para gcd:
+- D3: definição como resultado de ArithmeticUtils.gcd(numerator, denominator)
+
+Usos predicativos (p-use)
+
+Para denominator:
+- P1: decisão condicional de validação de entrada (denominator == 0)
+- P3: decisão condicional de normalização de sinal (denominator < 0)
+
+Para numerator:
+- P2: decisão condicional de normalização de zero (numerator == 0)
+- P4: uso em decisão combinada no caso especial
+      (denominator == Integer.MIN_VALUE && (numerator & 1) == 0)
+
+Usos computacionais (c-use)
+
+- C1: uso de numerator no cálculo do MDC
+- C2: uso de denominator no cálculo do MDC
+- C3: uso de numerator na criação do objeto Fraction
+- C4: uso de denominator na criação do objeto Fraction
+
+[4] Chain of Code
+
+Questão:Como o método getReducedFraction(int numerator, int denominator) se comporta para diferentes valores de entrada?
+
+Convenções:
+- input_numerator: valor fornecido como numerador;
+- input_denominator: valor fornecido como denominador;
+- original_input: par (input_numerator, input_denominator);
+- return_candidate: valor elegível ao retorno em um caminho;
+- observable_return: valor efetivamente retornado pelo método;
+- def(Di): definição identificada conforme a análise estrutural;
+- p_use: uso predicativo;
+- c_use: uso computacional;
+- path(Pi): caminho definição–uso livre de redefinição;
+- delta_state: representação explícita do estado semântico observável do método
+  após uma ação relevante.
+
+Modelo do Chain of Code:
+
+1   original_input = (input_numerator, input_denominator)
+    def(D1): numerator = input_numerator
+    def(D2): denominator = input_denominator
+    delta_state: { numerator definido, denominator definido }
+
+2   p_use: (denominator == 0)
+    path(P0)
+    delta_state: { exceção MathArithmeticException lançada,
+                   observable_return indefinido }
+
+3   p_use: (numerator == 0)
+    path(P1)
+    delta_state: { return_candidate = Fraction.ZERO }
+
+4   p_use: (denominator == Integer.MIN_VALUE &&
+             (numerator & 1) == 0)
+    path(P2)
+    numerator = numerator / 2
+    denominator = denominator / 2
+    delta_state: { numerator e denominator normalizados
+                   para evitar overflow }
+
+5   p_use: (denominator < 0)
+    path(P3)
+    numerator = -numerator
+    denominator = -denominator
+    delta_state: { sinal normalizado para manter denominador positivo }
+
+6   def(D3): gcd = ArithmeticUtils.gcd(numerator, denominator)
+    c_use(C1): numerator
+    c_use(C2): denominator
+    delta_state: { gcd calculado }
+
+7   numerator = numerator / gcd
+    denominator = denominator / gcd
+    delta_state: { numerator e denominator reduzidos pelo MDC }
+
+8   c_use(C3): numerator
+    c_use(C4): denominator
+    return_candidate = new Fraction(numerator, denominator)
+    path(P4)
+    delta_state: { return_candidate definido }
+
+9   unit_test_scenarios = derive_from_paths(
+        P0, P1, P2, P3, P4
+    )
+    delta_state: { unit_test_scenarios = completo }
+
+10  observable_return =
+        getReducedFraction(input_numerator, input_denominator)
+    delta_state: { observable_return = return_candidate }
+
+Resposta:unit_test_scenarios
+
+
+[5] Geração do Código Final (JUnit 5)
+
+Com base exclusivamente no Modelo do Chain of Code definido acima, gere apenas o código Java completo e compilável da classe de teste JUnit 5
+para o método getReducedFraction(int numerator, int denominator).
+
+[6] Convenções e Restrições Sintáticas
+
+- Os casos de teste devem garantir cobertura de todos os caminhos definidos no Chain of Code;
+- Não incluir comentários, explicações ou texto fora do código Java;
+- Os nomes dos testes devem seguir o padrão:testGetReducedFraction_*.
+

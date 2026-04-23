@@ -1,0 +1,53 @@
+[1] Tarefa
+Gerar testes unitários em Java (JUnit 5) para o método
+public static boolean verhoeffCheck(String digits)
+da classe com.thealgorithms.others.Verhoeff.
+
+[2] Restrição de Escopo
+Gerar casos de teste apenas para o método verhoeffCheck(String digits).
+Não criar testes para outros métodos da classe.
+
+[3] Exemplos de Casos de Teste na Classe de Teste (Few-Shot)
+
+Use os exemplos abaixo apenas como referência de estrutura, organização, imports
+e formato de uma classe de teste JUnit 5 com múltiplos casos de teste.
+
+Não reutilize valores de entrada, resultados esperados ou a lógica dos testes apresentados.
+
+// Exemplos
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
+import com.thealgorithms.others.Verhoeff;
+import org.junit.jupiter.api.Test;
+
+public class VerhoeffFewShotExampleTest {
+
+    @Test
+    void testVerhoeffCheckWithValidNumber() {
+        assertTrue(Verhoeff.verhoeffCheck("2363"));
+    }
+
+    @Test
+    void testVerhoeffCheckWithInvalidNumber() {
+        assertFalse(Verhoeff.verhoeffCheck("2364"));
+    }
+
+    @Test
+    void testVerhoeffCheckWithNonDigitInputThrowsException() {
+        assertThrows(IllegalArgumentException.class,
+            () -> Verhoeff.verhoeffCheck("23A3"));
+    }
+}
+
+// Fim dos Exemplos
+
+[4] Geração do Código Final (JUnit 5)
+Forneça apenas o código Java completo e compilável da classe de teste JUnit 5.
+
+[5] Convenções e Restrições Sintáticas
+- Não incluir comentários, explicações ou texto fora do código Java;
+- Nomes dos testes devem seguir o padrão: testVerhoeffCheck_*.
+

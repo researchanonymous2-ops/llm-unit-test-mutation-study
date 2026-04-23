@@ -1,0 +1,5 @@
+Suite,Class,Test_Cases,Mutants,Killed,Survived,No_Coverage,Mutation_Score (%),Test_Strength (%)
+BinaryCodecGrok_FS5Test,BinaryCodec,10,16,16,0,0,100.0,100.0
+BinaryCodecGrok_ZS2Test,BinaryCodec,9,16,16,0,0,100.0,100.0
+BinaryCodecGrok_ZS3Test,BinaryCodec,7,16,16,0,0,100.0,100.0
+BinaryCodecGrok_ZS4Test,BinaryCodec,9,16,16,0,0,100.0,100.0

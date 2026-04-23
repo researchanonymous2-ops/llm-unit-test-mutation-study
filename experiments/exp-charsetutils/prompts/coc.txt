@@ -1,0 +1,192 @@
+[1] Papel
+
+Você é um engenheiro de software especializado em testes unitários e critérios de teste estrutural baseados em fluxo de dados.
+
+[2] Tarefa
+
+Gerar testes unitários em Java (JUnit 5) para o método
+squeeze(String str, String... set).
+
+[3] Restrição de Escopo
+
+Gerar casos de teste apenas para o método squeeze(String str, String... set).
+Não criar testes para outros métodos da classe.
+
+[3.1] Análise Estrutural Prévia do Método squeeze(String str, String... set)
+
+O método squeeze(String str, String... set) da classe CharSetUtils foi previamente analisado
+segundo critérios de teste estrutural baseados em fluxo de dados.
+Essa análise deve ser considerada como base obrigatória para a construção do Chain of Code.
+
+Variáveis do método:
+
+- str: parâmetro formal (string de entrada)
+- set: parâmetro formal (array varargs de strings)
+- chars: variável local (instância de CharSet)
+- buffer: variável local (StringBuilder, acumulador do resultado)
+- chrs: variável local (array de caracteres derivado de str)
+- sz: variável local inteira (tamanho do array chrs)
+- lastChar: variável local (caractere anteriormente processado)
+- ch: variável local (caractere atual do laço)
+- i: variável de controle do laço for
+
+Definições (def)
+
+Para str:
+- D1: definição inicial como parâmetro formal do método
+
+Para set:
+- D2: definição inicial como parâmetro formal do método
+
+Para chars:
+- D3: definição por CharSet.getInstance(set)
+
+Para buffer:
+- D4: definição por new StringBuilder(str.length())
+
+Para chrs:
+- D5: definição por str.toCharArray()
+
+Para sz:
+- D6: definição por chrs.length
+
+Para lastChar:
+- D7: definição inicial literal ' '
+- D8: redefinição de lastChar por atribuição lastChar = ch dentro do laço,
+      após buffer.append(ch)
+
+Para ch:
+- D9: redefinição em cada iteração do laço (ch = chrs[i])
+
+Para i:
+- D10: definição inicial do laço for (int i = 0; ...)
+- D11: redefinição implícita pelo incremento do laço
+
+Usos predicativos (p-use)
+
+Para str:
+- P1: StringUtils.isEmpty(str)
+
+Para set:
+- P2: deepEmpty(set)
+
+Para i:
+- P3: condição do laço (i < sz)
+- P4: condição (i != 0)
+
+Para ch:
+- P5: comparação (ch == lastChar)
+- P6: predicado chars.contains(ch)
+
+Usos computacionais (c-use)
+
+Para str:
+- C1: return str
+- C2: str.length()
+- C3: str.toCharArray()
+
+Para set:
+- C4: argumento em CharSet.getInstance(set)
+
+Para chars:
+- C5: chamada chars.contains(ch)
+
+Para buffer:
+- C6: buffer.append(ch)
+- C7: buffer.toString()
+
+Para chrs:
+- C8: acesso chrs[i]
+
+Para ch:
+- C9: argumento em buffer.append(ch)
+- C10: valor atribuído a lastChar
+
+Para lastChar:
+- C11: atribuição lastChar = ch
+
+[4] Chain of Code
+
+Questão:Como o método squeeze(String str, String... set) se comporta para diferentes valores de entrada?
+
+Convenções:
+- input_str: valor fornecido ao parâmetro str do método squeeze;
+- input_set: valor fornecido ao parâmetro varargs set do método squeeze;
+- return_candidate: valor intermediário elegível ao retorno;
+- observable_return: valor efetivamente retornado por squeeze(input_str, input_set);
+- def(Di): definição identificada conforme a análise estrutural;
+- p_use: uso predicativo;
+- c_use: uso computacional;
+- path(Pi): caminho definição–uso livre de redefinição;
+- delta_state: representação explícita do estado semântico observável do método após uma ação relevante.
+
+Modelo do Chain of Code:
+
+1   input_str = valor fornecido ao parâmetro str
+    input_set = valor fornecido ao parâmetro set
+    def(D1): str = input_str
+    def(D2): set = input_set
+    delta_state: { str definido, set definido }
+
+2   p_use: StringUtils.isEmpty(str)
+    path(P0)
+    c_use: return str
+    delta_state: { observable_return = input_str }
+
+3   p_use: deepEmpty(set)
+    path(P1)
+    c_use: return str
+    delta_state: { observable_return = input_str }
+
+4   def(D3): chars = CharSet.getInstance(set)
+    def(D4): buffer = new StringBuilder(str.length())
+    def(D5): chrs = str.toCharArray()
+    def(D6): sz = chrs.length
+    def(D7): lastChar = ' '
+    delta_state: { estruturas internas inicializadas }
+
+5   def(D10): i = 0
+    p_use: (i < sz)
+    path(P2)
+    delta_state: { entrada no laço }
+
+6   def(D9): ch = chrs[i]
+    p_use: (ch == lastChar)
+    p_use: (i != 0)
+    p_use: chars.contains(ch)
+    path(P3)
+    delta_state: { condição verdadeira, caractere repetido identificado }
+
+7   c_use: buffer.append(ch)
+    def(D8): lastChar = ch
+    path(P4)
+    delta_state: { condição falsa, caractere adicionado ao buffer }
+
+8   def(D11): i++
+    p_use: (i < sz)
+    delta_state: { próxima iteração do laço }
+
+9   c_use: return buffer.toString()
+    delta_state: { observable_return definido }
+
+10  unit_test_scenarios = derive_from_paths(
+        P0, P1, P2, P3, P4
+    )
+    delta_state: { unit_test_scenarios = complete }
+
+11  observable_return = squeeze(input_str, input_set)
+    delta_state: { observable_return finalizado }
+
+Resposta:unit_test_scenarios
+
+[5] Geração do Código Final (JUnit 5)
+
+Com base exclusivamente no Modelo do Chain of Code definido acima, gere apenas o código Java completo
+e compilável da classe de teste JUnit 5 para o método squeeze(String str, String... set).
+
+[6] Convenções e Restrições Sintáticas
+
+- Os casos de teste devem garantir cobertura de todos os caminhos definidos no Chain of Code;
+- Não incluir comentários, explicações ou texto fora do código Java;
+- Os nomes dos testes devem seguir o padrão: testSqueeze_*.
+

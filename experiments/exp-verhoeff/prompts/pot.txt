@@ -1,0 +1,204 @@
+[1] Papel
+
+Você é um engenheiro de software especializado em testes unitários e critérios de teste estrutural baseados em fluxo de dados.
+
+[2] Tarefa
+
+Gerar testes unitários em Java (JUnit 5) para o método public static boolean verhoeffCheck(String digits) da classe Verhoeff.
+
+[3] Restrição de Escopo
+
+Gerar casos de teste apenas para o método verhoeffCheck(String digits).
+Não criar testes para outros métodos da classe.
+
+[3.1] Análise Estrutural Prévia do Método public static boolean verhoeffCheck(String digits)
+
+O método verhoeffCheck(String digits) da classe Verhoeff foi analisado segundo critérios de teste estrutural baseados em fluxo de dados,
+considerando exclusivamente o código contido no corpo do método. Essa análise deve ser considerada como base obrigatória para a construção 
+do Program-of-Thoughts.
+
+Variáveis do método:
+
+- digits: parâmetro formal do tipo String (entrada a ser validada)
+- numbers: variável local do tipo int[] (array de dígitos convertido)
+- checksum: variável local do tipo int (acumulador do estado do algoritmo)
+- index: variável local do tipo int (índice reverso calculado a cada iteração)
+- b: variável local do tipo byte (valor resultante da permutação)
+
+Definições (def)
+
+Para digits:
+- D1: definição inicial como parâmetro formal do método
+
+Para numbers:
+- D2: definição como resultado da conversão de digits em array de inteiros
+
+Para checksum:
+- D3: definição inicial com valor 0
+- D4: redefinição iterativa a cada iteração do laço for
+
+Para index:
+- D5: definição iterativa como resultado do cálculo (numbers.length - i - 1)
+
+Para b:
+- D6: definição iterativa como resultado do acesso à tabela PERMUTATION_TABLE
+
+Usos predicativos (p-use)
+
+Para checksum:
+- P1: decisão final de retorno baseada na condição (checksum == 0)
+
+Usos computacionais (c-use)
+
+Para digits:
+- C1: uso como argumento na chamada ao método externo checkInput
+- C2: uso como argumento na conversão para array de inteiros
+
+Para numbers:
+- C3: uso como limite de controle do laço for
+- C4: uso no cálculo do índice reverso
+
+Para checksum:
+- C5: uso como operando na tabela de multiplicação
+- C6: uso como acumulador do estado do algoritmo ao longo do laço
+
+Para b:
+- C7: uso como operando na tabela de multiplicação
+
+[4] Program-of-Thoughts
+
+- DEVERÁ SER UTILIZADO um programa de raciocínio estrutural que modele explicitamente o comportamento do método verhoeffCheck(String digits) com base em critérios de teste estrutural baseados em fluxo de dados.
+- Esse programa de raciocínio estrutural é representado por um objeto JSON válido, fornecido na seção seguinte.
+- O Program-of-Thoughts é um artefato intermediário de raciocínio e deve ser utilizado exclusivamente como base interna para a geração da classe de testes.
+
+[4.1] Estrutura esperada do Program-of-Thoughts (JSON)
+
+- A estrutura a seguir é fornecida como um artefato de raciocínio já definido. NÃO reproduza, modifique ou gere este JSON como saída.
+- Este artefato deve ser usado exclusivamente como base interna para a geração da classe de testes na etapa seguinte.
+
+{
+  "semantic_roles": [
+    {
+      "name": "input_digits",
+      "description": "string original fornecida ao método verhoeffCheck"
+    },
+    {
+      "name": "intermediate_checksum",
+      "description": "estado acumulado do checksum ao longo das iterações do laço"
+    },
+    {
+      "name": "observable_return",
+      "description": "valor booleano efetivamente retornado pelo método"
+    }
+  ],
+  "variables": [
+    { "name": "digits", "role": "parâmetro formal" },
+    { "name": "numbers", "role": "array de dígitos convertido" },
+    { "name": "checksum", "role": "acumulador do algoritmo" },
+    { "name": "index", "role": "índice reverso calculado a cada iteração" },
+    { "name": "b", "role": "valor obtido da tabela de permutação" }
+  ],
+  "definitions": [
+    {
+      "id": "D1",
+      "variable": "digits",
+      "description": "definição inicial como parâmetro formal do método"
+    },
+    {
+      "id": "D2",
+      "variable": "numbers",
+      "description": "definição como resultado da conversão de digits em array de inteiros"
+    },
+    {
+      "id": "D3",
+      "variable": "checksum",
+      "description": "definição inicial com valor zero antes do laço"
+    },
+    {
+      "id": "D4",
+      "variable": "checksum",
+      "description": "redefinição iterativa a cada iteração do laço for"
+    },
+    {
+      "id": "D5",
+      "variable": "index",
+      "description": "definição iterativa calculada como numbers.length - i - 1"
+    },
+    {
+      "id": "D6",
+      "variable": "b",
+      "description": "definição iterativa obtida a partir da tabela PERMUTATION_TABLE"
+    }
+  ],
+  "uses": [
+    {
+      "id": "U1",
+      "variable": "digits",
+      "type": "c-use",
+      "description": "uso como argumento em chamadas a métodos externos"
+    },
+    {
+      "id": "U2",
+      "variable": "numbers",
+      "type": "c-use",
+      "description": "uso como limite de controle do laço for"
+    },
+    {
+      "id": "U3",
+      "variable": "checksum",
+      "type": "c-use",
+      "description": "uso como acumulador no cálculo iterativo do algoritmo"
+    },
+    {
+      "id": "U4",
+      "variable": "checksum",
+      "type": "p-use",
+      "description": "uso na decisão final de retorno (checksum == 0)"
+    }
+  ],
+  "du_paths": [
+    {
+      "id": "P0",
+      "description": "execução completa do laço com resultado final verdadeiro",
+      "post_condition": "observable_return == true"
+    },
+    {
+      "id": "P1",
+      "description": "execução completa do laço com resultado final falso",
+      "post_condition": "observable_return == false"
+    }
+  ],
+  "planned_tests": [
+    {
+      "test_id": "T0",
+      "covers": ["P0"],
+      "asserts": ["observable_return == true"]
+    },
+    {
+      "test_id": "T1",
+      "covers": ["P1"],
+      "asserts": ["observable_return == false"]
+    }
+  ],
+  "constraints": {
+    "all_defs_covered": true,
+    "all_uses_covered": true,
+    "loop_executed": true,
+    "observable_contract_preserved": true
+  }
+}
+
+
+[5] Geração do Código Final (JUnit 5)
+
+Com base exclusivamente no Program-of-Thoughts definido na etapa anterior,gere apenas o código Java completo e compilável da classe de teste JUnit 5
+para o método verhoeffCheck(String digits).
+
+[6] Convenções e Restrições Sintáticas
+
+- O código Java final NÃO deve conter JSON sob nenhuma forma;
+- Qualquer classe de teste que inclua JSON dentro do código Java é considerada inválida;
+- Os casos de teste devem garantir cobertura de todos os caminhos definidos em "planned_tests";
+- Não incluir comentários, explicações ou texto fora do código Java;
+- Nomes dos testes devem seguir o padrão: testVerhoeffCheck_*.
+

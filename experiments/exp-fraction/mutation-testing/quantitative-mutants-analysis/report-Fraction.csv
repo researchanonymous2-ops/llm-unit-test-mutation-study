@@ -1,0 +1,23 @@
+Suite,Class,Test_Cases,Mutants,Killed,Survived,No_Coverage,Mutation_Score (%),Test_Strength (%)
+FractionGrok_COC1Test,Fraction,5,17,15,2,0,88.24,88.24
+FractionGrok_COC3Test,Fraction,6,17,15,2,0,88.24,88.24
+FractionGrok_FS1Test,Fraction,7,17,11,2,4,64.71,84.62
+FractionGrok_FS4Test,Fraction,10,17,11,2,4,64.71,84.62
+FractionGrok_FS5Test,Fraction,10,17,10,3,4,58.82,76.92
+FractionGrok_OS4Test,Fraction,10,17,11,2,4,64.71,84.62
+FractionGrok_OS5Test,Fraction,10,17,10,3,4,58.82,76.92
+FractionGrok_POT2Test,Fraction,5,17,15,2,0,88.24,88.24
+FractionGrok_POT3Test,Fraction,5,17,15,2,0,88.24,88.24
+FractionGrok_POT4Test,Fraction,5,17,15,2,0,88.24,88.24
+FractionGrok_ZS5Test,Fraction,11,17,15,2,0,88.24,88.24
+FractionLlama_COC1Test,Fraction,5,17,15,2,0,88.24,88.24
+FractionLlama_COC2Test,Fraction,9,17,15,2,0,88.24,88.24
+FractionLlama_COC3Test,Fraction,10,17,15,2,0,88.24,88.24
+FractionLlama_COC4Test,Fraction,6,17,15,2,0,88.24,88.24
+FractionLlama_COC5Test,Fraction,5,17,15,2,0,88.24,88.24
+FractionLlama_POT2Test,Fraction,5,17,15,2,0,88.24,88.24
+FractionLlama_POT3Test,Fraction,5,17,15,2,0,88.24,88.24
+FractionLlama_POT4Test,Fraction,5,17,15,2,0,88.24,88.24
+FractionLlama_POT5Test,Fraction,5,17,15,2,0,88.24,88.24
+FractionLlama_ZS3Test,Fraction,8,17,15,2,0,88.24,88.24
+FractionQwen_OS2Test,Fraction,11,17,15,2,0,88.24,88.24

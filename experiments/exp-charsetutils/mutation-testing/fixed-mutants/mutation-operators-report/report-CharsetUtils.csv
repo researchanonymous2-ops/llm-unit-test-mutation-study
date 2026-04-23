@@ -1,0 +1,10 @@
+class,mutant_id,operator_id,mutator,operator_type,method,line,transformation
+CharSetUtils,M001,OP01,ConditionalsBoundaryMutator,Relational,squeeze,74,boundary condition change
+CharSetUtils,M002,OP02,NegateConditionalsMutator,Relational,squeeze,65,if (cond) → if (!cond)
+CharSetUtils,M003,OP02,NegateConditionalsMutator,Relational,squeeze,65,if (cond) → if (!cond)
+CharSetUtils,M004,OP02,NegateConditionalsMutator,Relational,squeeze,74,if (cond) → if (!cond)
+CharSetUtils,M005,OP02,NegateConditionalsMutator,Relational,squeeze,77,if (cond) → if (!cond)
+CharSetUtils,M006,OP02,NegateConditionalsMutator,Relational,squeeze,77,if (cond) → if (!cond)
+CharSetUtils,M007,OP02,NegateConditionalsMutator,Relational,squeeze,77,if (cond) → if (!cond)
+CharSetUtils,M008,OP03,EmptyObjectReturnValsMutator,Return,squeeze,66,return value modified
+CharSetUtils,M009,OP03,EmptyObjectReturnValsMutator,Return,squeeze,83,return value modified

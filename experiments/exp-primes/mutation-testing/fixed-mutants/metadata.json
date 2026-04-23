@@ -1,0 +1,6 @@
+{
+  "created_utc": "20260127T125646Z",
+  "suite_base": "org.apache.commons.math3.primes.PrimesBaseTest",
+  "target_package": "org.apache.commons.math3.primes",
+  "pit_plugin_version": "unknown"
+}

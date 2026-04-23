@@ -1,0 +1,8 @@
+
+/app/experimentos/exp-hashmapcuckoohashing/src/test/java/com/thealgorithms/datastructures/hashmap/hashing/HashMapCuckooHashingQwen_POT3Test.java:48: error: buckets has private access in HashMapCuckooHashing
+        assertNull(hashMap.buckets[expectedHash]);
+                          ^
+/app/experimentos/exp-hashmapcuckoohashing/src/test/java/com/thealgorithms/datastructures/hashmap/hashing/HashMapCuckooHashingQwen_POT3Test.java:53: error: buckets has private access in HashMapCuckooHashing
+        assertEquals(Integer.valueOf(key), hashMap.buckets[expectedHash]);
+                                                  ^
+2 errors

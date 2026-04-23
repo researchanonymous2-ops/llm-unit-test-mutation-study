@@ -1,0 +1,53 @@
+[1] Tarefa
+Gerar testes unitários em Java (JUnit 5) para o método elementCompareTo(T element)
+da classe org.apache.commons.lang3.Range.
+
+[2] Restrição de Escopo
+Gerar casos de teste apenas para o método elementCompareTo(T element).
+Não criar testes para outros métodos da classe.
+
+[3] Exemplos de Casos de Teste na Classe de Teste (Few-Shot)
+
+Use o exemplo abaixo apenas como referência de estrutura, organização, imports e formato de uma classe de teste JUnit 5 com múltiplos casos de teste.
+
+Não reutilize valores de entrada, resultados esperados ou a lógica dos testes apresentados.
+
+// Exemplos
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
+import org.apache.commons.lang3.Range;
+import org.junit.jupiter.api.Test;
+
+public class RangeFewShotExampleTest {
+
+    @Test
+    void testElementCompareToInsideRange() {
+        Range<Integer> range = Range.between(1, 10);
+        assertEquals(0, range.elementCompareTo(5));
+    }
+
+    @Test
+    void testElementCompareToBeforeRange() {
+        Range<Integer> range = Range.between(3, 8);
+        assertEquals(-1, range.elementCompareTo(1));
+    }
+
+    @Test
+    void testElementCompareToNullThrowsException() {
+        Range<Integer> range = Range.between(2, 6);
+        assertThrows(NullPointerException.class,
+            () -> range.elementCompareTo(null));
+    }
+}
+
+// Fim dos Exemplos
+
+[4] Geração do Código Final (JUnit 5)
+Forneça apenas o código Java completo e compilável da classe de teste.
+
+[5] Convenções e Restrições Sintáticas
+- Não incluir comentários, explicações ou texto fora do código Java;
+- Nomes dos testes devem seguir o padrão: testElementCompareTo_*.
+

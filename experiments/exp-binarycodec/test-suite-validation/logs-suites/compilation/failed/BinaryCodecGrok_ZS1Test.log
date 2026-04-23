@@ -1,0 +1,8 @@
+
+/app/experimentos/exp-binarycodec/src/test/java/org/apache/commons/codec/binary/BinaryCodecGrok_ZS1Test.java:11: error: EMPTY_BYTE_ARRAY has private access in BinaryCodec
+       byte[] expected = BinaryCodec.EMPTY_BYTE_ARRAY;
+                                    ^
+/app/experimentos/exp-binarycodec/src/test/java/org/apache/commons/codec/binary/BinaryCodecGrok_ZS1Test.java:19: error: EMPTY_BYTE_ARRAY has private access in BinaryCodec
+       byte[] expected = BinaryCodec.EMPTY_BYTE_ARRAY;
+                                    ^
+2 errors

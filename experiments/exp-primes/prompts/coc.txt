@@ -1,0 +1,154 @@
+[1] Papel
+
+Você é um engenheiro de software especializado em testes unitários e critérios de teste estrutural baseados em fluxo de dados.
+
+[2] Tarefa
+
+Gerar testes unitários em Java (JUnit 5) para o método nextPrime(int n) da classe Primes.
+
+[3] Restrição de Escopo
+
+Gerar casos de teste apenas para o método nextPrime(int n).Não criar testes para outros métodos da classe.
+
+[3.1] Análise Estrutural Prévia do Método public static int nextPrime(int n)
+
+O método nextPrime(int n) da classe Primes foi analisado segundo critérios de teste estrutural baseados em fluxo de dados, considerando exclusivamente o 
+código do método fornecido. Essa análise deve ser considerada como base obrigatória para a construção do Chain of Code.
+
+Variáveis do método:
+
+- n: parâmetro formal inteiro (valor de entrada para cálculo do próximo número primo)
+- rem: variável local inteira final (resto da divisão de n por 3)
+
+Definições (def)
+
+Para n:
+- D1: definição inicial como parâmetro formal do método
+- D2: redefinição por normalização para número ímpar (n = n | 1)
+- D3: redefinição por incremento controlado (n += 2)
+- D4: redefinição por incremento alternativo (n += 4)
+
+Para rem:
+- D5: definição como resultado do cálculo do resto da divisão de n por 3 (n % 3)
+
+Usos predicativos (p-use)
+
+Para n:
+- P1: decisão condicional de validação de entrada (verificação de valor negativo)
+- P2: decisão condicional de caso especial (verificação se n == 2)
+- P3: decisão condicional de ajuste inicial (verificação se n == 1)
+- P4: decisão condicional de primalidade (isPrime(n)), utilizada em diferentes pontos do fluxo de repetição
+
+Para rem:
+- P5: decisão condicional baseada no valor do resto (rem == 0)
+- P6: decisão condicional alternativa baseada no valor do resto (rem == 1)
+
+Usos computacionais (c-use)
+
+Para n:
+- C1: uso de n como valor associado à exceção lançada em caso de entrada inválida
+- C2: uso de n na operação de normalização para número ímpar
+- C3: uso de n no cálculo do resto da divisão por 3
+- C4: uso de n nas operações de incremento controlado dentro do laço
+- C5: uso de n como valor de retorno quando um número primo é encontrado
+
+[4] Chain of Code
+
+Questão:Como o método nextPrime(int n) se comporta para diferentes valores de entrada?
+
+Convenções:
+- input_n: valor original fornecido ao método nextPrime;
+- return_candidate: valor elegível ao retorno em um caminho;
+- observable_return: valor efetivamente retornado por nextPrime(input_n);
+- def(Di): definição identificada conforme a análise estrutural;
+- p_use: uso predicativo;
+- c_use: uso computacional;
+- path(Pi): caminho definição–uso livre de redefinição;
+- delta_state: representação explícita do estado semântico observável do método
+  após uma ação relevante, registrando apenas informações necessárias para
+  derivação de cenários de teste.
+
+Modelo do Chain of Code:
+
+1   input_n = original_input
+    def(D1): n = input_n
+    delta_state: { n definido }
+
+2   p_use: (n < 0)
+    path(P0)
+    c_use: throw_exception(n)
+    delta_state: { observable_return indefinido }
+
+3   p_use: (n == 2)
+    path(P1)
+    c_use: return 2
+    delta_state: { return_candidate = 2 }
+
+4   def(D2): n = n | 1
+    c_use: normalização para número ímpar
+    delta_state: { n redefinido }
+
+5   p_use: (n == 1)
+    path(P2)
+    c_use: return 2
+    delta_state: { return_candidate = 2 }
+
+6   p_use: isPrime(n)
+    path(P3)
+    c_use: return n
+    delta_state: { return_candidate = n }
+
+7   def(D5): rem = n % 3
+    c_use: cálculo do resto da divisão por 3
+    delta_state: { rem definido }
+
+8   p_use: (rem == 0)
+    def(D3): n = n + 2
+    path(P4)
+    delta_state: { n redefinido }
+
+9   p_use: (rem == 1)
+    def(D4): n = n + 4
+    path(P5)
+    delta_state: { n redefinido }
+
+10  path(P6)
+    delta_state: { entrada no laço principal sem retorno }
+
+11  p_use: isPrime(n)
+    path(P7)
+    c_use: return n
+    delta_state: { return_candidate = n }
+
+12  def(D3): n = n + 2
+    delta_state: { n redefinido }
+
+13  p_use: isPrime(n)
+    path(P8)
+    c_use: return n
+    delta_state: { return_candidate = n }
+
+14  def(D4): n = n + 4
+    path(P9)
+    delta_state: { n redefinido e iteração completa do laço }
+
+15  unit_test_scenarios = derive_from_paths(
+        P0, P1, P2, P3, P4, P5, P6, P7, P8, P9
+    )
+    delta_state: { unit_test_scenarios = complete }
+
+16  observable_return = nextPrime(input_n)
+    delta_state: { observable_return = return_candidate }
+
+Resposta:unit_test_scenarios
+
+[5] Geração do Código Final (JUnit 5)
+
+Com base exclusivamente no Modelo do Chain of Code definido acima, gere apenas o código Java completo e compilável da classe de teste JUnit 5
+para o método nextPrime(int n).
+
+[6] Convenções e Restrições Sintáticas
+
+- Os casos de teste devem garantir cobertura de todos os caminhos definidos no Chain of Code;
+- Não incluir comentários, explicações ou texto fora do código Java;
+- Os nomes dos testes devem seguir o padrão: testNextPrime_*.

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.thealgorithms.datastructures.hashmap.hashing.HashMapCuckooHashingLlama_COC3Test" time="0.035" tests="5" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="17"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/app/experimentos/exp-hashmapcuckoohashing/target/test-classes:/app/experimentos/exp-hashmapcuckoohashing/target/classes:/root/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.9.3/junit-jupiter-api-5.9.3.jar:/root/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/root/.m2/repository/org/junit/platform/junit-platform-commons/1.9.3/junit-platform-commons-1.9.3.jar:/root/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/root/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.9.3/junit-jupiter-engine-5.9.3.jar:/root/.m2/repository/org/junit/platform/junit-platform-engine/1.9.3/junit-platform-engine-1.9.3.jar:/root/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.9.3/junit-jupiter-params-5.9.3.jar:"/>
+    <property name="java.vm.vendor" value="Eclipse Adoptium"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://adoptium.net/"/>
+    <property name="os.name" value="Linux"/>
+    <property name="java.vm.specification.version" value="17"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.boot.library.path" value="/opt/java/openjdk/lib"/>
+    <property name="sun.java.command" value="/app/experimentos/exp-hashmapcuckoohashing/target/surefire/surefirebooter-20260124233318837_3.jar /app/experimentos/exp-hashmapcuckoohashing/target/surefire 2026-01-24T23-33-18_664-jvmRun1 surefire-20260124233318837_1tmp surefire_0-20260124233318837_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="test" value="com.thealgorithms.datastructures.hashmap.hashing.HashMapCuckooHashingLlama_COC3Test"/>
+    <property name="surefire.test.class.path" value="/app/experimentos/exp-hashmapcuckoohashing/target/test-classes:/app/experimentos/exp-hashmapcuckoohashing/target/classes:/root/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.9.3/junit-jupiter-api-5.9.3.jar:/root/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/root/.m2/repository/org/junit/platform/junit-platform-commons/1.9.3/junit-platform-commons-1.9.3.jar:/root/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/root/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.9.3/junit-jupiter-engine-5.9.3.jar:/root/.m2/repository/org/junit/platform/junit-platform-engine/1.9.3/junit-platform-engine-1.9.3.jar:/root/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.9.3/junit-jupiter-params-5.9.3.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/root"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2025-10-21"/>
+    <property name="java.home" value="/opt/java/openjdk"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/app/experimentos/exp-hashmapcuckoohashing"/>
+    <property name="java.vm.compressedOopsMode" value="32-bit"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="surefire.real.class.path" value="/app/experimentos/exp-hashmapcuckoohashing/target/surefire/surefirebooter-20260124233318837_3.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="17.0.17+10"/>
+    <property name="user.name" value="root"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="6.14.0-37-generic"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Temurin-17.0.17+10"/>
+    <property name="localRepository" value="/root/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.version" value="17.0.17"/>
+    <property name="user.dir" value="/app/experimentos/exp-hashmapcuckoohashing"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Eclipse Adoptium"/>
+    <property name="java.vm.version" value="17.0.17+10"/>
+    <property name="java.specification.maintenance.version" value="1"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="61.0"/>
+    <property name="maven.test.failure.ignore" value="false"/>
+  </properties>
+  <testcase name="testInsertKey2HashTable_TableFull_KeyNotPresent_Rehash" classname="com.thealgorithms.datastructures.hashmap.hashing.HashMapCuckooHashingLlama_COC3Test" time="0.017">
+    <system-out><![CDATA[Load factor is 1.00 , rehashing table
+]]></system-out>
+  </testcase>
+  <testcase name="testInsertKey2HashTable_KeyRequiresRelocation_NoInfiniteLoop" classname="com.thealgorithms.datastructures.hashmap.hashing.HashMapCuckooHashingLlama_COC3Test" time="0">
+    <system-out><![CDATA[Load factor is 1.00 , rehashing table
+]]></system-out>
+  </testcase>
+  <testcase name="testInsertKey2HashTable_InfiniteLoop_Rehash" classname="com.thealgorithms.datastructures.hashmap.hashing.HashMapCuckooHashingLlama_COC3Test" time="0.001">
+    <system-out><![CDATA[Load factor is 1.00 , rehashing table
+Load factor is 0.75 , rehashing table
+]]></system-out>
+  </testcase>
+  <testcase name="testInsertKey2HashTable_TableNotFull_KeyNotPresent_NoRelocation" classname="com.thealgorithms.datastructures.hashmap.hashing.HashMapCuckooHashingLlama_COC3Test" time="0.001"/>
+  <testcase name="testInsertKey2HashTable_KeyAlreadyPresent_Exception" classname="com.thealgorithms.datastructures.hashmap.hashing.HashMapCuckooHashingLlama_COC3Test" time="0.002"/>
+</testsuite>

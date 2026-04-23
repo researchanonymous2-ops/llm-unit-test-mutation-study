@@ -1,0 +1,8 @@
+
+/app/experimentos/exp-hashmapcuckoohashing/src/test/java/com/thealgorithms/datastructures/hashmap/hashing/HashMapCuckooHashingQwen_POT1Test.java:25: error: unreported exception NoSuchFieldException; must be caught or declared to be thrown
+        assertEquals(32, hashMap.getClass().getDeclaredField("tableSize").get(hashMap));
+                                                            ^
+/app/experimentos/exp-hashmapcuckoohashing/src/test/java/com/thealgorithms/datastructures/hashmap/hashing/HashMapCuckooHashingQwen_POT1Test.java:25: error: unreported exception IllegalAccessException; must be caught or declared to be thrown
+        assertEquals(32, hashMap.getClass().getDeclaredField("tableSize").get(hashMap));
+                                                                             ^
+2 errors

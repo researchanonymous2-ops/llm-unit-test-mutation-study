@@ -1,0 +1,175 @@
+
+/app/experimentos/exp-matrixutil/src/test/java/com/thealgorithms/maths/MatrixUtilGrok_FS1Test.java:36: error: no suitable method found for assertArrayEquals(BigDecimal[][],BigDecimal[][],(a,b)->Arr[...]0 : 1)
+       assertArrayEquals(expected, result.get(), (a, b) -> Arrays.deepEquals(a, b) ? 0 : 1);
+       ^
+    method Assertions.assertArrayEquals(Object[],Object[],Supplier<String>) is not applicable
+      (argument mismatch; incompatible parameter types in lambda expression)
+    method Assertions.assertArrayEquals(Object[],Object[],String) is not applicable
+      (argument mismatch; String is not a functional interface)
+    method Assertions.assertArrayEquals(double[],double[],double) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to double[])
+    method Assertions.assertArrayEquals(double[],double[],Supplier<String>) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to double[])
+    method Assertions.assertArrayEquals(double[],double[],String) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to double[])
+    method Assertions.assertArrayEquals(float[],float[],float) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to float[])
+    method Assertions.assertArrayEquals(float[],float[],Supplier<String>) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to float[])
+    method Assertions.assertArrayEquals(float[],float[],String) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to float[])
+    method Assertions.assertArrayEquals(long[],long[],Supplier<String>) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to long[])
+    method Assertions.assertArrayEquals(long[],long[],String) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to long[])
+    method Assertions.assertArrayEquals(int[],int[],Supplier<String>) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to int[])
+    method Assertions.assertArrayEquals(int[],int[],String) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to int[])
+    method Assertions.assertArrayEquals(short[],short[],Supplier<String>) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to short[])
+    method Assertions.assertArrayEquals(short[],short[],String) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to short[])
+    method Assertions.assertArrayEquals(byte[],byte[],Supplier<String>) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to byte[])
+    method Assertions.assertArrayEquals(byte[],byte[],String) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to byte[])
+    method Assertions.assertArrayEquals(char[],char[],Supplier<String>) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to char[])
+    method Assertions.assertArrayEquals(char[],char[],String) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to char[])
+    method Assertions.assertArrayEquals(boolean[],boolean[],Supplier<String>) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to boolean[])
+    method Assertions.assertArrayEquals(boolean[],boolean[],String) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to boolean[])
+/app/experimentos/exp-matrixutil/src/test/java/com/thealgorithms/maths/MatrixUtilGrok_FS1Test.java:72: error: no suitable method found for assertArrayEquals(BigDecimal[][],BigDecimal[][],(a,b)->Arr[...]0 : 1)
+       assertArrayEquals(expected, result.get(), (a, b) -> Arrays.deepEquals(a, b) ? 0 : 1);
+       ^
+    method Assertions.assertArrayEquals(Object[],Object[],Supplier<String>) is not applicable
+      (argument mismatch; incompatible parameter types in lambda expression)
+    method Assertions.assertArrayEquals(Object[],Object[],String) is not applicable
+      (argument mismatch; String is not a functional interface)
+    method Assertions.assertArrayEquals(double[],double[],double) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to double[])
+    method Assertions.assertArrayEquals(double[],double[],Supplier<String>) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to double[])
+    method Assertions.assertArrayEquals(double[],double[],String) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to double[])
+    method Assertions.assertArrayEquals(float[],float[],float) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to float[])
+    method Assertions.assertArrayEquals(float[],float[],Supplier<String>) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to float[])
+    method Assertions.assertArrayEquals(float[],float[],String) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to float[])
+    method Assertions.assertArrayEquals(long[],long[],Supplier<String>) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to long[])
+    method Assertions.assertArrayEquals(long[],long[],String) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to long[])
+    method Assertions.assertArrayEquals(int[],int[],Supplier<String>) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to int[])
+    method Assertions.assertArrayEquals(int[],int[],String) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to int[])
+    method Assertions.assertArrayEquals(short[],short[],Supplier<String>) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to short[])
+    method Assertions.assertArrayEquals(short[],short[],String) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to short[])
+    method Assertions.assertArrayEquals(byte[],byte[],Supplier<String>) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to byte[])
+    method Assertions.assertArrayEquals(byte[],byte[],String) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to byte[])
+    method Assertions.assertArrayEquals(char[],char[],Supplier<String>) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to char[])
+    method Assertions.assertArrayEquals(char[],char[],String) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to char[])
+    method Assertions.assertArrayEquals(boolean[],boolean[],Supplier<String>) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to boolean[])
+    method Assertions.assertArrayEquals(boolean[],boolean[],String) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to boolean[])
+/app/experimentos/exp-matrixutil/src/test/java/com/thealgorithms/maths/MatrixUtilGrok_FS1Test.java:94: error: no suitable method found for assertArrayEquals(BigDecimal[][],BigDecimal[][],(a,b)->Arr[...]0 : 1)
+       assertArrayEquals(expected, result.get(), (a, b) -> Arrays.deepEquals(a, b) ? 0 : 1);
+       ^
+    method Assertions.assertArrayEquals(Object[],Object[],Supplier<String>) is not applicable
+      (argument mismatch; incompatible parameter types in lambda expression)
+    method Assertions.assertArrayEquals(Object[],Object[],String) is not applicable
+      (argument mismatch; String is not a functional interface)
+    method Assertions.assertArrayEquals(double[],double[],double) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to double[])
+    method Assertions.assertArrayEquals(double[],double[],Supplier<String>) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to double[])
+    method Assertions.assertArrayEquals(double[],double[],String) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to double[])
+    method Assertions.assertArrayEquals(float[],float[],float) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to float[])
+    method Assertions.assertArrayEquals(float[],float[],Supplier<String>) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to float[])
+    method Assertions.assertArrayEquals(float[],float[],String) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to float[])
+    method Assertions.assertArrayEquals(long[],long[],Supplier<String>) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to long[])
+    method Assertions.assertArrayEquals(long[],long[],String) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to long[])
+    method Assertions.assertArrayEquals(int[],int[],Supplier<String>) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to int[])
+    method Assertions.assertArrayEquals(int[],int[],String) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to int[])
+    method Assertions.assertArrayEquals(short[],short[],Supplier<String>) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to short[])
+    method Assertions.assertArrayEquals(short[],short[],String) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to short[])
+    method Assertions.assertArrayEquals(byte[],byte[],Supplier<String>) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to byte[])
+    method Assertions.assertArrayEquals(byte[],byte[],String) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to byte[])
+    method Assertions.assertArrayEquals(char[],char[],Supplier<String>) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to char[])
+    method Assertions.assertArrayEquals(char[],char[],String) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to char[])
+    method Assertions.assertArrayEquals(boolean[],boolean[],Supplier<String>) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to boolean[])
+    method Assertions.assertArrayEquals(boolean[],boolean[],String) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to boolean[])
+/app/experimentos/exp-matrixutil/src/test/java/com/thealgorithms/maths/MatrixUtilGrok_FS1Test.java:178: error: no suitable method found for assertArrayEquals(BigDecimal[][],BigDecimal[][],(a,b)->Arr[...]0 : 1)
+       assertArrayEquals(expected, result.get(), (a, b) -> Arrays.deepEquals(a, b) ? 0 : 1);
+       ^
+    method Assertions.assertArrayEquals(Object[],Object[],Supplier<String>) is not applicable
+      (argument mismatch; incompatible parameter types in lambda expression)
+    method Assertions.assertArrayEquals(Object[],Object[],String) is not applicable
+      (argument mismatch; String is not a functional interface)
+    method Assertions.assertArrayEquals(double[],double[],double) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to double[])
+    method Assertions.assertArrayEquals(double[],double[],Supplier<String>) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to double[])
+    method Assertions.assertArrayEquals(double[],double[],String) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to double[])
+    method Assertions.assertArrayEquals(float[],float[],float) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to float[])
+    method Assertions.assertArrayEquals(float[],float[],Supplier<String>) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to float[])
+    method Assertions.assertArrayEquals(float[],float[],String) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to float[])
+    method Assertions.assertArrayEquals(long[],long[],Supplier<String>) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to long[])
+    method Assertions.assertArrayEquals(long[],long[],String) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to long[])
+    method Assertions.assertArrayEquals(int[],int[],Supplier<String>) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to int[])
+    method Assertions.assertArrayEquals(int[],int[],String) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to int[])
+    method Assertions.assertArrayEquals(short[],short[],Supplier<String>) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to short[])
+    method Assertions.assertArrayEquals(short[],short[],String) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to short[])
+    method Assertions.assertArrayEquals(byte[],byte[],Supplier<String>) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to byte[])
+    method Assertions.assertArrayEquals(byte[],byte[],String) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to byte[])
+    method Assertions.assertArrayEquals(char[],char[],Supplier<String>) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to char[])
+    method Assertions.assertArrayEquals(char[],char[],String) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to char[])
+    method Assertions.assertArrayEquals(boolean[],boolean[],Supplier<String>) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to boolean[])
+    method Assertions.assertArrayEquals(boolean[],boolean[],String) is not applicable
+      (argument mismatch; BigDecimal[][] cannot be converted to boolean[])
+Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
+4 errors

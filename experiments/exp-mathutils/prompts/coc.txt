@@ -1,0 +1,119 @@
+[1] Papel
+
+Você é um engenheiro de software especializado em testes unitários e critérios de teste estrutural baseados em fluxo de dados.
+
+[2] Tarefa
+
+Gerar testes unitários em Java (JUnit 5) para o método public static void checkFinite(double[] val) da classe org.apache.commons.math3.util.MathUtils.
+
+[3] Restrição de Escopo
+
+Gerar casos de teste apenas para o método public static void checkFinite(double[] val).
+Não criar testes para outros métodos da classe.
+
+[3.1] Análise Estrutural Prévia do Método public static void checkFinite(double[] val)
+
+O método checkFinite(double[] val) da classe MathUtils foi previamente analisado segundo critérios de teste estrutural baseados em fluxo de dados. Essa análise deve ser considerada como base obrigatória para a construção do Chain of Code.
+
+Variáveis do método:
+- val: parâmetro formal (array de valores double)
+- i: variável de controle do laço
+- x: variável local (elemento atual do array)
+
+Definições (def)
+
+Para val:
+- D1: definição inicial como parâmetro formal do método
+
+Para i:
+- D2: definição inicial no laço for (i = 0)
+- D3: redefinição no incremento do laço (i++)
+
+Para x:
+- D4: definição como leitura do elemento do array (x = val[i])
+
+Usos predicativos (p-use)
+
+Para i:
+- P1: condição do laço (i < val.length)
+
+Para x:
+- P2: decisão condicional composta
+      (Double.isInfinite(x) || Double.isNaN(x))
+
+Usos computacionais (c-use)
+
+- C1: uso de val no lado direito da atribuição (x = val[i])
+- C2: uso de x como argumento na construção da exceção NotFiniteNumberException
+- C3: uso de i como argumento na construção da exceção NotFiniteNumberException
+
+[4] Chain of Code
+
+Questão: Como o método checkFinite(double[] val) se comporta para diferentes conteúdos do array de entrada?
+
+Convenções:
+- input_array: array fornecido como entrada;
+- original_input: referência ao array input_array;
+- observable_effect: execução normal ou exceção lançada;
+- def(Di): definição identificada conforme a análise estrutural;
+- p_use: uso predicativo;
+- c_use: uso computacional;
+- path(Pi): caminho definição–uso livre de redefinição com efeito observável;
+- delta_state: representação explícita do estado semântico observável do método
+  após uma ação relevante.
+
+Modelo do Chain of Code:
+
+1   original_input = input_array
+    def(D1): val = input_array
+    delta_state: { val definido }
+
+2   p_use(P1): (i < val.length)
+    delta_state: { início da iteração sobre os elementos do array }
+
+3   def(D4): x = val[i]
+    c_use(C1): val
+    delta_state: { x definido a partir de val[i] }
+
+4   p_use(P2):
+        (Double.isInfinite(x) || Double.isNaN(x))
+
+    path(P0)
+    delta_state: {
+        c_use(C2): x,
+        c_use(C3): i,
+        observable_effect = lançamento de NotFiniteNumberException
+    }
+
+5   p_use(P2): condição falsa
+    delta_state: { elemento atual é finito, iteração prossegue }
+
+6   Repetição das etapas 3 a 5
+    delta_state: { todos os elementos avaliados sem violação }
+
+7   path(P1)
+    observable_effect = execução normal sem exceção
+    delta_state: { método concluído com sucesso }
+
+8   unit_test_scenarios = derive_from_paths(
+        P0, P1
+    )
+    delta_state: { unit_test_scenarios completo }
+
+9   observable_effect =
+        checkFinite(input_array)
+    delta_state: { observable_effect confirmado }
+
+Resposta:unit_test_scenarios
+
+[5] Geração do Código Final (JUnit 5)
+
+Com base exclusivamente no Modelo do Chain of Code definido acima, gere apenas o código Java completo e compilável da classe de teste JUnit 5
+para o método public static void checkFinite(double[] val).
+
+[6] Convenções e Restrições Sintáticas
+
+- Os casos de teste devem garantir cobertura de todos os caminhos definidos no Chain of Code;
+- Não incluir comentários, explicações ou texto fora do código Java;
+- Os nomes dos testes devem seguir o padrão:testCheckFinite_*.
+

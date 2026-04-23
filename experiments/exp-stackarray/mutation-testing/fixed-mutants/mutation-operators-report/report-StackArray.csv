@@ -1,0 +1,6 @@
+class,mutant_id,operator_id,mutator,operator_type,method,line,transformation
+StackArray,M001,OP01,MathMutator,Arithmetic,push,84,x + y → x - y
+StackArray,M002,OP01,MathMutator,Arithmetic,push,87,x * y → x / y
+StackArray,M003,OP02,NegateConditionalsMutator,Relational,push,83,if (cond) → if (!cond)
+StackArray,M004,OP03,VoidMethodCallMutator,Logical,push,87,removed call to com/thealgorithms/datastructures/stacks/StackArray::resize
+StackArray,M005,OP03,VoidMethodCallMutator,Logical,push,88,removed call to com/thealgorithms/datastructures/stacks/StackArray::push

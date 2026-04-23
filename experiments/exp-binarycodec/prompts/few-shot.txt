@@ -1,0 +1,55 @@
+[1] Tarefa
+Gerar testes unitários em Java (JUnit 5) para o método toAsciiBytes(byte[] raw)
+da classe org.apache.commons.codec.binary.BinaryCodec.
+
+[2] Restrição de Escopo
+Gerar casos de teste apenas para o método toAsciiBytes(byte[] raw).
+Não criar testes para outros métodos da classe.
+
+[3] Exemplos de Casos de Teste na Classe de Teste (Few-Shot)
+
+Use o exemplo abaixo apenas como referência de estrutura, organização, imports e formato de uma classe de teste JUnit 5 com múltiplos casos de teste.
+
+Não reutilize valores de entrada, resultados esperados ou a lógica dos testes apresentados.
+
+// Exemplos
+
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.apache.commons.codec.binary.BinaryCodec;
+import org.junit.jupiter.api.Test;
+
+public class BinaryCodecFewShotExampleTest {
+
+    @Test
+    void testToAsciiBytesWithSingleByteExample() {
+        byte[] input = { 0x01 };
+        byte[] result = BinaryCodec.toAsciiBytes(input);
+        assertNotNull(result);
+    }
+
+    @Test
+    void testToAsciiBytesWithEmptyArrayExample() {
+        byte[] input = {};
+        byte[] result = BinaryCodec.toAsciiBytes(input);
+        assertEquals(0, result.length);
+    }
+
+    @Test
+    void testToAsciiBytesWithMultipleBytesExample() {
+        byte[] input = { 0x0F, (byte) 0xA5 };
+        byte[] result = BinaryCodec.toAsciiBytes(input);
+        assertNotNull(result);
+    }
+}
+
+// Fim dos Exemplos
+
+[4] Geração do Código Final (JUnit 5)
+Forneça apenas o código Java completo e compilável da classe de teste.
+
+[5] Convenções e Restrições Sintáticas
+- Não incluir comentários, explicações ou texto fora do código Java;
+- Nomes dos testes devem seguir o padrão: testToAsciiBytes_*.
+

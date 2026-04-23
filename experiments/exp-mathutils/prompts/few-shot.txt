@@ -1,0 +1,53 @@
+[1] Tarefa
+Gerar testes unitários em Java (JUnit 5) para o método public static void checkFinite(double[] val) da classe org.apache.commons.math3.util.MathUtils.
+
+[2] Restrição de Escopo
+Gerar casos de teste apenas para o método public static void checkFinite(double[] val).
+Não criar testes para outros métodos da classe.
+
+[3] Exemplos de Casos de Teste na Classe de Teste (Few-Shot)
+
+Use os exemplos abaixo apenas como referência de estrutura, organização, imports e formato de uma classe de teste JUnit 5 com múltiplos casos de teste.
+
+Não reutilize valores de entrada, resultados esperados ou a lógica dos testes apresentados.
+
+// Exemplos
+
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
+import org.apache.commons.math3.util.MathUtils;
+import org.junit.jupiter.api.Test;
+
+public class MathUtilsFewShotExampleTest {
+
+    @Test
+    void testCheckFiniteWithFiniteValues() {
+        double[] values = {1.0, 2.0, 3.0};
+        assertDoesNotThrow(() -> MathUtils.checkFinite(values));
+    }
+
+    @Test
+    void testCheckFiniteWithNaNValueThrowsException() {
+        double[] values = {1.0, Double.NaN};
+        assertThrows(Exception.class,
+            () -> MathUtils.checkFinite(values));
+    }
+
+    @Test
+    void testCheckFiniteWithInfiniteValueThrowsException() {
+        double[] values = {Double.POSITIVE_INFINITY};
+        assertThrows(Exception.class,
+            () -> MathUtils.checkFinite(values));
+    }
+}
+
+// Fim dos Exemplos
+
+[4] Geração do Código Final (JUnit 5)
+Forneça apenas o código Java completo e compilável da classe de teste.
+
+[5] Convenções e Restrições Sintáticas
+- Não incluir comentários, explicações ou texto fora do código Java;
+- Nomes dos testes devem seguir o padrão: testCheckFinite_*.
+

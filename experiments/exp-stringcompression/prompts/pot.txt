@@ -1,0 +1,162 @@
+[1] Papel
+Você é um engenheiro de software especializado em testes unitários e critérios de teste estrutural baseados em fluxo de dados.
+
+[2] Tarefa
+Gerar testes unitários em Java (JUnit 5) para o método compress(String input).
+
+[3] Restrição de Escopo
+Gerar casos de teste apenas para o método compress(String input). Não criar testes para outros métodos da classe.
+
+[3.1] Análise Estrutural Prévia do Método compress(String input)
+
+O método compress(String input) da classe StringCompression foi analisado segundo critérios de teste estrutural baseados em fluxo de dados.Essa análise deve ser considerada como base obrigatória para a construção do Program-of-Thoughts.
+
+Variáveis do método:
+- input: parâmetro formal
+- count: variável local mutável
+- compressedString: variável local acumuladora
+- i: variável de controle do laço
+
+Definições (def)
+
+Para input:
+- D1: definição inicial como parâmetro formal
+
+Para count:
+- D2: definição inicial (int count = 1)
+- D3: redefinição por incremento (count = count + 1)
+- D4: redefinição explícita (count = 1)
+
+Para compressedString:
+- D5: definição inicial (String compressedString = "")
+- D6: redefinição por retorno de appendCount(compressedString, count, ch)
+- D7: redefinição por concatenação com caractere final
+      (appendCount(...) + input.charAt(i + 1))
+
+Para i:
+- D8: definição inicial no laço for (int i = 0)
+- D9: redefinição por incremento do laço (i++)
+
+Usos predicativos (p-use)
+
+Para input:
+- P1: if (input.length() == 1)
+- P2: if (input.charAt(i) == input.charAt(i + 1))
+- P3: if ((i + 1) == input.length() - 1)
+- P4: else if (input.charAt(i) != input.charAt(i + 1))
+
+Para i:
+- P5: condição do laço for (i < input.length() - 1)
+
+Usos computacionais (c-use)
+
+Para input:
+- C1: uso em input.length()
+- C2: uso em return input.charAt(0)
+- C3: uso em input.charAt(i)
+- C4: uso em input.charAt(i + 1)
+
+Para count:
+- C5: uso em incremento aritmético (count = count + 1)
+- C6: uso como argumento em appendCount(compressedString, count, ch)
+
+Para compressedString:
+- C7: uso como argumento em appendCount(compressedString, count, ch)
+- C8: atribuição do retorno de appendCount(...)
+- C9: concatenação appendCount(...) + input.charAt(i + 1)
+- C10: return compressedString
+
+Para i:
+- C11: uso em expressão aritmética (i + 1)
+- C12: incremento do laço (i++)
+
+[4] Program-of-Thoughts
+
+- DEVERÁ SER UTILIZADO um programa de raciocínio estrutural que modele explicitamente o comportamento do método compress(String input) com base em critérios de teste estrutural baseados em fluxo de dados. 
+
+- Esse programa de raciocínio estrutural é representado por um objeto JSON válido, fornecido na seção seguinte.
+
+- O Program-of-Thoughts é um artefato intermediário de raciocínio e deve ser utilizado exclusivamente como base interna para a geração da classe de testes.
+
+
+[4.1] Estrutura esperada do Program-of-Thoughts (JSON)
+
+- A estrutura a seguir é fornecida como um artefato de raciocínio já definido. NÃO reproduza, modifique ou gere este JSON como saída. Este artefato deve ser usado exclusivamente como base interna para a geração da classe de testes na etapa seguinte.
+
+{
+  "variables": [
+    { "name": "input", "role": "parâmetro" },
+    { "name": "count", "role": "variável local" },
+    { "name": "compressedString", "role": "variável local" },
+    { "name": "i", "role": "variável de controle" }
+  ],
+  "definitions": [
+    { "id": "D1", "variable": "input", "description": "definição inicial como parâmetro formal" },
+
+    { "id": "D2", "variable": "count", "description": "definição inicial com valor 1" },
+    { "id": "D3", "variable": "count", "description": "redefinição por incremento aritmético (count = count + 1)" },
+    { "id": "D4", "variable": "count", "description": "redefinição explícita para reinício da contagem (count = 1)" },
+
+    { "id": "D5", "variable": "compressedString", "description": "definição inicial como string vazia" },
+    { "id": "D6", "variable": "compressedString", "description": "redefinição por retorno de appendCount(compressedString, count, ch)" },
+    { "id": "D7", "variable": "compressedString", "description": "redefinição por concatenação com caractere final" },
+
+    { "id": "D8", "variable": "i", "description": "definição inicial no laço for (i = 0)" },
+    { "id": "D9", "variable": "i", "description": "redefinição por incremento do laço (i++)" }
+  ],
+  "uses": [
+    { "id": "U1", "variable": "input", "type": "p-use", "description": "verificação de comprimento igual a 1 (input.length() == 1)" },
+    { "id": "U2", "variable": "input", "type": "p-use", "description": "comparação de caracteres adjacentes (input.charAt(i) == input.charAt(i + 1))" },
+    { "id": "U3", "variable": "input", "type": "p-use", "description": "verificação de último índice ((i + 1) == input.length() - 1)" },
+    { "id": "U4", "variable": "i", "type": "p-use", "description": "condição do laço (i < input.length() - 1)" },
+
+    { "id": "U5", "variable": "input", "type": "c-use", "description": "uso em input.length()" },
+    { "id": "U6", "variable": "input", "type": "c-use", "description": "uso em input.charAt(0)" },
+    { "id": "U7", "variable": "input", "type": "c-use", "description": "uso em input.charAt(i)" },
+    { "id": "U8", "variable": "input", "type": "c-use", "description": "uso em input.charAt(i + 1)" },
+
+    { "id": "U9", "variable": "count", "type": "c-use", "description": "uso em incremento aritmético" },
+    { "id": "U10", "variable": "count", "type": "c-use", "description": "uso como argumento em appendCount" },
+
+    { "id": "U11", "variable": "compressedString", "type": "c-use", "description": "uso como argumento em appendCount" },
+    { "id": "U12", "variable": "compressedString", "type": "c-use", "description": "atribuição do retorno de appendCount" },
+    { "id": "U13", "variable": "compressedString", "type": "c-use", "description": "concatenação com caractere final" },
+    { "id": "U14", "variable": "compressedString", "type": "c-use", "description": "retorno do método" },
+
+    { "id": "U15", "variable": "i", "type": "c-use", "description": "uso em expressão aritmética (i + 1)" },
+    { "id": "U16", "variable": "i", "type": "c-use", "description": "incremento do laço (i++)" }
+  ],
+  "du_paths": [
+    { "id": "P1", "description": "retorno imediato para string de tamanho 1" },
+    { "id": "P2", "description": "compressão com sequência de caracteres repetidos" },
+    { "id": "P3", "description": "compressão com alternância de caracteres" },
+    { "id": "P4", "description": "compressão envolvendo último caractere fora da repetição" }
+  ],
+  "planned_tests": [
+    { "test_id": "T1", "covers": ["P1"] },
+    { "test_id": "T2", "covers": ["P2"] },
+    { "test_id": "T3", "covers": ["P3"] },
+    { "test_id": "T4", "covers": ["P4"] }
+  ],
+  "constraints": {
+    "all_defs_covered": true,
+    "all_p_uses_covered": true,
+    "all_c_uses_covered": true,
+    "all_uses_covered": true,
+    "loop_coverage": "partial_and_complete"
+  }
+}
+
+[5] Geração do Código Final (JUnit 5)
+
+Com base exclusivamente no Program-of-Thoughts definido na etapa anterior, gere apenas o código Java completo e compilável da classe de teste JUnit 5
+para o método compress(String input).
+
+[6] Convenções e Restrições Sintáticas
+
+- O código Java final NÃO deve conter JSON sob nenhuma forma;
+- Qualquer classe de teste que inclua JSON dentro do código Java é considerada inválida;
+- Os casos de teste devem garantir cobertura de todos os caminhos definidos em "planned_tests";
+- Não incluir comentários, explicações ou texto fora do código Java;
+- Nomes dos testes devem seguir o padrão: testCompress_*.
+

@@ -1,0 +1,5 @@
+
+/app/experimentos/exp-stringcompression/src/test/java/com/thealgorithms/strings/StringCompressionGrok_ZS1Test.java:3: error: class, interface, enum, or record expected
+package com.thealgorithms.strings;
+^
+1 error

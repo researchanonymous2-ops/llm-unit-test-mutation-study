@@ -1,0 +1,8 @@
+
+/app/experimentos/exp-binarycodec/src/test/java/org/apache/commons/codec/binary/BinaryCodecGrok_POT5Test.java:12: error: EMPTY_BYTE_ARRAY has private access in BinaryCodec
+        assertArrayEquals(BinaryCodec.EMPTY_BYTE_ARRAY, BinaryCodec.toAsciiBytes(null));
+                                     ^
+/app/experimentos/exp-binarycodec/src/test/java/org/apache/commons/codec/binary/BinaryCodecGrok_POT5Test.java:15: error: EMPTY_BYTE_ARRAY has private access in BinaryCodec
+        assertArrayEquals(BinaryCodec.EMPTY_BYTE_ARRAY, BinaryCodec.toAsciiBytes(new byte[0]));
+                                     ^
+2 errors

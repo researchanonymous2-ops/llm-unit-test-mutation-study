@@ -1,0 +1,5 @@
+
+/app/experimentos/exp-stackarray/src/test/java/com/thealgorithms/datastructures/stacks/StackArrayLlama_OS3Test.java:48: error: maxSize has private access in StackArray
+        assertEquals(4, stack.maxSize); // Note: maxSize is not public, this won't compile
+                             ^
+1 error

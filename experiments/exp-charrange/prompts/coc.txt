@@ -1,0 +1,139 @@
+[1] Papel
+
+Você é um engenheiro de software especializado em testes unitários e critérios de teste estrutural baseados em fluxo de dados.
+
+[2] Tarefa
+
+Gerar testes unitários em Java (JUnit 5) para o método public boolean contains(final CharRange range) da classe org.apache.commons.lang3.CharRange.
+
+[3] Restrição de Escopo
+
+Gerar casos de teste apenas para o método contains(final CharRange range).
+Não criar testes para outros métodos da classe.
+
+[3.1] Análise Estrutural Prévia do Método public boolean contains(final CharRange range)
+
+O método contains(final CharRange range) da classe CharRange foi previamente analisado segundo critérios de teste estrutural baseados em fluxo de dados. Essa análise deve ser considerada como base obrigatória para a construção do Chain of Code.
+
+Variáveis do método:
+- range: parâmetro formal
+- this.start: atributo da instância atual
+- this.end: atributo da instância atual
+- this.negated: atributo da instância atual
+- range.start: atributo do parâmetro
+- range.end: atributo do parâmetro
+- range.negated: atributo do parâmetro
+
+Definições (def)
+
+Para range:
+- D1: definição inicial como parâmetro formal do método
+
+Para this.start:
+- D2: definição como atributo da instância atual
+
+Para this.end:
+- D3: definição como atributo da instância atual
+
+Para this.negated:
+- D4: definição como atributo da instância atual
+
+Para range.start:
+- D5: definição como atributo do parâmetro
+
+Para range.end:
+- D6: definição como atributo do parâmetro
+
+Para range.negated:
+- D7: definição como atributo do parâmetro
+
+Usos predicativos (p-use)
+
+- P1: verificação de nulidade do parâmetro (range == null)
+- P2: decisão condicional baseada em this.negated
+- P3: decisão condicional baseada em range.negated
+- P4: comparação this.start >= range.start
+- P5: comparação this.end <= range.end
+- P6: comparação range.end < this.start
+- P7: comparação range.start > this.end
+- P8: comparação this.start == 0
+- P9: comparação this.end == Character.MAX_VALUE
+- P10: comparação this.start <= range.start
+- P11: comparação this.end >= range.end
+
+Usos computacionais (c-use)
+
+- Não existem usos computacionais neste método.
+
+[4] Chain of Code
+
+Questão: Como o método contains(final CharRange range) se comporta para diferentes valores de entrada?
+
+Convenções:
+- input_range: valor fornecido como parâmetro ao método;
+- original_input: instância this + input_range;
+- return_candidate: valor booleano elegível ao retorno em um caminho;
+- observable_return: valor efetivamente retornado pelo método;
+- def(Di): definição identificada conforme a análise estrutural;
+- p_use: uso predicativo;
+- path(Pi): caminho definição–uso livre de redefinição;
+- delta_state: representação explícita do estado semântico observável do método
+  após uma ação relevante.
+
+Modelo do Chain of Code:
+
+1   original_input = (this, input_range)
+    def(D1): range = input_range
+    delta_state: { parâmetro range definido }
+
+2   p_use: (range == null)
+    path(P0)
+    delta_state: { exceção IllegalArgumentException lançada,
+                   observable_return indefinido }
+
+3   p_use: (this.negated == true && range.negated == true)
+    path(P1)
+    return_candidate =
+        (this.start >= range.start && this.end <= range.end)
+    delta_state: { retorno avaliado para ambos intervalos negados }
+
+4   p_use: (this.negated == true && range.negated == false)
+    path(P2)
+    return_candidate =
+        (range.end < this.start || range.start > this.end)
+    delta_state: { retorno avaliado para instância negada e parâmetro normal }
+
+5   p_use: (this.negated == false && range.negated == true)
+    path(P3)
+    return_candidate =
+        (this.start == 0 && this.end == Character.MAX_VALUE)
+    delta_state: { retorno avaliado para instância normal e parâmetro negado }
+
+6   p_use: (this.negated == false && range.negated == false)
+    path(P4)
+    return_candidate =
+        (this.start <= range.start && this.end >= range.end)
+    delta_state: { retorno avaliado para ambos intervalos normais }
+
+7   unit_test_scenarios = derive_from_paths(
+        P0, P1, P2, P3, P4
+    )
+    delta_state: { unit_test_scenarios completo }
+
+8   observable_return =
+        this.contains(input_range)
+    delta_state: { observable_return = return_candidate }
+
+Resposta:unit_test_scenarios
+
+[5] Geração do Código Final (JUnit 5)
+
+Com base exclusivamente no Modelo do Chain of Code definido acima, gere apenas o código Java completo e compilável da classe de teste JUnit 5
+para o método contains(final CharRange range).
+
+[6] Convenções e Restrições Sintáticas
+
+- Os casos de teste devem garantir cobertura de todos os caminhos definidos no Chain of Code;
+- Não incluir comentários, explicações ou texto fora do código Java;
+- Os nomes dos testes devem seguir o padrão: testContains_*.
+

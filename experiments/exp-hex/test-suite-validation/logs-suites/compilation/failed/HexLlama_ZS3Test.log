@@ -1,0 +1,7 @@
+
+/app/experimentos/exp-hex/src/test/java/org/apache/commons/codec/binary/HexLlama_ZS3Test.java:17: error: cannot find symbol
+        assertArrayEquals(expected, actual);
+        ^
+  symbol:   method assertArrayEquals(char[],char[])
+  location: class HexLlama_ZS3Test
+1 error

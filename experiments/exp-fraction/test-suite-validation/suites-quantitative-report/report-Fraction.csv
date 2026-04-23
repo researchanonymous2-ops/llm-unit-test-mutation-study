@@ -1,0 +1,16 @@
+Class,Model,Prompt Strategy,Total Suites,Non-compiling Suites,Runtime-failure Suites,Eligible Suites,Ineligible Suites,Eligibility Rate (%)
+Fraction,Grok,Zero-shot,5,0,4,1,4,20.0
+Fraction,,One-shot,5,1,2,2,3,40.0
+Fraction,,Few-shot,5,0,2,3,2,60.0
+Fraction,,POT,5,0,2,3,2,60.0
+Fraction,,COC,5,0,3,2,3,40.0
+Fraction,Llama,Zero-shot,5,0,4,1,4,20.0
+Fraction,,One-shot,5,0,5,0,5,0.0
+Fraction,,Few-shot,5,0,5,0,5,0.0
+Fraction,,POT,5,0,1,4,1,80.0
+Fraction,,COC,5,0,0,5,0,100.0
+Fraction,Qwen,Zero-shot,5,0,5,0,5,0.0
+Fraction,,One-shot,5,0,4,1,4,20.0
+Fraction,,Few-shot,5,0,5,0,5,0.0
+Fraction,,POT,5,0,5,0,5,0.0
+Fraction,,COC,5,0,5,0,5,0.0

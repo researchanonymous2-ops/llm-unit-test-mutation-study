@@ -1,0 +1,153 @@
+[1] Papel
+
+Você é um engenheiro de software especializado em testes unitários e critérios de teste estrutural baseados em fluxo de dados.
+
+[2] Tarefa
+
+Gerar testes unitários em Java (JUnit 5) para o método public void insertKey2HashTable(int key) da classe com.thealgorithms.datastructures.hashmap.hashing.HashMapCuckooHashing.
+
+[3] Restrição de Escopo
+
+Gerar casos de teste apenas para o método insertKey2HashTable(int key).
+Não criar testes para outros métodos da classe.
+
+[3.1] Análise Estrutural Prévia do Método public void insertKey2HashTable(int key)
+
+O método insertKey2HashTable(int key) da classe HashMapCuckooHashing foi previamente analisado segundo critérios de teste estrutural baseados em fluxo de dados, considerando exclusivamente o código do método fornecido.Essa análise deve ser considerada como base obrigatória para a construção do Chain of Code.
+
+Variáveis do método:
+- key: parâmetro formal (chave a ser inserida)
+- wrappedInt: variável local (Integer associado à chave corrente)
+- temp: variável local auxiliar para realocação
+- hash: variável local inteira (índice calculado)
+- loopCounter: variável local de controle do laço
+- thresh: atributo da classe (limite máximo de iterações)
+- size: atributo da classe (contador de chaves armazenadas)
+- buckets: estrutura de armazenamento da tabela
+- AVAILABLE: valor sentinela para posição logicamente vazia
+
+Definições (def)
+
+Para key:
+- D1: definição inicial como parâmetro formal do método
+
+Para wrappedInt:
+- D2: definição inicial como Integer.valueOf(key)
+- D6: redefinição após realocação de chaves
+
+Para loopCounter:
+- D3: definição inicial como 0
+- D4: redefinição a cada iteração do laço
+
+Para hash:
+- D5: definição como resultado de hashFunction1(key)
+- D7: redefinição como resultado de hashFunction2(temp)
+
+Para temp:
+- D8: definição como valor previamente armazenado em buckets[hash]
+
+Para size:
+- D9: redefinição após inserção bem-sucedida da chave
+
+Usos predicativos (p-use)
+
+- P1: verificação se a tabela está cheia (isFull())
+- P2: verificação de duplicidade da chave (checkTableContainsKey(key))
+- P3: condição de continuação do laço (loopCounter <= thresh)
+- P4: verificação de posição livre após hashFunction1
+      (buckets[hash] == null || buckets[hash] == AVAILABLE)
+- P5: verificação de posição livre após hashFunction2
+      (buckets[hash] == null || buckets[hash] == AVAILABLE)
+
+Usos computacionais (c-use)
+
+- C1: uso de key no cálculo de hashFunction1
+- C2: uso de wrappedInt/temp no cálculo de hashFunction2
+- C3: uso de wrappedInt na escrita em buckets[hash]
+- C4: uso de temp na realocação de chaves
+- C5: uso de size na atualização do estado da tabela
+- C6: chamada de checkLoadFactor() como efeito colateral após inserção
+
+[4] Chain of Code
+
+Questão:Como o método insertKey2HashTable(int key) se comporta para diferentes estados da tabela e valores de entrada?
+
+Convenções:
+- input_key: valor fornecido como chave;
+- original_input: input_key;
+- observable_effect: efeito observável no estado da tabela ou exceção lançada;
+- def(Di): definição identificada conforme a análise estrutural;
+- p_use(Pi): uso predicativo avaliado;
+- c_use(Ci): uso computacional executado;
+- path(Pi): caminho definição–uso livre de redefinição;
+- delta_state: representação explícita do estado semântico observável
+  após uma ação relevante.
+
+Modelo do Chain of Code:
+
+1   original_input = input_key
+    def(D1): key = input_key
+    def(D2): wrappedInt = Integer.valueOf(key)
+    def(D3): loopCounter = 0
+    delta_state: { chave definida, contador inicializado }
+
+2   p_use(P1): isFull()
+    path(P0)
+    delta_state: { tabela rehashada antes da inserção }
+
+3   p_use(P2): checkTableContainsKey(key)
+    path(P1)
+    delta_state: { IllegalArgumentException lançada }
+
+4   p_use(P3): loopCounter <= thresh
+    delta_state: { iteração permitida }
+
+5   def(D5): hash = hashFunction1(key)
+    c_use(C1): key
+    delta_state: { índice inicial calculado }
+
+6   p_use(P4): buckets[hash] == null || AVAILABLE
+    path(P2)
+    c_use(C3): buckets[hash] = wrappedInt
+    def(D9): size++
+    c_use(C6): checkLoadFactor()
+    delta_state: { chave inserida sem realocação }
+
+7   def(D8): temp = buckets[hash]
+    c_use(C4): realocação
+    wrappedInt = temp
+    delta_state: { chave deslocada }
+
+8   def(D7): hash = hashFunction2(temp)
+    c_use(C2): wrappedInt
+    delta_state: { segundo índice calculado }
+
+9   p_use(P5): buckets[hash] == null || AVAILABLE
+    path(P3)
+    c_use(C3): buckets[hash] = wrappedInt
+    def(D9): size++
+    c_use(C6): checkLoadFactor()
+    delta_state: { inserção após realocação }
+
+10  p_use(P3): loopCounter > thresh
+    path(P4)
+    delta_state: { rehash e reinserção da chave }
+
+11  unit_test_scenarios = derive_from_paths(
+        P0, P1, P2, P3, P4
+    )
+    delta_state: { cenários de teste completos }
+
+Resposta: unit_test_scenarios
+
+[5] Geração do Código Final (JUnit 5)
+
+Com base exclusivamente no Modelo do Chain of Code definido acima, gere apenas o código Java completo e compilável da classe de teste JUnit 5 para o método insertKey2HashTable(int key).
+
+[6] Convenções e Restrições Sintáticas
+
+- Os casos de teste devem garantir cobertura de todos os caminhos definidos no Chain of Code;
+- Não incluir comentários, explicações ou texto fora do código Java;
+- Os nomes dos testes devem seguir o padrão:
+  testInsertKey2HashTable_*.
+

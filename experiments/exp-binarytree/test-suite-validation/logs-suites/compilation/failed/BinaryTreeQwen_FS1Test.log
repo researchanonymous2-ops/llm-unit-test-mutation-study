@@ -1,0 +1,303 @@
+
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:28: error: not a statement
+        to0:45
+            ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:28: error: ';' expected
+        to0:45
+              ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:32: error: ')' expected
+        tree.put(45:45
+                   ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:33: error: ')' expected
+        tree.put(3147:45
+                     ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:35: error: ';' expected
+       :45:45:47:3148:45:3147:45:3147:45To avoid error in test method, we use a:45
+                                                ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:35: error: ';' expected
+       :45:45:47:3148:45:3147:45:3147:45To avoid error in test method, we use a:45
+                                                         ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:35: error: ';' expected
+       :45:45:47:3148:45:3147:45:3147:45To avoid error in test method, we use a:45
+                                                                         ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:35: error: ';' expected
+       :45:45:47:3148:45:3147:45:3147:45To avoid error in test method, we use a:45
+                                                                               ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:37: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:40: error: ')' expected
+        tree.put(3145:45
+                     ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:41: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:42: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:43: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:44: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:45: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:46: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:47: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:48: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:49: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:50: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:52: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:53: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:54: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:55: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:56: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:57: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:58: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:59: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:60: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:62: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:63: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:64: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:65: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:66: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:67: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:68: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:69: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:70: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:71: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:72: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:73: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:74: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:75: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:76: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:77: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:78: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:79: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:80: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:81: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:82: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:85: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:86: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:87: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:88: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:89: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:90: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:91: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:92: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:93: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:94: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:95: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:96: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:97: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:98: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:99: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:100: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:101: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:102: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:103: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:104: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:105: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:106: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:107: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:108: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:109: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:110: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:113: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:114: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:115: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:116: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:117: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:118: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:119: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:120: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:121: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:122: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:123: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:124: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:125: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:126: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:127: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:128: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:129: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:133: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:134: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:135: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:136: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:137: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:138: error: ')' expected
+        tree.put(141:45
+                    ^
+/app/experimentos/exp-binarytree/src/test/java/com/thealgorithms/datastructures/trees/BinaryTreeQwen_FS1Test.java:139: error: ')' expected
+        tree.put(141:45
+                    ^
+100 errors
+only showing the first 100 errors, of 149 total; use -Xmaxerrs if you would like to see more

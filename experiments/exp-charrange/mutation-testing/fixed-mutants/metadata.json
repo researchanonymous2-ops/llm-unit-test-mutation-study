@@ -1,0 +1,6 @@
+{
+  "created_utc": "20260125T183104Z",
+  "suite_base": "org.apache.commons.lang3.CharRangeBaseTest",
+  "target_package": "org.apache.commons.lang3",
+  "pit_plugin_version": "unknown"
+}

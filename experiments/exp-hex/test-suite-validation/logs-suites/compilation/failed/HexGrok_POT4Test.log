@@ -1,0 +1,5 @@
+
+/app/experimentos/exp-hex/src/test/java/org/apache/commons/codec/binary/HexGrok_POT4Test.java:35: error: incompatible types: possible lossy conversion from int to byte
+        byte[] data = {0x0F, 0xFF};
+                             ^
+1 error

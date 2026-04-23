@@ -1,0 +1,7 @@
+
+/app/experimentos/exp-matrixutil/src/test/java/com/thealgorithms/maths/MatrixUtilQwen_POT5Test.java:41: error: cannot find symbol
+            {BigDecimal.ONE, BigDecimal.TWO, BigDecimal.valueOf(3)},
+                                       ^
+  symbol:   variable TWO
+  location: class BigDecimal
+1 error

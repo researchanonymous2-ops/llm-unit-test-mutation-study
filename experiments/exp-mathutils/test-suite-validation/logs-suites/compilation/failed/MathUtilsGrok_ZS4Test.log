@@ -1,0 +1,26 @@
+
+/app/experimentos/exp-mathutils/src/test/java/org/apache/commons/math3/util/MathUtilsGrok_ZS4Test.java:27: error: cannot find symbol
+        assertEquals(1, exception.getArgument().get(1));
+                                               ^
+  symbol:   method get(int)
+  location: class Number
+/app/experimentos/exp-mathutils/src/test/java/org/apache/commons/math3/util/MathUtilsGrok_ZS4Test.java:34: error: cannot find symbol
+        assertEquals(1, exception.getArgument().get(1));
+                                               ^
+  symbol:   method get(int)
+  location: class Number
+/app/experimentos/exp-mathutils/src/test/java/org/apache/commons/math3/util/MathUtilsGrok_ZS4Test.java:41: error: cannot find symbol
+        assertEquals(1, exception.getArgument().get(1));
+                                               ^
+  symbol:   method get(int)
+  location: class Number
+/app/experimentos/exp-mathutils/src/test/java/org/apache/commons/math3/util/MathUtilsGrok_ZS4Test.java:48: error: cannot find symbol
+        assertEquals(0, exception.getArgument().get(1));
+                                               ^
+  symbol:   method get(int)
+  location: class Number
+/app/experimentos/exp-mathutils/src/main/java/org/apache/commons/math3/util/MathUtils.java:57: warning: [removal] Double(double) in Double has been deprecated and marked for removal
+        return new Double(value).hashCode();
+               ^
+4 errors
+1 warning

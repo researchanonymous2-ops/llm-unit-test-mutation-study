@@ -1,0 +1,5 @@
+
+/app/experimentos/exp-area/src/test/java/com/thealgorithms/maths/AreaGrok_COC5Test.java:3: error: class, interface, enum, or record expected
+package com.thealgorithms.maths;
+^
+1 error

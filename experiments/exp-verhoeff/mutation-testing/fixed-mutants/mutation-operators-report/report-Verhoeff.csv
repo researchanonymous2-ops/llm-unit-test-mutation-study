@@ -1,0 +1,10 @@
+class,mutant_id,operator_id,mutator,operator_type,method,line,transformation
+Verhoeff,M001,OP01,PrimitiveReturnsMutator,Return,lambda$toIntArray$0,167,return value modified
+Verhoeff,M002,OP02,ConditionalsBoundaryMutator,Relational,verhoeffCheck,99,boundary condition change
+Verhoeff,M003,OP03,MathMutator,Arithmetic,verhoeffCheck,100,x - y → x + y
+Verhoeff,M004,OP03,MathMutator,Arithmetic,verhoeffCheck,100,x - y → x + y
+Verhoeff,M005,OP03,MathMutator,Arithmetic,verhoeffCheck,101,modulus operation modified
+Verhoeff,M006,OP04,NegateConditionalsMutator,Relational,verhoeffCheck,99,if (cond) → if (!cond)
+Verhoeff,M007,OP04,NegateConditionalsMutator,Relational,verhoeffCheck,105,if (cond) → if (!cond)
+Verhoeff,M008,OP05,VoidMethodCallMutator,Logical,verhoeffCheck,94,removed call to com/thealgorithms/others/Verhoeff::checkInput
+Verhoeff,M009,OP06,BooleanTrueReturnValsMutator,Return,verhoeffCheck,105,return value modified

@@ -1,0 +1,92 @@
+
+/app/experimentos/exp-hex/src/test/java/org/apache/commons/codec/binary/HexLlama_COC3Test.java:72: error: class, interface, enum, or record expected
+import org.junit.Test;
+^
+/app/experimentos/exp-hex/src/test/java/org/apache/commons/codec/binary/HexLlama_COC3Test.java:73: error: class, interface, enum, or record expected
+import static org.junit.Assert.assertArrayEquals;
+^
+/app/experimentos/exp-hex/src/test/java/org/apache/commons/codec/binary/HexLlama_COC3Test.java:89: error: class, interface, enum, or record expected
+import org.junit.Test;
+^
+/app/experimentos/exp-hex/src/test/java/org/apache/commons/codec/binary/HexLlama_COC3Test.java:90: error: class, interface, enum, or record expected
+import static org.junit.Assert.assertEquals;
+^
+/app/experimentos/exp-hex/src/test/java/org/apache/commons/codec/binary/HexLlama_COC3Test.java:106: error: class, interface, enum, or record expected
+import org.junit.runner.JUnitCore;
+^
+/app/experimentos/exp-hex/src/test/java/org/apache/commons/codec/binary/HexLlama_COC3Test.java:107: error: class, interface, enum, or record expected
+import org.junit.runner.Result;
+^
+/app/experimentos/exp-hex/src/test/java/org/apache/commons/codec/binary/HexLlama_COC3Test.java:108: error: class, interface, enum, or record expected
+import org.junit.runner.notification.Failure;
+^
+/app/experimentos/exp-hex/src/test/java/org/apache/commons/codec/binary/HexLlama_COC3Test.java:125: error: class, interface, enum, or record expected
+import org.junit.runner.JUnitCore;
+^
+/app/experimentos/exp-hex/src/test/java/org/apache/commons/codec/binary/HexLlama_COC3Test.java:126: error: class, interface, enum, or record expected
+import org.junit.runner.Result;
+^
+/app/experimentos/exp-hex/src/test/java/org/apache/commons/codec/binary/HexLlama_COC3Test.java:127: error: class, interface, enum, or record expected
+import org.junit.runner.notification.Failure;
+^
+/app/experimentos/exp-hex/src/test/java/org/apache/commons/codec/binary/HexLlama_COC3Test.java:143: error: class, interface, enum, or record expected
+import org.junit.Test;
+^
+/app/experimentos/exp-hex/src/test/java/org/apache/commons/codec/binary/HexLlama_COC3Test.java:144: error: class, interface, enum, or record expected
+import static org.junit.Assert.assertEquals;
+^
+/app/experimentos/exp-hex/src/test/java/org/apache/commons/codec/binary/HexLlama_COC3Test.java:161: error: class, interface, enum, or record expected
+import org.junit.Test;
+^
+/app/experimentos/exp-hex/src/test/java/org/apache/commons/codec/binary/HexLlama_COC3Test.java:162: error: class, interface, enum, or record expected
+import static org.junit.Assert.assertArrayEquals;
+^
+/app/experimentos/exp-hex/src/test/java/org/apache/commons/codec/binary/HexLlama_COC3Test.java:177: error: class, interface, enum, or record expected
+import org.junit.Test;
+^
+/app/experimentos/exp-hex/src/test/java/org/apache/commons/codec/binary/HexLlama_COC3Test.java:178: error: class, interface, enum, or record expected
+import static org.junit.Assert.assertArrayEquals;
+^
+/app/experimentos/exp-hex/src/test/java/org/apache/commons/codec/binary/HexLlama_COC3Test.java:194: error: class, interface, enum, or record expected
+import org.junit.Test;
+^
+/app/experimentos/exp-hex/src/test/java/org/apache/commons/codec/binary/HexLlama_COC3Test.java:195: error: class, interface, enum, or record expected
+import static org.junit.Assert.assertThrows;
+^
+/app/experimentos/exp-hex/src/test/java/org/apache/commons/codec/binary/HexLlama_COC3Test.java:208: error: class, interface, enum, or record expected
+import org.junit.Test;
+^
+/app/experimentos/exp-hex/src/test/java/org/apache/commons/codec/binary/HexLlama_COC3Test.java:209: error: class, interface, enum, or record expected
+import static org.junit.Assert.assertThrows;
+^
+/app/experimentos/exp-hex/src/test/java/org/apache/commons/codec/binary/HexLlama_COC3Test.java:222: error: class, interface, enum, or record expected
+import org.junit.Test;
+^
+/app/experimentos/exp-hex/src/test/java/org/apache/commons/codec/binary/HexLlama_COC3Test.java:223: error: class, interface, enum, or record expected
+import static org.junit.Assert.assertThrows;
+^
+/app/experimentos/exp-hex/src/test/java/org/apache/commons/codec/binary/HexLlama_COC3Test.java:236: error: class, interface, enum, or record expected
+import org.junit.Test;
+^
+/app/experimentos/exp-hex/src/test/java/org/apache/commons/codec/binary/HexLlama_COC3Test.java:237: error: class, interface, enum, or record expected
+import static org.junit.Assert.assertThrows;
+^
+/app/experimentos/exp-hex/src/test/java/org/apache/commons/codec/binary/HexLlama_COC3Test.java:250: error: class, interface, enum, or record expected
+import org.junit.Test;
+^
+/app/experimentos/exp-hex/src/test/java/org/apache/commons/codec/binary/HexLlama_COC3Test.java:251: error: class, interface, enum, or record expected
+import static org.junit.Assert.assertThrows;
+^
+/app/experimentos/exp-hex/src/test/java/org/apache/commons/codec/binary/HexLlama_COC3Test.java:264: error: class, interface, enum, or record expected
+import org.junit.Test;
+^
+/app/experimentos/exp-hex/src/test/java/org/apache/commons/codec/binary/HexLlama_COC3Test.java:265: error: class, interface, enum, or record expected
+import static org.junit.Assert.assertThrows;
+^
+/app/experimentos/exp-hex/src/test/java/org/apache/commons/codec/binary/HexLlama_COC3Test.java:278: error: class, interface, enum, or record expected
+import org.junit.Test;
+^
+/app/experimentos/exp-hex/src/test/java/org/apache/commons/codec/binary/HexLlama_COC3Test.java:279: error: class, interface, enum, or record expected
+import static org.junit.Assert.assertThrows;
+^
+30 errors

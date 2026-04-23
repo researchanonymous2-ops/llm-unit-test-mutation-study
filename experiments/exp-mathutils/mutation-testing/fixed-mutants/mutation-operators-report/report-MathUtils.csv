@@ -1,0 +1,5 @@
+class,mutant_id,operator_id,mutator,operator_type,method,line,transformation
+MathUtils,M001,OP01,ConditionalsBoundaryMutator,Relational,checkFinite,231,boundary condition change
+MathUtils,M002,OP02,NegateConditionalsMutator,Relational,checkFinite,231,if (cond) → if (!cond)
+MathUtils,M003,OP02,NegateConditionalsMutator,Relational,checkFinite,233,if (cond) → if (!cond)
+MathUtils,M004,OP02,NegateConditionalsMutator,Relational,checkFinite,233,if (cond) → if (!cond)

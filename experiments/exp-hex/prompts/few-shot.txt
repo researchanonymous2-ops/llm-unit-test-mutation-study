@@ -1,0 +1,54 @@
+[1] Tarefa
+Gerar testes unitários em Java (JUnit 5) para o método encodeHex(byte[] data)
+da classe org.apache.commons.codec.binary.Hex.
+
+[2] Restrição de Escopo
+Gerar casos de teste apenas para o método encodeHex(byte[] data).
+Não criar testes para outros métodos da classe.
+
+[3] Exemplos de Classe de Teste (Few-Shot)
+
+Use os exemplo abaixo apenas como referência de estrutura, organização, imports e formato de uma classe de teste JUnit 5 com múltiplos casos de teste.
+
+Não reutilize valores de entrada, resultados esperados ou a lógica dos testes apresentados.
+
+// Exemplos
+
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+
+import org.apache.commons.codec.binary.Hex;
+import org.junit.jupiter.api.Test;
+
+public class HexFewShotExampleTest {
+
+    @Test
+    void testEncodeHexWithSingleByte() {
+        byte[] input = { 0x0A };
+        char[] expected = { '0', 'a' };
+        assertArrayEquals(expected, Hex.encodeHex(input));
+    }
+
+    @Test
+    void testEncodeHexWithMultipleBytes() {
+        byte[] input = { 0x00, 0x01 };
+        char[] expected = { '0', '0', '0', '1' };
+        assertArrayEquals(expected, Hex.encodeHex(input));
+    }
+
+    @Test
+    void testEncodeHexWithZeroByte() {
+        byte[] input = { 0x00 };
+        char[] expected = { '0', '0' };
+        assertArrayEquals(expected, Hex.encodeHex(input));
+    }
+}
+
+// Fim dos Exemplos
+
+[4] Geração do Código Final (JUnit 5)
+Forneça apenas o código Java completo e compilável da classe de teste.
+
+[5] Requisitos
+- Não incluir comentários, explicações ou texto fora do código Java;
+- Nomes dos testes devem seguir o padrão: testEncodeHex_*.
+

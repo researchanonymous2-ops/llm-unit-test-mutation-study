@@ -1,0 +1,16 @@
+Class,Model,Prompt Strategy,Total Suites,Non-compiling Suites,Runtime-failure Suites,Eligible Suites,Ineligible Suites,Eligibility Rate (%)
+BinaryTree,Grok,Zero-shot,5,2,0,3,2,60.0
+BinaryTree,,One-shot,5,0,0,5,0,100.0
+BinaryTree,,Few-shot,5,0,0,5,0,100.0
+BinaryTree,,POT,5,0,0,5,0,100.0
+BinaryTree,,COC,5,0,0,5,0,100.0
+BinaryTree,Llama,Zero-shot,5,0,0,5,0,100.0
+BinaryTree,,One-shot,5,0,0,5,0,100.0
+BinaryTree,,Few-shot,5,0,0,5,0,100.0
+BinaryTree,,POT,5,0,0,5,0,100.0
+BinaryTree,,COC,5,0,0,5,0,100.0
+BinaryTree,Qwen,Zero-shot,5,0,0,5,0,100.0
+BinaryTree,,One-shot,5,0,1,4,1,80.0
+BinaryTree,,Few-shot,5,1,2,2,3,40.0
+BinaryTree,,POT,5,0,1,4,1,80.0
+BinaryTree,,COC,5,0,0,5,0,100.0

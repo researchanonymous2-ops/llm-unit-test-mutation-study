@@ -1,0 +1,8 @@
+
+/app/experimentos/exp-hashmapcuckoohashing/src/test/java/com/thealgorithms/datastructures/hashmap/hashing/HashMapCuckooHashingQwen_COC4Test.java:63: error: buckets has private access in HashMapCuckooHashing
+            hashMap.buckets[i] = i;
+                   ^
+/app/experimentos/exp-hashmapcuckoohashing/src/test/java/com/thealgorithms/datastructures/hashmap/hashing/HashMapCuckooHashingQwen_COC4Test.java:65: error: size has private access in HashMapCuckooHashing
+        hashMap.size = 10;
+               ^
+2 errors

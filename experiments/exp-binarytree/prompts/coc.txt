@@ -1,0 +1,139 @@
+[1] Papel
+
+Você é um engenheiro de software especializado em testes unitários e critérios de teste estrutural baseados em fluxo de dados.
+
+[2] Tarefa
+
+Gerar testes unitários em Java (JUnit 5) para o método public void put(int value)
+da classe com.thealgorithms.datastructures.trees.BinaryTree.
+
+[3] Restrição de Escopo
+
+Gerar casos de teste apenas para o método put(int value).
+Não criar testes para outros métodos da classe BinaryTree.
+
+[3.1] Análise Estrutural Prévia do Método public void put(int value)
+
+O método put(int value) da classe BinaryTree foi previamente analisado segundo
+critérios de teste estrutural baseados em fluxo de dados.
+Essa análise deve ser considerada como base obrigatória para a construção do
+Chain of Code.
+
+Variáveis do método:
+- value: parâmetro formal de entrada
+- root: atributo da classe BinaryTree
+- newNode: variável local (novo nó criado)
+- parent: variável local (resultado da chamada find(value), apenas quando root != null)
+
+Definições (def)
+
+Para value:
+- D1: definição inicial como parâmetro formal do método
+
+Para newNode:
+- D2: definição como nova instância de Node(value)
+
+Para root:
+- D3: definição pela atribuição root = newNode, quando root == null
+
+Para parent:
+- D4: definição como resultado da chamada find(value), quando root != null
+
+Para estrutura da árvore:
+- D5: definição de parent.left = newNode, quando value < parent.data
+- D6: definição de parent.right = newNode, quando value >= parent.data
+
+Usos predicativos (p-use)
+
+Para root:
+- P1: decisão condicional (root == null)
+
+Para value:
+- P2: decisão condicional (value < parent.data)
+
+Usos computacionais (c-use)
+
+- C1: uso de value na criação do novo nó new Node(value)
+- C2: uso de value na comparação com parent.data
+- C3: uso de parent nas atribuições de filhos
+- C4: uso de newNode nas atribuições parent.left ou parent.right
+- C5: uso de parent nas atribuições parent.left.parent = parent ou parent.right.parent = parent
+
+
+[4] Chain of Code
+
+Questão:Como o método put(int value) se comporta para diferentes estados iniciais da árvore
+e diferentes valores de entrada?
+
+Convenções:
+- input_value: valor fornecido ao método put;
+- original_input: valor inteiro input_value;
+- observable_state: estado estrutural observável da árvore após a execução;
+- def(Di): definição identificada conforme a análise estrutural;
+- p_use: uso predicativo;
+- c_use: uso computacional;
+- path(Pi): caminho definição–uso livre de redefinição;
+- delta_state: representação explícita do estado semântico observável da árvore
+  após uma ação relevante.
+
+Modelo do Chain of Code:
+
+1   original_input = input_value
+    def(D1): value = input_value
+    delta_state: { value definido }
+
+2   def(D2): newNode = new Node(value)
+    c_use(C1): value
+    delta_state: { newNode criado }
+
+3   p_use(P1): (root == null)
+    path(P0)
+    def(D3): root = newNode
+    delta_state: { árvore estava vazia, root aponta para newNode }
+
+4   p_use(P1): (root != null)
+    def(D4): parent = find(value)
+    delta_state: { nó pai identificado }
+
+5   p_use(P2): (value < parent.data)
+    path(P1)
+    c_use(C2): value
+    c_use(C3): parent
+    c_use(C4): newNode
+    def(D5): parent.left = newNode
+    c_use(C5): parent
+    delta_state: { newNode inserido como filho esquerdo }
+
+6   p_use(P2): (value >= parent.data)
+    path(P2)
+    c_use(C2): value
+    c_use(C3): parent
+    c_use(C4): newNode
+    def(D6): parent.right = newNode
+    c_use(C5): parent
+    delta_state: { newNode inserido como filho direito }
+
+7   unit_test_scenarios = derive_from_paths(
+        P0, P1, P2
+    )
+    delta_state: { unit_test_scenarios completo }
+
+8   observable_state =
+        estado da árvore após put(input_value)
+    delta_state: { observable_state consistente com o caminho executado }
+
+Resposta:unit_test_scenarios
+
+
+[5] Geração do Código Final (JUnit 5)
+
+Com base exclusivamente no Modelo do Chain of Code definido acima,
+gere apenas o código Java completo e compilável da classe de teste JUnit 5
+para o método put(int value).
+
+[6] Convenções e Restrições Sintáticas
+
+- Os casos de teste devem garantir cobertura de todos os caminhos definidos no Chain of Code;
+- Não incluir comentários, explicações ou texto fora do código Java;
+- Os nomes dos testes devem seguir o padrão: testPut_*.
+

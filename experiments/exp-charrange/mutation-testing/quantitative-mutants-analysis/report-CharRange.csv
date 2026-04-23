@@ -1,0 +1,16 @@
+Suite,Class,Test_Cases,Mutants,Killed,Survived,No_Coverage,Mutation_Score (%),Test_Strength (%)
+CharRangeGrok_COC2Test,CharRange,5,22,11,9,2,50.0,55.0
+CharRangeGrok_COC3Test,CharRange,9,22,16,6,0,72.73,72.73
+CharRangeGrok_FS1Test,CharRange,9,22,16,6,0,72.73,72.73
+CharRangeGrok_FS5Test,CharRange,14,22,20,2,0,90.91,90.91
+CharRangeGrok_OS2Test,CharRange,12,22,18,4,0,81.82,81.82
+CharRangeGrok_POT3Test,CharRange,5,22,16,6,0,72.73,72.73
+CharRangeGrok_POT4Test,CharRange,5,22,16,6,0,72.73,72.73
+CharRangeGrok_POT5Test,CharRange,5,22,16,6,0,72.73,72.73
+CharRangeGrok_ZS5Test,CharRange,13,22,20,2,0,90.91,90.91
+CharRangeLlama_FS1Test,CharRange,10,22,13,6,3,59.09,68.42
+CharRangeLlama_ZS2Test,CharRange,9,22,15,6,1,68.18,71.43
+CharRangeLlama_ZS3Test,CharRange,9,22,15,2,5,68.18,88.24
+CharRangeQwen_OS3Test,CharRange,20,22,22,0,0,100.0,100.0
+CharRangeQwen_POT5Test,CharRange,9,22,16,6,0,72.73,72.73
+CharRangeQwen_ZS4Test,CharRange,21,22,20,2,0,90.91,90.91

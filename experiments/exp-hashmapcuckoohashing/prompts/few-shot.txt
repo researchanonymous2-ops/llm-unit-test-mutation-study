@@ -1,0 +1,57 @@
+[1] Tarefa
+Gerar testes unitários em Java (JUnit 5) para o método public void insertKey2HashTable(int key)
+da classe com.thealgorithms.datastructures.hashmap.hashing.HashMapCuckooHashing.
+
+[2] Restrição de Escopo
+Gerar casos de teste apenas para o método public void insertKey2HashTable(int key).
+Não criar testes para outros métodos da classe.
+
+[3] Exemplos de Casos de Teste na Classe de Teste (Few-Shot)
+
+Use os exemplos abaixo apenas como referência de estrutura, organização, imports e formato de uma classe de teste JUnit 5 com múltiplos casos de teste.
+
+Não reutilize valores de entrada, resultados esperados ou a lógica dos testes apresentados.
+
+// Exemplos
+
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
+import org.junit.jupiter.api.Test;
+import com.thealgorithms.datastructures.hashmap.hashing.HashMapCuckooHashing;
+
+public class HashMapCuckooHashingFewShotExampleTest {
+
+    @Test
+    void testInsertKey2HashTableSingleInsertion() {
+        HashMapCuckooHashing map = new HashMapCuckooHashing(8);
+        assertDoesNotThrow(() -> map.insertKey2HashTable(10));
+    }
+
+    @Test
+    void testInsertKey2HashTableMultipleInsertions() {
+        HashMapCuckooHashing map = new HashMapCuckooHashing(8);
+        assertDoesNotThrow(() -> {
+            map.insertKey2HashTable(5);
+            map.insertKey2HashTable(13);
+        });
+    }
+
+    @Test
+    void testInsertKey2HashTableDuplicateKeyThrowsException() {
+        HashMapCuckooHashing map = new HashMapCuckooHashing(8);
+        map.insertKey2HashTable(7);
+        assertThrows(IllegalArgumentException.class,
+            () -> map.insertKey2HashTable(7));
+    }
+}
+
+// Fim dos Exemplos
+
+[4] Geração do Código Final (JUnit 5)
+Forneça apenas o código Java completo e compilável da classe de teste.
+
+[5] Convenções e Restrições Sintáticas
+- Não incluir comentários, explicações ou texto fora do código Java;
+- Nomes dos testes devem seguir o padrão: testInsertKey2HashTable_*.
+

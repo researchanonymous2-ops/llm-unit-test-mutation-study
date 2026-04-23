@@ -1,0 +1,201 @@
+[1] Papel
+
+Você é um engenheiro de software especializado em testes unitários e critérios de teste estrutural baseados em fluxo de dados.
+
+[2] Tarefa
+
+Gerar testes unitários em Java (JUnit 5) para o método multiply(BigDecimal[][] matrix1, BigDecimal[][] matrix2) 
+da classe com.thealgorithms.maths.MatrixUtil.
+
+[3] Restrição de Escopo
+
+Gerar casos de teste apenas para o método
+multiply(BigDecimal[][] matrix1, BigDecimal[][] matrix2).
+Não criar testes para outros métodos da classe.
+
+[3.1] Análise Estrutural Prévia do Método multiply(BigDecimal[][], BigDecimal[][])
+
+O método multiply(BigDecimal[][] matrix1, BigDecimal[][] matrix2) da classe MatrixUtil
+foi previamente analisado segundo critérios de teste estrutural baseados em fluxo de dados.
+Essa análise deve ser considerada como base obrigatória para a construção do Chain of Code.
+
+Variáveis do método:
+- matrix1: parâmetro formal (primeira matriz de entrada)
+- matrix2: parâmetro formal (segunda matriz de entrada)
+- size: variável local inteira
+- matrix1RowSize: variável local inteira
+- matrix2ColumnSize: variável local inteira
+- result: matriz local BigDecimal[][]
+- rowIndex: variável de iteração (laço externo)
+- columnIndex: variável de iteração (laço intermediário)
+- index: variável de iteração (laço interno)
+- value1: variável local BigDecimal
+- value2: variável local BigDecimal
+
+Definições (def)
+
+Para matrix1:
+- D1: definição inicial como parâmetro formal
+
+Para matrix2:
+- D2: definição inicial como parâmetro formal
+
+Para size:
+- D3: final int size = matrix1[0].length
+
+Para matrix1RowSize:
+- D4: final int matrix1RowSize = matrix1.length
+
+Para matrix2ColumnSize:
+- D5: final int matrix2ColumnSize = matrix2[0].length
+
+Para result:
+- D6: final BigDecimal[][] result = new BigDecimal[matrix1RowSize][matrix2ColumnSize]
+
+Para rowIndex:
+- D7: definição implícita no IntStream.range(0, matrix1RowSize)
+
+Para columnIndex:
+- D8: definição implícita no IntStream.range(0, matrix2ColumnSize)
+
+Para index:
+- D9: definição implícita no IntStream.range(0, size)
+
+Para value1:
+- D10: final BigDecimal value1 = matrix1[rowIndex][index]
+
+Para value2:
+- D11: final BigDecimal value2 = matrix2[index][columnIndex]
+
+Usos predicativos (p-use)
+
+Para matrix1 e matrix2:
+- P1: if (!canMultiply(matrix1, matrix2))
+
+Para matrix1RowSize:
+- P2: condição do laço IntStream.range(0, matrix1RowSize)
+
+Para matrix2ColumnSize:
+- P3: condição do laço IntStream.range(0, matrix2ColumnSize)
+
+Para size:
+- P4: condição do laço IntStream.range(0, size)
+
+Usos computacionais (c-use)
+
+Para matrix1:
+- C1: matrix1[0].length
+- C2: matrix1.length
+- C3: matrix1[rowIndex][index]
+
+Para matrix2:
+- C4: matrix2[0].length
+- C5: matrix2[index][columnIndex]
+
+Para value1:
+- C6: value1.multiply(value2)
+
+Para value2:
+- C7: value1.multiply(value2)
+
+Para result:
+- C8: result[rowIndex][columnIndex] = ...
+- C9: return Optional.of(result)
+
+[4] Chain of Code
+
+Questão:
+Como o método multiply(BigDecimal[][] matrix1, BigDecimal[][] matrix2)
+se comporta para diferentes combinações de dimensões e conteúdos das matrizes?
+
+Convenções:
+- input_matrix1: primeira matriz fornecida ao método;
+- input_matrix2: segunda matriz fornecida ao método;
+- observable_return: Optional<BigDecimal[][]> retornado por multiply;
+- def(Di): definição identificada conforme a análise estrutural;
+- p_use: uso predicativo;
+- c_use: uso computacional;
+- path(Pi): caminho definição–uso livre de redefinição;
+- delta_state: estado semântico observável após cada ação relevante.
+
+Modelo do Chain of Code:
+
+1   input_matrix1 = original_input_1
+    input_matrix2 = original_input_2
+    def(D1): matrix1 = input_matrix1
+    def(D2): matrix2 = input_matrix2
+    delta_state: { matrix1 definido, matrix2 definido }
+
+2   p_use: !canMultiply(matrix1, matrix2)
+    path(P0)
+    c_use: return Optional.empty
+    delta_state: { observable_return = empty }
+
+3   def(D3): size = matrix1[0].length
+    def(D4): matrix1RowSize = matrix1.length
+    def(D5): matrix2ColumnSize = matrix2[0].length
+    delta_state: { dimensões definidas }
+
+4   def(D6): result = new BigDecimal[matrix1RowSize][matrix2ColumnSize]
+    delta_state: { result alocado }
+
+5   p_use: rowIndex < matrix1RowSize
+    def(D7): rowIndex iterador
+    delta_state: { linha selecionada }
+
+6   p_use: columnIndex < matrix2ColumnSize
+    def(D8): columnIndex iterador
+    delta_state: { coluna selecionada }
+
+7   p_use: index < size
+    def(D9): index iterador
+    c_use: value1 = matrix1[rowIndex][index]
+    c_use: value2 = matrix2[index][columnIndex]
+    c_use: value1.multiply(value2)
+    delta_state: { computed_cell atualizado }
+
+8   path(P1): término do laço interno (size == 1)
+    c_use: atribuição em result[rowIndex][columnIndex]
+    delta_state: { célula result definida }
+
+9   path(P2): término do laço interno após múltiplas iterações
+    c_use: atribuição em result[rowIndex][columnIndex]
+    delta_state: { célula result definida }
+
+10  repetição dos passos 6–9 até conclusão das colunas
+    delta_state: { linha completa }
+
+11  repetição dos passos 5–10 até conclusão das linhas
+    delta_state: { matriz completa }
+
+12  c_use: return Optional.of(result)
+    path(P3)
+    delta_state: { observable_return = Optional.of(result) }
+
+13  unit_test_scenarios = derive_from_paths(
+        P0, P1, P2, P3
+    )
+    delta_state: { unit_test_scenarios = complete }
+
+14  observable_return = multiply(input_matrix1, input_matrix2)
+    delta_state: { observable_return definido }
+
+Resposta:
+unit_test_scenarios
+
+[5] Geração do Código Final (JUnit 5)
+
+Com base exclusivamente no Modelo do Chain of Code definido acima,
+gere apenas o código Java completo e compilável da classe de teste JUnit 5
+para o método multiply(BigDecimal[][] matrix1, BigDecimal[][] matrix2).
+
+[6] Convenções e Restrições Sintáticas
+
+- Os casos de teste devem garantir cobertura de todos os caminhos definidos no Chain of Code;
+- Não incluir comentários, explicações ou texto fora do código Java;
+- Os nomes dos testes devem seguir o padrão: testMultiply_*.
+- Ao utilizar a classe java.math.BigDecimal, considere que apenas as constantes
+  pré-definidas ZERO, ONE e TEN estão disponíveis. Todos os demais valores
+  numéricos devem ser criados explicitamente por meio de construtores ou do
+  método BigDecimal.valueOf(long).
+

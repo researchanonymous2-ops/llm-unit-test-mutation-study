@@ -1,0 +1,6 @@
+{
+  "created_utc": "20260124T120446Z",
+  "suite_base": "com.thealgorithms.datastructures.stacks.StackArrayBaseTest",
+  "target_package": "com.thealgorithms.datastructures.stacks",
+  "pit_plugin_version": "unknown"
+}

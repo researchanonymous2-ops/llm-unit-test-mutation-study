@@ -1,0 +1,8 @@
+
+/app/experimentos/exp-binarycodec/src/test/java/org/apache/commons/codec/binary/BinaryCodecQwen_ZS3Test.java:39: error: incompatible types: possible lossy conversion from int to byte
+        byte[] input = {0b10101010};
+                        ^
+/app/experimentos/exp-binarycodec/src/test/java/org/apache/commons/codec/binary/BinaryCodecQwen_ZS3Test.java:46: error: incompatible types: possible lossy conversion from int to byte
+        byte[] input = {0b11001100, 0b00110011};
+                        ^
+2 errors

@@ -1,0 +1,116 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>research.study</groupId>
+  <artifactId>research</artifactId>
+  <version>1.0-SNAPSHOT</version>
+
+  <properties>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+    <!-- JUnit 5 API -->
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <version>5.9.3</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- JUnit 5 Engine -->
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <version>5.9.3</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- JUnit 5 Params -->
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-params</artifactId>
+      <version>5.9.3</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+
+      <!-- Surefire -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.0.0-M9</version>
+      </plugin>
+
+      <!-- PIT -->
+      <plugin>
+        <groupId>org.pitest</groupId>
+        <artifactId>pitest-maven</artifactId>
+        <version>1.20.1</version>
+
+        <!-- Suporte JUnit 5 -->
+        <dependencies>
+          <dependency>
+            <groupId>org.pitest</groupId>
+            <artifactId>pitest-junit5-plugin</artifactId>
+            <version>1.2.1</version>
+          </dependency>
+        </dependencies>
+
+        <configuration>
+          <testPlugin>junit5</testPlugin>
+
+          <!-- Forçar o PIT a usar as classes compiladas locais -->
+          <classesDirectory>${project.build.directory}/classes</classesDirectory>
+
+          <!-- Mutar apenas a classe alvo -->
+          <targetClasses>
+            <param>com.thealgorithms.maths.Area</param>
+          </targetClasses>
+
+          <!-- Excluir métodos fora do escopo -->
+          <excludedMethods>
+            <param>surfaceAreaCube</param>
+            <param>surfaceAreaSphere</param>
+            <param>surfaceAreaRectangle</param>
+            <param>surfaceAreaCylinder</param>
+            <param>surfaceAreaSquare</param>
+            <param>surfaceAreaTriangle</param>
+            <param>surfaceAreaParallelogram</param>
+            <param>surfaceAreaTrapezium</param>
+            <param>surfaceAreaCircle</param>
+            <param>surfaceAreaHemisphere</param>
+          </excludedMethods>
+
+          <!-- Considerar apenas os testes do pacote da classe -->
+          <targetTests>
+            <param>com.thealgorithms.maths.*</param>
+          </targetTests>
+
+          <outputFormats>
+            <param>XML</param>
+            <param>HTML</param>
+            <param>CSV</param>
+          </outputFormats>
+
+          <!-- Histórico fixo -->
+          <historyOutputFile>
+            ${project.build.directory}/pit-history/pitHistory.bin
+          </historyOutputFile>
+          <timestampedReports>false</timestampedReports>
+        </configuration>
+
+      </plugin>
+    </plugins>
+  </build>
+</project>
+

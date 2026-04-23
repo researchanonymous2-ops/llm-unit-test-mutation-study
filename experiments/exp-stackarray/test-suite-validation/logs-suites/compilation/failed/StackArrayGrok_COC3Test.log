@@ -1,0 +1,5 @@
+
+/app/experimentos/exp-stackarray/src/test/java/com/thealgorithms/datastructures/stacks/StackArrayGrok_COC3Test.java:28: error: maxSize has private access in StackArray
+        assertEquals(4, stack.maxSize);
+                             ^
+1 error
