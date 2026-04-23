@@ -12,7 +12,7 @@ The repository currently contains the following target classes and scripts used 
 
 
 ```
-repos-sbes/
+llm-unit-test-mutation-study/
 ├── experiments/
 │   ├── exp-anagrams/
 │   ├── exp-area/
