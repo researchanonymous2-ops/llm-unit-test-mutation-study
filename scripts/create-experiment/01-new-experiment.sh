@@ -1,11 +1,5 @@
 #!/bin/bash
 
-# =====================================================
-# Script: novoExperimento.sh
-# Uso: bash scripts/novoExperimento.sh <nome_experimento> <nome_classe>
-# Exemplo: bash scripts/novoExperimento.sh exp15-binarytree BinaryTree
-# =====================================================
-
 if [ $# -lt 2 ]; then
   echo "Uso: $0 <nome_experimento> <nome_classe>"
   echo "Exemplo: $0 exp15-binarytree BinaryTree"
@@ -53,14 +47,14 @@ umask 000
 
 echo "✅ Estrutura criada com sucesso!"
 echo ""
-echo "👉 Agora copie a classe alvo ($NOME_CLASSE.java) para:"
+echo "👉 Copiar a classe alvo ($NOME_CLASSE.java) para:"
 echo "   $EXP_DIR/src/main/java/"
 echo "   (mantendo a estrutura de pacote original, ex.: com/thealgorithms/.../BinaryTree.java)"
 echo ""
-echo "👉 Após copiar a classe alvo, crie a SUÍTE BASE em:"
+echo "👉 Após copiar a classe alvo, criar a SUÍTE BASE em:"
 echo "   $EXP_DIR/src/test/java/<MESMO PACKAGE DA CLASSE ALVO>/${NOME_CLASSE}BaseTest.java"
 echo ""
-echo "👉 Depois disso, já pode chamar o script:"
+echo "👉 Depois disso, chamar o script:"
 echo "   python3 scripts/testes/02-gerar-testes.py $NOME_EXP $NOME_CLASSE <modelo> <llm> <estrategia>"
 echo ""
 
