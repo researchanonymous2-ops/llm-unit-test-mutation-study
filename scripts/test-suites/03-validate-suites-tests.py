@@ -9,8 +9,8 @@ import re
 # PARÂMETROS GERAIS
 # ============================================================
 if len(sys.argv) < 3:
-    print("Uso: python3 verificarSuitesLLMs.py <nome_experimento> <nome_classe>")
-    print("Exemplo: python3 verificarSuitesLLMs.py exp15-binarytree BinaryTree")
+    print("Uso: python3 validate-suites-tests.py <nome_experimento> <nome_classe>")
+    print("Exemplo: python3 validate-suites-tests.py exp15-binarytree BinaryTree")
     sys.exit(1)
 
 EXP_NAME = sys.argv[1]
