@@ -7,11 +7,11 @@ from collections import defaultdict
 
 # ============================================================
 # USAGE:
-#   python3 scripts/testes/05-generate-quantitative-suites-report.py <experiment_name> <target_class>
+#   python3 scripts/testes/05-generate-test-suites-quantitative-report.py <experiment_name> <target_class>
 # ============================================================
 
 if len(sys.argv) < 3:
-    print("Usage: python3 05-generate-quantitative-suites-report.py <experiment_name> <target_class>")
+    print("Usage: python3 05-generate-test-suites-quantitative-report.py <experiment_name> <target_class>")
     sys.exit(1)
 
 experiment = sys.argv[1]   # ex: exp19-primes
