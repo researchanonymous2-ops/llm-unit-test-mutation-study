@@ -11,7 +11,7 @@ import csv
 # =============================
 
 if len(sys.argv) < 6:
-    print("Uso: python3 scripts/testes/02-gerar-suites-testes.py <nome_experimento> <nome_classe> <modelo_api> <llm_nome> <estrategia>")
+    print("Uso: python3 scripts/testes/02-generate-test-suites.py <nome_experimento> <nome_classe> <modelo_api> <llm_nome> <estrategia>")
     sys.exit(1)
 
 EXP_NAME = sys.argv[1]
