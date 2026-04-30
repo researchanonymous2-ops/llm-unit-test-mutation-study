@@ -1,6 +1,8 @@
 # Artifacts of the Empirical Study
 
-This repository contains the artifacts generated during the empirical study. The artifacts are organized by target class, following a uniform directory structure pattern described below.
+This repository supports the article "Does Prompt Engineering Really Impact LLM-Generated Unit Tests? An Empirical Study Based on Mutation Testing", to be submitted to the Brazilian Symposium on Software Engineering (SBES 2026).
+
+The repository contains the artifacts generated during the empirical study, organized by target class, following a uniform directory structure pattern described below.
 
 ## General Repository Structure
 
@@ -9,7 +11,6 @@ Each target class has a dedicated folder inside `experiments/`, named according 
 **Example:** `experiments/exp-anagrams/`, `experiments/exp-area/`, `experiments/exp-fraction/`, etc.
 
 The repository currently contains the following target classes and scripts used in the study:
-
 
 ```
 llm-unit-test-mutation-study/
