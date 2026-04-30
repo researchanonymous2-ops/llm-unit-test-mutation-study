@@ -5,7 +5,7 @@ set -euo pipefail
 # USO
 # ===========================================
 # Exemplo:
-#   bash scripts/gerarMutantesFixosPit.sh exp06-primes experimento.base.PrimesBaseTest org.apache.commons.math3.primes
+#   bash scripts/generate-target-class-mutants.sh exp06-primes experimento.base.PrimesBaseTest org.apache.commons.math3.primes
 #
 # Argumentos:
 #   1: diretório do experimento (ex.: exp06-primes)
@@ -15,7 +15,7 @@ set -euo pipefail
 
 if [[ $# -lt 3 ]]; then
   echo "Uso: $0 <diretorio_experimento> <suite_base> <pacote_classe_alvo>"
-  echo "Exemplo: $0 exp06-primes experimento.base.PrimesBaseTest org.apache.commons.math3.primes"
+  echo "Exemplo: $0 exp-primes experimento.base.PrimesBaseTest org.apache.commons.math3.primes"
   exit 1
 fi
 
