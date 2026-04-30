@@ -5,8 +5,8 @@ set -euo pipefail
 # USO
 # ===========================================
 # Exemplo:
-#   bash scripts/mutacao/08-executar-testes-sobre-mutantes.sh \
-#     exp15-binarytree com.thealgorithms.datastructures.trees.BinaryTree
+#   bash scripts/mutacao/08-run-test-suites-on-mutants.sh \
+#     exp-binarytree com.thealgorithms.datastructures.trees.BinaryTree
 # ===========================================
 
 if [[ $# -lt 2 ]]; then
