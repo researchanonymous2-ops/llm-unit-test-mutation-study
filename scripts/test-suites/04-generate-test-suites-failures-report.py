@@ -8,8 +8,8 @@ import sys
 # PARAMETERS
 # =============================
 if len(sys.argv) < 2:
-    print("Usage: python3 04-generate-test-error-logs-report.py <experiment_name>")
-    print("Example: python3 04-generate-test-error-logs-report.py exp19-primes")
+    print("Usage: python3 04-generate-test-suites-failures-report.py <experiment_name>")
+    print("Example: python3 04-generate-test-suites-failures-report.py exp-primes")
     sys.exit(1)
 
 EXP_NAME = sys.argv[1]
