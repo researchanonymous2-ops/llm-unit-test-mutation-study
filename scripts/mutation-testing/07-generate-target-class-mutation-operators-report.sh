@@ -5,7 +5,7 @@ set -euo pipefail
 # USO
 # ===========================================
 # Exemplo:
-#   bash scripts/05_gerarRelatorioMutacao.sh exp06-primes Primes
+#   bash scripts/07-generate-target-class-mutation-operators-report.sh exp-primes Primes
 #
 # Argumentos:
 #   1: diretório do experimento (ex.: exp06-primes)
@@ -14,7 +14,7 @@ set -euo pipefail
 
 if [[ $# -lt 2 ]]; then
   echo "Uso: $0 <diretorio_experimento> <classe_alvo>"
-  echo "Exemplo: $0 exp06-primes Primes"
+  echo "Exemplo: $0 exp-primes Primes"
   exit 1
 fi
 
