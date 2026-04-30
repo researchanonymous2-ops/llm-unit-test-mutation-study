@@ -8,7 +8,7 @@ import re
 # Parâmetros
 # ============================================================
 if len(sys.argv) < 3:
-    print("Uso: python3 10-gerar-analise-quantitativa-mutantes.py <experimento> <classe>")
+    print("Uso: python3 09-generate-mutation-score-report.py <experimento> <classe>")
     sys.exit(1)
 
 experimento = sys.argv[1]
