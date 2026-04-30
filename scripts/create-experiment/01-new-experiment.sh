@@ -35,6 +35,12 @@ mkdir -p "$EXP_DIR/prompts"
 echo "Gere uma suíte de testes JUnit 5 para a classe $NOME_CLASSE usando estratégia Zero-Shot." \
   > "$EXP_DIR/prompts/zero-shot.txt"
 
+echo "Gere uma suíte de testes JUnit 5 para a classe $NOME_CLASSE usando estratégia One-Shot." \
+  > "$EXP_DIR/prompts/one-shot.txt"  
+
+echo "Gere uma suíte de testes JUnit 5 para a classe $NOME_CLASSE usando estratégia Few-Shot." \
+  > "$EXP_DIR/prompts/few-shot.txt"  
+
 echo "Gere uma suíte de testes JUnit 5 para a classe $NOME_CLASSE usando estratégia POT." \
   > "$EXP_DIR/prompts/pot.txt"
 
