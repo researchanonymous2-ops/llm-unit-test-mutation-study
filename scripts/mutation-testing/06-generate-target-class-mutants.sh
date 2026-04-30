@@ -5,7 +5,7 @@ set -euo pipefail
 # USO
 # ===========================================
 # Exemplo:
-#   bash scripts/generate-target-class-mutants.sh exp06-primes experimento.base.PrimesBaseTest org.apache.commons.math3.primes
+#   bash scripts/06-generate-target-class-mutants.sh exp06-primes experimento.base.PrimesBaseTest org.apache.commons.math3.primes
 #
 # Argumentos:
 #   1: diretório do experimento (ex.: exp06-primes)
